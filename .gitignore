@@ -1,0 +1,18 @@
+# Raw FIA data is gitignored - re-download from DataMart as needed
+data/fia/*.csv
+data/fia/*.zip
+# Raster inputs are large
+data/rasters/*
+*.tif
+*.tiff
+*.tgz
+*.tar
+*.zip
+# R artifacts
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+# Logs
+logs/*
+!logs/.gitkeep
