@@ -50,7 +50,7 @@ library(patchwork)   # available for multi-panel figure composition
 # States to process. Use FIA state abbreviations.
 # Maine only:       c("ME")
 # All New England:  c("ME", "NH", "VT", "MA", "CT", "RI")
-STATE_CODES <- c("ME")
+STATE_CODES <- c("ME", "NH", "VT", "NY")
 
 # Root directory for FIA data. The script looks for files in two places:
 #   1. {data_root}/{ST}/{ST}_PLOT.csv  (multi-state layout)

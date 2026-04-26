@@ -41,7 +41,7 @@ suppressPackageStartupMessages({
 
 # ---- CONFIG -----------------------------------------------------------------
 
-STATE_CODES   <- c("ME")
+STATE_CODES   <- c("ME", "NH", "VT", "NY")
 data_root     <- "~/LSOG/data/fia"
 potapov_raster <- "~/LSOG/data/rasters/potapov_2019/Forest_height_2019_NAM.tif"
 out_dir       <- "~/LSOG/output_v5"
