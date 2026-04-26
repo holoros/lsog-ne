@@ -1,61 +1,77 @@
-# lsog-maine
+# lsog-ne
 
-FIA-based late-successional / old-growth (LSOG) classification for Maine and New England.
+FIA-based late-successional / old-growth (LSOG) classification for the U.S.
+Northeast. Started in Maine; designed to extend to New Hampshire, Vermont, and
+New York as data become available.
 
-Built on the proxy scoring framework in `R/fia_lsog_analysis_v3.r`, with a planned
-v4 line that will:
+Built on the proxy scoring framework in `R/fia_lsog_analysis_v3.r`. The v3
+script already supports a multi-state `STATE_CODES` vector and produces
+regional comparison figures when more than one state is processed.
 
-1. Add a 2020 to 2024 evaluation panel using the FIA refresh of Feb 2026.
-2. Add an unorganized-territories subset so estimates can be compared like-for-like
-   to Hagan et al. (2024) and Thompson et al. (2026).
-3. Cross-validate against ORNL DAAC dataset 2498 ("Mature and Old-growth Forest
-   Probability Maps for the Conterminous US") at the FIA plot level.
-4. Recalibrate the 5-dimension score thresholds against the 348 FIA plots that
-   fall inside Hagan's three LSOG classes in the unorganized townships.
+## Project arc
+
+- Phase 1 (done): Cardinal project layout, v3 baseline import, GitHub remote.
+- Phase 2: 2020-2024 evaluation panel + unorganized-territory subset; STDAGE
+  imputation; multi-state run for ME, NH, VT, NY.
+- Phase 3 (blocked on raster availability): plot-level recalibration against
+  Hagan et al. (2024) LiDAR LSOG classes for the Maine unorganized townships.
+- Phase 4 (in progress this session): cross-validate the v3 proxy against
+  the ORNL DAAC dataset 2498 ("Mature and Old-growth Forest Probability Maps
+  for the Conterminous US") at the FIA plot level, statewide for each state
+  in `STATE_CODES`.
 
 ## Layout
 
-- `R/`            Analysis scripts. v3 is the current baseline.
-- `data/fia/`     FIA tables (gitignored; pull from USDA FIA DataMart).
-- `data/rasters/` Hagan LSOG raster, ORNL DAAC 2498 layers (gitignored).
-- `output_v3/`    Phase 1 baseline figures and CSVs from the v3 March 2026 run.
-- `output_legacy/`  Earlier Mar-2026 figures from the pre-v3 script.
+- `R/`            Analysis scripts.
+  - `fia_lsog_analysis_v3.r`     v3 baseline classifier (multi-state aware)
+  - `fia_lsog_analysis.R`        v1 reference
+  - `phase4_helpers.r`           shared scoring + raster utilities
+  - `phase4_ornl2498_extract.r`  Phase 4 pipeline
+- `scripts/`      Shell helpers.
+  - `download_ornl2498.sh`       wget + .netrc downloader for the 3 COGs
+  - `refresh_earthdata_netrc.sh` interactive password updater
+  - `submit_phase4.sh`           sbatch template (uses default account)
+- `data/fia/`     FIA tables (gitignored). Cardinal already has `~/fia_data/`
+                  with ME tables; symlinked here.
+- `data/rasters/` Hagan and ORNL rasters (gitignored).
+- `output_v3/`    Phase 1 baseline figures and CSVs.
+- `output_legacy/` Earlier outputs (will populate in a follow-up commit).
+- `output_phase4/` Phase 4 results (created by phase4 scripts).
 - `docs/`         Methodology notes, comparison tables, source PDFs.
-- `logs/`         Slurm logs (gitignored).
+- `logs/`         SLURM logs (gitignored).
 
-## v3 baseline result (Maine, 2014-2018 evaluation period)
+## v3 baseline result (Maine, 2014-2018)
 
-- Transitioning LS: ~1,328,000 ac (7.9 percent of plots, statewide)
-- Late-Successional: ~171,000 ac (1.0 percent)
-- Old-Growth: ~22,000 ac (0.13 percent)
-- All LSOG: ~1,521,000 ac (9.0 percent)
+Statewide:
 
-Compare with Hagan/Thompson (unorganized townships only, 9.5M ac):
-- Transitioning LS: 17.2 percent
-- LS + OG: 4.2 percent
-- All LSOG: 21.4 percent
+- Transitioning LS:    ~1,328,000 ac (7.9 percent)
+- Late-Successional:    ~171,000 ac (1.0 percent)
+- Old-Growth:            ~22,000 ac (0.13 percent)
+- All LSOG:           ~1,521,000 ac (9.0 percent)
 
-The scope difference (statewide vs. unorganized only) explains part of the gap;
-the rest is sensitivity floor of the proxy and STDAGE NA frequency. Phase 2 and
-Phase 3 of this project address both.
+Compare with Hagan/Thompson (Maine unorganized territories only, 9.5M ac):
+
+- Transitioning LS:  17.2 percent
+- LS + OG:            4.2 percent
+- All LSOG:          21.4 percent
 
 ## References
 
-- Hagan, J., B. Shamgochian, M. Taylor, and M. Reed. 2024. Using LiDAR to Map,
-  Quantify, and Conserve Late-successional Forest in Maine. Our Climate Common.
-  https://ourclimatecommon.org/lsog-project/
-- Thompson, J., A. Daigneault, J. Plisinski, I. Moon, J. Norton, and J. Hagan.
-  2026. Pathways for Protecting Maine's Remaining Old-Growth Forests.
-  Harvard Forest / University of Maine.
-- Burrill, E. et al. ORNL DAAC. Mature and Old-growth Forest Probability Maps
-  for the Conterminous United States. doi:10.3334/ORNLDAAC/2498
+- Bruening, J.M. et al. 2026. Mature and Old-growth Forest Probability Maps
+  for the Conterminous United States. ORNL DAAC.
+  https://doi.org/10.3334/ORNLDAAC/2498
+- Hagan, J. et al. 2024. Using LiDAR to Map, Quantify, and Conserve LSOG in
+  Maine. Our Climate Common. https://ourclimatecommon.org/lsog-project/
+- Thompson, J. et al. 2026. Pathways for Protecting Maine's Remaining
+  Old-Growth Forests. Harvard Forest / University of Maine.
 
-## Running v3 on Cardinal
+## Running on Cardinal
 
 ```bash
 module load gdal/3.7.3 gcc/12.3.0 geos/3.12.0 proj/9.2.1 R/4.4.0
 cd ~/LSOG
-# Place ME_PLOT.csv, ME_COND.csv, ME_TREE.csv in data/fia/
-# Edit data_root in R/fia_lsog_analysis_v3.r if needed
+ln -sf ~/fia_data data/fia    # use the already-staged FIA tables
 Rscript R/fia_lsog_analysis_v3.r
 ```
+
+For the Phase 4 ORNL comparison see `docs/PHASE4_PLAN.md`.
