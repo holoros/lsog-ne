@@ -68,7 +68,7 @@ Compare with Hagan/Thompson (Maine unorganized territories only, 9.5M ac):
 ## Running on Cardinal
 
 ```bash
-module load gdal/3.7.3 gcc/12.3.0 geos/3.12.0 proj/9.2.1 R/4.4.0
+source /etc/profile.d/lmod.sh && module purge && module load gcc/12.3.0 gdal/3.7.3 R/4.4.0
 cd ~/LSOG
 ln -sf ~/fia_data data/fia    # use the already-staged FIA tables
 Rscript R/fia_lsog_analysis_v3.r

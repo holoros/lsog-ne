@@ -85,7 +85,7 @@ Once raster is in place (and FIA tables reachable as data/fia/):
 Interactive:
 
 ```
-module load gdal/3.7.3 gcc/12.3.0 geos/3.12.0 proj/9.2.1 R/4.4.0
+source /etc/profile.d/lmod.sh && module purge && module load gcc/12.3.0 gdal/3.7.3 R/4.4.0
 cd ~/LSOG
 ln -sf ~/fia_data data/fia
 Rscript --vanilla R/phase4_ornl2498_extract.r

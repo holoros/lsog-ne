@@ -8,20 +8,26 @@
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=aaron.weiskittel@maine.edu
 
-# Defaults: no --account flag (uses user's default OSC allocation).
+# Default OSC allocation (no --account flag).
 
 set -e
 cd ~/LSOG
 mkdir -p logs
 
-module load gdal/3.7.3 gcc/12.3.0 geos/3.12.0 proj/9.2.1 R/4.4.0
+# Cardinal module setup: gcc must precede gdal; geos/proj are bundled in gdal
+source /etc/profile.d/lmod.sh
+module purge
+module load gcc/12.3.0
+module load gdal/3.7.3
+module load R/4.4.0
+module list
 
-# Make sure FIA tables are reachable as data/fia/<ST>_*.csv
+# FIA tables symlink
 if [ ! -e data/fia ] && [ -d ~/fia_data ]; then
-  ln -sf ~/fia_data data/fia
+  ln -sfn ~/fia_data data/fia
 fi
 
-# Make sure the ORNL raster is present (otherwise R script will stop early)
+# Confirm ORNL raster present
 RASTER=~/LSOG/data/rasters/ornl_2498/CONUS_mature_old_growth_probabilities_0100m.tif
 if [ ! -f "$RASTER" ]; then
   echo "ORNL raster missing; running download script..."
