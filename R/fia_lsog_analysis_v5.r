@@ -139,16 +139,16 @@ score_state <- function(st) {
     score_maturity = case_when(
       !is.na(STDAGE) & STDAGE >= 120 ~ 2L,
       !is.na(STDAGE) & STDAGE >= 80  ~ 1L,
-      (is.na(STDAGE) | STDAGE == 0) & max_dia >= 20 ~ 1L,
+      (is.na(STDAGE) | STDAGE == 0) & max_dia >= 24 ~ 1L,
       TRUE ~ 0L),
-    score_structure = case_when(sd_dia >= 6 ~ 2L, sd_dia >= 3 ~ 1L, TRUE ~ 0L),
-    score_canopy    = case_when(ba_total >= 120 ~ 2L, ba_total >= 80 ~ 1L, TRUE ~ 0L),
+    score_structure = case_when(sd_dia >= 8 ~ 2L, sd_dia >= 5 ~ 1L, TRUE ~ 0L),
+    score_canopy    = case_when(ba_total >= 150 ~ 2L, ba_total >= 100 ~ 1L, TRUE ~ 0L),
     score_deadwood  = case_when(snag_tpa >= snag_thresh_2 ~ 2L,
                                  snag_tpa >= snag_thresh_1 ~ 1L,
                                  TRUE ~ 0L),
     score_canopy_height = case_when(
-      !is.na(potapov_rh95) & potapov_rh95 >= 20 ~ 2L,
-      !is.na(potapov_rh95) & potapov_rh95 >= 10 ~ 1L,
+      !is.na(potapov_rh95) & potapov_rh95 >= 25 ~ 2L,
+      !is.na(potapov_rh95) & potapov_rh95 >= 18 ~ 1L,
       TRUE ~ 0L),
     total_score = score_ba_large + score_maturity + score_structure +
                   score_canopy + score_deadwood + score_canopy_height,

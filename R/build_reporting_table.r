@@ -63,10 +63,10 @@ for (i in seq_len(nrow(tab))) {
 md_lines <- c(md_lines, "",
   "## Notes",
   "",
-  "- v5 score system uses six dimensions: large-tree basal area, stand maturity, TPA-weighted DBH dispersion, total basal area (canopy stocking), snag TPA, and Potapov GEDI/Landsat canopy height (RH95). Class thresholds: Transitioning LS >= 5, LS >= 7, OG >= 9 (out of 12).",
+  "- v5.1 score system uses six dimensions: large-tree basal area (BA in trees DBH>=20in: 1pt at 40, 2pt at 80 ft^2/ac), stand maturity (STDAGE >=80/120 yr or max_dia >=24in fallback), TPA-weighted DBH dispersion (sd_dia >=5/8 in), total basal area (>=100/150 ft^2/ac), snag TPA (data-driven percentiles), and Potapov GEDI/Landsat canopy height (RH95 >=18/25 m). Class thresholds: Transitioning LS >= 4, LS >= 6, OG >= 8 (out of 12).",
   "- Reference points: Hagan et al. 2024 LiDAR estimate for Maine unorganized territories (9.5M ac): Trans LS 17.2%, LS+OG 4.2%, all LSOG 21.4%. Bruening et al. 2026 ORNL DAAC 2498 estimates ~33% mature-prob > 50 statewide for ME.",
   "- Maine is the lowest-LSOG state in the Northeast despite covering the largest forest area; NH and VT have nearly double Maine's percentage. NY's Adirondack region drives its high OG share (2.5%).",
-  "- The Potapov RH95 thresholds in score_canopy_height were lowered from 18m/25m to 10m/20m based on Phase 5c sensitivity analysis (AUC against ORNL mature lifted from 0.644 to 0.682).")
+  "- v5.1 reverts to v3-original dim thresholds and 18m/25m RH95 thresholds after the sweep showed that v3R relaxed dims combined with 10/20m RH95 produced implausibly high regional shares (NH/VT 65-69 percent all-LSOG). The v5.1 configuration produces field-defensible regional shares: ME 12.6 percent, NH ~31 percent, NY ~27 percent, VT ~29 percent statewide all-LSOG.")
 
 writeLines(md_lines, path.expand(out_md))
 cat(sprintf("wrote %s\n", out_md))
