@@ -1,0 +1,7 @@
+variant,pct_any_lsog,pct_og
+"v3 default (4/6/8, default dims)",10.048,0.064
+"v3R relaxed dims (4/6/8, BA/sd/max relaxed)",20.416,0.22399999999999998
+v3 logit (P_mature>50 | scores) > 0.5,4.4799999999999995,NA
+ORNL mature_prob > 50 (target),33.409238776837995,NA
+ORNL MOG_prob > 50 (target),33.53936239427456,NA
+ORNL OG_prob > 50 (target),NA,0.13012361743656475
