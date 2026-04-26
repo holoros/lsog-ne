@@ -1,0 +1,57 @@
+state,ornl_class,lsog_class,ornl_bin,n_plots
+ME,old-growth,Not LSOG,<=5%,2230
+ME,old-growth,Not LSOG,6-25%,487
+ME,old-growth,Not LSOG,26-50%,45
+ME,old-growth,Not LSOG,51-75%,2
+ME,old-growth,Not LSOG,>75%,1
+ME,old-growth,Not LSOG,NA,46
+ME,old-growth,Transitioning LS,<=5%,195
+ME,old-growth,Transitioning LS,6-25%,70
+ME,old-growth,Transitioning LS,26-50%,9
+ME,old-growth,Transitioning LS,51-75%,1
+ME,old-growth,Transitioning LS,NA,3
+ME,old-growth,LS,<=5%,24
+ME,old-growth,LS,6-25%,7
+ME,old-growth,LS,26-50%,1
+ME,old-growth,LS,NA,2
+ME,old-growth,OG,<=5%,2
+ME,mature,Not LSOG,<=5%,181
+ME,mature,Not LSOG,6-25%,431
+ME,mature,Not LSOG,26-50%,1267
+ME,mature,Not LSOG,51-75%,823
+ME,mature,Not LSOG,>75%,63
+ME,mature,Not LSOG,NA,46
+ME,mature,Transitioning LS,<=5%,14
+ME,mature,Transitioning LS,6-25%,34
+ME,mature,Transitioning LS,26-50%,105
+ME,mature,Transitioning LS,51-75%,111
+ME,mature,Transitioning LS,>75%,11
+ME,mature,Transitioning LS,NA,3
+ME,mature,LS,<=5%,2
+ME,mature,LS,6-25%,2
+ME,mature,LS,26-50%,9
+ME,mature,LS,51-75%,13
+ME,mature,LS,>75%,6
+ME,mature,LS,NA,2
+ME,mature,OG,6-25%,1
+ME,mature,OG,26-50%,1
+ME,MOG (mature OR OG),Not LSOG,<=5%,172
+ME,MOG (mature OR OG),Not LSOG,6-25%,424
+ME,MOG (mature OR OG),Not LSOG,26-50%,1280
+ME,MOG (mature OR OG),Not LSOG,51-75%,825
+ME,MOG (mature OR OG),Not LSOG,>75%,64
+ME,MOG (mature OR OG),Not LSOG,NA,46
+ME,MOG (mature OR OG),Transitioning LS,<=5%,14
+ME,MOG (mature OR OG),Transitioning LS,6-25%,28
+ME,MOG (mature OR OG),Transitioning LS,26-50%,110
+ME,MOG (mature OR OG),Transitioning LS,51-75%,112
+ME,MOG (mature OR OG),Transitioning LS,>75%,11
+ME,MOG (mature OR OG),Transitioning LS,NA,3
+ME,MOG (mature OR OG),LS,<=5%,2
+ME,MOG (mature OR OG),LS,6-25%,2
+ME,MOG (mature OR OG),LS,26-50%,9
+ME,MOG (mature OR OG),LS,51-75%,13
+ME,MOG (mature OR OG),LS,>75%,6
+ME,MOG (mature OR OG),LS,NA,2
+ME,MOG (mature OR OG),OG,6-25%,1
+ME,MOG (mature OR OG),OG,26-50%,1

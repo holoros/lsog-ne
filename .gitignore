@@ -19,3 +19,4 @@ logs/*
 
 # Phase 4 derived per-plot outputs (regeneratable, large)
 output_phase4/phase4_plot_classified_*.csv
+output_phase4/v2/phase4_v2_plot_classified_*.csv
