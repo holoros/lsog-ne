@@ -1,0 +1,53 @@
+state,v51_class,species,n
+ME,Transitioning LS,SPCD-241,73
+ME,Transitioning LS,Balsam fir,62
+ME,Transitioning LS,Red spruce,53
+ME,Transitioning LS,Eastern hemlock,52
+ME,Transitioning LS,Eastern white pine,46
+ME,LS,Eastern white pine,15
+ME,LS,SPCD-241,15
+ME,LS,Eastern hemlock,7
+ME,LS,Red spruce,6
+ME,LS,Sugar maple,4
+ME,OG,Eastern white pine,3
+ME,OG,Eastern hemlock,1
+ME,OG,Northern red oak,1
+ME,OG,Red spruce,1
+NH,Transitioning LS,Balsam fir,37
+NH,Transitioning LS,Red spruce,34
+NH,Transitioning LS,Eastern hemlock,29
+NH,Transitioning LS,Eastern white pine,20
+NH,Transitioning LS,Sugar maple,18
+NH,LS,Eastern white pine,15
+NH,LS,Eastern hemlock,8
+NH,LS,Northern red oak,4
+NH,LS,Red spruce,4
+NH,LS,Balsam fir,3
+NH,OG,Eastern hemlock,1
+NH,OG,Eastern white pine,1
+NY,Transitioning LS,Sugar maple,70
+NY,Transitioning LS,Red maple,61
+NY,Transitioning LS,Eastern hemlock,53
+NY,Transitioning LS,American beech,47
+NY,Transitioning LS,Eastern white pine,39
+NY,LS,Eastern hemlock,22
+NY,LS,Eastern white pine,22
+NY,LS,Red maple,20
+NY,LS,Sugar maple,18
+NY,LS,Northern red oak,10
+NY,OG,Eastern hemlock,8
+NY,OG,Eastern white pine,6
+NY,OG,Sugar maple,6
+NY,OG,American beech,2
+NY,OG,Northern red oak,2
+VT,Transitioning LS,Sugar maple,42
+VT,Transitioning LS,Red maple,23
+VT,Transitioning LS,Eastern hemlock,22
+VT,Transitioning LS,Eastern white pine,15
+VT,Transitioning LS,Balsam fir,8
+VT,LS,Eastern hemlock,9
+VT,LS,Eastern white pine,7
+VT,LS,Red maple,7
+VT,LS,Balsam fir,4
+VT,LS,Sugar maple,4
+VT,OG,Sugar maple,1
