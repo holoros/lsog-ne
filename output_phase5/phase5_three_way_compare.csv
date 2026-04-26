@@ -1,0 +1,5 @@
+variant,pct_any_lsog,pct_ls_og,pct_og
+"v4 default (4/6/8, /10 score)",20.416,4,0.22399999999999998
+"v5 with Potapov RH95 (5/7/9, /12 score)",12.767999999999999,1.7919999999999998,0.128
+ORNL mature_prob > 50 (target),33.409238776837995,NA,NA
+ORNL OG_prob > 50 (target),NA,NA,0.13012361743656475

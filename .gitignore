@@ -1,23 +1,24 @@
-# Raw FIA data is gitignored - re-download from DataMart as needed
+
 data/fia/*.csv
 data/fia/*.zip
-# Raster inputs are large
 data/rasters/*
-*.tif
-*.tiff
-*.tgz
-*.tar
-*.zip
-# R artifacts
-.Rhistory
-.RData
-.Rproj.user/
-*.Rproj
-# Logs
 logs/*
+# Logs
 !logs/.gitkeep
-
-# Phase 4 derived per-plot outputs (regeneratable, large)
 output_phase4/phase4_plot_classified_*.csv
 output_phase4/v2/phase4_v2_plot_classified_*.csv
 output_phase4/v3/phase4_v3_plot_classified_*.csv
+output_phase5/phase5_plot_classified_*.csv
+# Phase 4 derived per-plot outputs (regeneratable, large)
+# R artifacts
+# Raster inputs are large
+# Raw FIA data is gitignored - re-download from DataMart as needed
+.RData
+.Rhistory
+*.Rproj
+.Rproj.user/
+*.tar
+*.tgz
+*.tif
+*.tiff
+*.zip
