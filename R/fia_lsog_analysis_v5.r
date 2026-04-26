@@ -147,8 +147,8 @@ score_state <- function(st) {
                                  snag_tpa >= snag_thresh_1 ~ 1L,
                                  TRUE ~ 0L),
     score_canopy_height = case_when(
-      !is.na(potapov_rh95) & potapov_rh95 >= 25 ~ 2L,
-      !is.na(potapov_rh95) & potapov_rh95 >= 18 ~ 1L,
+      !is.na(potapov_rh95) & potapov_rh95 >= 20 ~ 2L,
+      !is.na(potapov_rh95) & potapov_rh95 >= 10 ~ 1L,
       TRUE ~ 0L),
     total_score = score_ba_large + score_maturity + score_structure +
                   score_canopy + score_deadwood + score_canopy_height,
