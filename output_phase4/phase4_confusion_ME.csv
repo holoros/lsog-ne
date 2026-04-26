@@ -1,0 +1,18 @@
+state,lsog_class,ornl_og_bin,n_plots
+ME,Not LSOG,<=5%,13838
+ME,Not LSOG,6-25%,3095
+ME,Not LSOG,26-50%,280
+ME,Not LSOG,51-75%,15
+ME,Not LSOG,>75%,5
+ME,Not LSOG,NA,337
+ME,Transitioning LS,<=5%,982
+ME,Transitioning LS,6-25%,363
+ME,Transitioning LS,26-50%,44
+ME,Transitioning LS,51-75%,6
+ME,Transitioning LS,NA,29
+ME,LS,<=5%,108
+ME,LS,6-25%,25
+ME,LS,26-50%,9
+ME,LS,NA,5
+ME,OG,<=5%,6
+ME,OG,26-50%,2

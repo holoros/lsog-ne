@@ -16,3 +16,6 @@ data/rasters/*
 # Logs
 logs/*
 !logs/.gitkeep
+
+# Phase 4 derived per-plot outputs (regeneratable, large)
+output_phase4/phase4_plot_classified_*.csv

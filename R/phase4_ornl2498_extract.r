@@ -14,7 +14,7 @@
 # Inputs:
 #   - data/fia/<ST>_PLOT.csv, <ST>_COND.csv, <ST>_TREE.csv per state
 #       (a symlink data/fia -> ~/fia_data is recommended on Cardinal)
-#   - data/rasters/ornl_2498/CONUS_mature_old_growth_probabilities_0100m.tif
+#   - data/rasters/ornl_2498/CONUS_mature_old_growth_probabilities_0100m_lzw.tif
 #       (downloaded by scripts/download_ornl2498.sh)
 #
 # Outputs (in output_phase4/):
@@ -41,7 +41,7 @@ suppressPackageStartupMessages({
 
 STATE_CODES <- c("ME")    # extend to c("ME","NH","VT","NY") later
 data_root   <- "~/LSOG/data/fia"
-ornl_raster <- "~/LSOG/data/rasters/ornl_2498/CONUS_mature_old_growth_probabilities_0100m.tif"
+ornl_raster <- "~/LSOG/data/rasters/ornl_2498/CONUS_mature_old_growth_probabilities_0100m_lzw.tif"
 out_dir     <- "~/LSOG/output_phase4"
 v3_script   <- "~/LSOG/R/fia_lsog_analysis_v3.r"
 
