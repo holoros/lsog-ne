@@ -1,0 +1,4 @@
+method,region,n,pct_any_lsog,pct_ls_og,pct_og
+region_inclusive,Inclusive UT (+ Franklin),1691,12.714370195150797,1.655824955647546,0
+region_strict,Strict UT (Aroostook+Piscataquis+Somerset),1527,11.656843483955468,1.5062213490504257,0
+region_unit,"FIA Northern unit (UNITCD 2,5,7)",1527,11.656843483955468,1.5062213490504257,0

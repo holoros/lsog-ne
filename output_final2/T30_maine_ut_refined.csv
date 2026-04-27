@@ -1,0 +1,22 @@
+region_def,region,v51_class,n,pct,n_total
+1. Strict (Aroo+Pisc+Som),Rest of Maine,Not LSOG,1335,83.54192740926158,1598
+1. Strict (Aroo+Pisc+Som),Rest of Maine,Transitioning LS,222,13.892365456821027,1598
+1. Strict (Aroo+Pisc+Som),Rest of Maine,LS,35,2.1902377972465583,1598
+1. Strict (Aroo+Pisc+Som),Rest of Maine,OG,6,0.37546933667083854,1598
+1. Strict (Aroo+Pisc+Som),Strict UT (Aroostook+Piscataquis+Somerset),Not LSOG,1349,88.34315651604453,1527
+1. Strict (Aroo+Pisc+Som),Strict UT (Aroostook+Piscataquis+Somerset),Transitioning LS,155,10.150622134905042,1527
+1. Strict (Aroo+Pisc+Som),Strict UT (Aroostook+Piscataquis+Somerset),LS,23,1.5062213490504257,1527
+2. Inclusive (+Franklin),Inclusive UT (+ Franklin),Not LSOG,1476,87.28562980484921,1691
+2. Inclusive (+Franklin),Inclusive UT (+ Franklin),Transitioning LS,187,11.058545239503253,1691
+2. Inclusive (+Franklin),Inclusive UT (+ Franklin),LS,28,1.6558249556475457,1691
+2. Inclusive (+Franklin),Rest of Maine,Not LSOG,1208,84.23988842398884,1434
+2. Inclusive (+Franklin),Rest of Maine,Transitioning LS,190,13.249651324965132,1434
+2. Inclusive (+Franklin),Rest of Maine,LS,30,2.092050209205021,1434
+2. Inclusive (+Franklin),Rest of Maine,OG,6,0.41841004184100417,1434
+"3. UNITCD 2,5,7","FIA Northern unit (UNITCD 2,5,7)",Not LSOG,1349,88.34315651604453,1527
+"3. UNITCD 2,5,7","FIA Northern unit (UNITCD 2,5,7)",Transitioning LS,155,10.150622134905042,1527
+"3. UNITCD 2,5,7","FIA Northern unit (UNITCD 2,5,7)",LS,23,1.5062213490504257,1527
+"3. UNITCD 2,5,7",Other Maine units,Not LSOG,1335,83.54192740926158,1598
+"3. UNITCD 2,5,7",Other Maine units,Transitioning LS,222,13.892365456821027,1598
+"3. UNITCD 2,5,7",Other Maine units,LS,35,2.1902377972465583,1598
+"3. UNITCD 2,5,7",Other Maine units,OG,6,0.37546933667083854,1598
