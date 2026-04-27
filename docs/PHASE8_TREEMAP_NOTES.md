@@ -102,3 +102,62 @@ Two options for Phase 8 v2:
 - Compare TreeMap-derived state shares to v5.1 plot-based shares - the
   alignment quality is a proxy for how well TreeMap's imputation reflects
   the ground-truth plot characteristics
+
+## Phase 8 v2: closed the Unknown gap (commit pending)
+
+Built `R/phase8_v2_treemap_full_coverage.r` that scores ALL ME/NH/VT/NY
+plots (1999-2023, all FIA panels) using v4-style scoring (5 FIA dims,
+no Potapov canopy height — Potapov is 2019-only and not applicable to
+older panels), then applies the lookup to TreeMap rasters.
+
+### Coverage closed
+- Phase 8 v1: 50.2% Unknown pixels
+- **Phase 8 v2: 0.33% Unknown pixels** — full coverage achieved
+
+### v2 results (ME 2020 + 2022, wall-to-wall)
+
+| Year | Class | n TM_IDs | Acres (M) | % of pixels |
+|---|---|---:|---:|---:|
+| 2020 | Transitioning LS | 425 | 1.25 | 7.45 |
+| 2020 | LS | 34 | 0.118 | 0.70 |
+| 2020 | OG | 0 | 0 | 0 |
+| 2020 | Not LSOG | 2,686 | 15.30 | 91.51 |
+| 2020 | Unknown | 367 | 0.056 | 0.33 |
+| 2022 | Transitioning LS | 425 | 1.23 | 7.36 |
+| 2022 | LS | 35 | 0.113 | 0.68 |
+| 2022 | OG | 0 | 0 | 0 |
+| 2022 | Not LSOG | 2,738 | 15.29 | 91.61 |
+| 2022 | Unknown | 372 | 0.058 | 0.35 |
+
+ME 2020 wall-to-wall any-LSOG: **8.15%** (1.37 M acres)
+ME 2022 wall-to-wall any-LSOG: **8.04%** (1.34 M acres)
+
+### Why this differs from v5.1 plot-based 14.1%
+
+Phase 8 v2 uses v4-equivalent scoring (5 FIA dims, NO Potapov canopy
+height) because Potapov is a single-year 2019 product and we needed
+v3-style scoring applicable to all panels back to 1999. Without the
+Potapov dim, the score system is /10 with 4/6/8 thresholds. This is
+essentially the v3-default classifier (which gave ME 9% all-LSOG in
+the original 2014-2018 panel run).
+
+So Phase 8 v2 ~8% all-LSOG is consistent with v3-default plot-based
+~9%. Adding Potapov in v5.1 lifts the share to 14.1%.
+
+### Phase 8 v3 future option
+
+To have Potapov-informed wall-to-wall (v5.1-equivalent):
+1. Re-download Potapov NAM mosaic (5.4 GB; was deleted to free disk quota)
+2. Extract RH95 at ALL FIA plot locations (1999-2023, ~18,935 ME plots
+   + 24,454 NH/VT/NY)
+3. Add score_canopy_height to per-plot v4 -> v5.1 classification
+4. Apply lookup to TreeMap raster
+
+Time estimate: ~30-60 minutes (raster download + extraction).
+
+### No OG pixels in either year
+
+v4 OG class: only 8 unique ME plots ever scored OG. None of those 8
+PLT_CNs got imputed to ME pixels in TreeMap 2020 or 2022 — the imputation
+algorithm preferred other (younger) plots as donors. This matches the
+v5.1 finding that OG-class detection at panel scale is highly uncertain.
