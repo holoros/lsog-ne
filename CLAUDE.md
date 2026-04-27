@@ -7,9 +7,9 @@ new Cowork or Claude Code session that picks up the work.
 
 - Repo: github.com/holoros/lsog-ne
 - Cardinal: crsfaaron at /users/PUOM0008/crsfaaron/LSOG/
-- Branch: master (28 commits)
+- Branch: master (31 commits)
 - Operational classifier: v5.1 (R/fia_lsog_analysis_v5.r)
-- Latest commit: 11bb757 (Phase 8 NE-extension scaffold + debug)
+- Latest commit: 6c9764f (Phase 8 NE deeper debug findings)
 
 ## v5.1 classifier (six dimensions, /12 score, 4/6/8 class thresholds)
 
