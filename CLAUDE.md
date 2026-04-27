@@ -7,9 +7,9 @@ new Cowork or Claude Code session that picks up the work.
 
 - Repo: github.com/holoros/lsog-ne
 - Cardinal: crsfaaron at /users/PUOM0008/crsfaaron/LSOG/
-- Branch: master (24 commits)
+- Branch: master (28 commits)
 - Operational classifier: v5.1 (R/fia_lsog_analysis_v5.r)
-- Latest commit: e9b3a3c (Phase 8 TreeMap initial)
+- Latest commit: 11bb757 (Phase 8 NE-extension scaffold + debug)
 
 ## v5.1 classifier (six dimensions, /12 score, 4/6/8 class thresholds)
 
@@ -83,7 +83,21 @@ DBH >= 12-20 in by Tyrrell veg type), compare to v5.1 OG/LS calls.
 NE NFS = WMNF (NH) + GMNF (VT) + small ME fragments ~1.0M ac.
 
 ### Phase 8 IN PROGRESS: TreeMap wall-to-wall
-**Done**: ME 2020 + 2022 with 50% Unknown coverage.
+**Done**:
+- v1: ME 2020 + 2022 with 50% Unknown coverage gap
+- v2: ME 2020 + 2022 wall-to-wall, Unknown gap closed to 0.33% via
+  all-panels v4 lookup. ME any-LSOG = 8.04-8.15 percent (vs v5.1
+  plot-based 14.1 percent; difference is the missing Potapov dim).
+- NE-wide scaffold (R/phase8_v2_NE_wall_to_wall.r) committed.
+
+**Pending - resolves next session**: NE extension to NH/VT/NY hit a
+TM_ID-encoding mismatch when cropping CONUS raster at runtime. The
+pre-cropped ME_TM_20.tif worked; runtime-cropped CONUS subset returns
+all NA on TM_ID merge. Two paths forward documented in
+docs/PHASE8_TREEMAP_NOTES.md:
+  1. Inspect terra::cats() of CONUS raster for value->TM_ID mapping
+  2. Pre-crop CONUS to NH/VT/NY bounding boxes via gdal_translate
+
 **v2 plan in docs/PHASE8_TREEMAP_NOTES.md**:
 - Close Unknown gap (50% of ME pixels imputed from older FIA panels +
   some non-NE state plots)
