@@ -1,0 +1,6 @@
+comparison,n,po,pe,kappa
+v5.1 any-LSOG vs Hagan any-LS (cls 2/3/4),125,0.7680,0.7520,0.0645
+v5.1 LS+OG vs Hagan LS+OG-like (cls 3/4),125,0.9760,0.9763,-0.0108
+v5.1 OG vs Hagan OG-like (cls 4),125,0.9920,0.9920,0.0000
+v4 any-LSOG vs Hagan any-LS (cls 2/3/4),125,0.6960,0.6992,-0.0106
+v4 LS+OG vs Hagan LS+OG-like (cls 3/4),125,0.9680,0.9685,-0.0163

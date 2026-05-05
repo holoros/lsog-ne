@@ -1,0 +1,5 @@
+comparison,n,any_LSOG_pct,LS_OG_pct,OG_only_pct
+v5.1 (FIA proxy),125,8.0,0.8,0.0
+"v4 (FIA proxy, no GEDI)",125,16.8,1.6,0.0
+Hagan (LiDAR canopy),125,20.0,1.6,0.8
+Hagan landscape (report Table 2),all-Pingree,18.8,2.4,0.6

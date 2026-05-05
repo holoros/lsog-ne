@@ -65,6 +65,12 @@ Ownership breakdowns and forest-type breakdowns use the same design-based estima
 
 The 1999 to 2003 to 2019 to 2023 LSOG share trend was estimated via Mann Kendall non-parametric trend test on annual all-LSOG percent values (one value per evaluation panel, four values per state, plus the early baseline). Linear regression of LSOG percent on panel midpoint year provided the per-decade slope and significance test. Results are reported in Table 4.
 
+### 2.7a External cross-validation against the Hagan Seven Islands LiDAR raster
+
+Seven Islands Land Company shared the Hagan et al. (2024) M2V2b GFW23-masked LSOG raster for Pingree Ownership in northwestern Maine (approximately 290,098 ha of forested area on the unorganized territories). The raster classifies each 100 m hectare cell into one of four classes: Not LS, Transitional LS (canopy 100 to 150 yr, possibly lightly harvested or commercially overmature), Late Successional (canopy approximately 150 to 200 yr with high density of large trees and indicator epiphytes), and Old-growth-like (canopy structure statistically similar to reference old-growth sites). Areas above 2700 ft elevation are masked out per Hagan's protocol, and the GFW23 layer additionally masks pixels harvested between 2016 and 2023. The classification was generated using a random forest trained on 8 LiDAR canopy metrics (mean and maximum height, 95th percentile height, canopy rugosity, rumple index, and cover fractions over 2, 6, and 15 m).
+
+We projected the fuzzed FIA plot coordinates from the unified table to the Hagan raster's coordinate reference system and sampled the raster at each plot location. In-extent plots were those with Hagan class 1 through 4. We computed confusion matrices and Cohen's kappa for v5.1 and v4 against the Hagan classification, and we compared aggregate shares to the Hagan landscape-level Pingree estimate from Table 2 of Hagan and Shamgochian (2024). The Phase 9 R script `phase9_seven_islands_validation.R` documents the workflow.
+
 ### 2.7 External cross-validation against Pelz et al. (2023)
 
 We cross-validated the v5.1 classification against the Pelz et al. (2023) USFS old-growth criteria on National Forest System (NFS) plots in the four-state region. Pelz-OG criteria are STDAGE at least 100 years and at least 5 trees per acre with DBH at least 12 inches. The unified plot table was filtered to OWNCD = 31 (USFS), yielding 925 NFS plots. Cohen's kappa was computed for v5.1 OG vs Pelz-OG, v5.1 LS+OG vs Pelz-OG, and v5.1 any-LSOG vs Pelz-OG.
@@ -145,6 +151,33 @@ Plot-level live aboveground carbon scales monotonically with LSOG class (Table 5
 
 Old-growth-class plots store approximately 3.6 times the live carbon of Not-LSOG plots in Maine. Across Maine's approximately 24 thousand acres of OG-class forest, the carbon density premium amounts to roughly 100 megagrams of carbon per hectare relative to letting that area revert to Not-LSOG conditions.
 
+### 3.5a Cross-validation against Hagan Seven Islands LiDAR
+
+Of the 6,275 ME plots in the unified table, 250 fell within the Hagan raster footprint at Pingree, of which 125 were in the most recent FIA panel. The Hagan any-LS share at these 125 plots is 20.0 percent, which closely matches the Hagan landscape-level Pingree estimate of 18.8 percent, supporting the inference that the FIA plot sample is representative of the Pingree forest condition.
+
+**Table 6a.** Share-level comparison at 125 in-extent FIA plots.
+
+| Source | any-LSOG % | LS+OG % | OG-only % |
+|---|---:|---:|---:|
+| v5.1 (FIA proxy with GEDI) | 8.0 | 0.8 | 0.0 |
+| v4 (FIA proxy without GEDI) | 16.8 | 1.6 | 0.0 |
+| Hagan LiDAR at FIA plots | 20.0 | 1.6 | 0.8 |
+| Hagan landscape Pingree | 18.8 | 2.4 | 0.6 |
+
+**Table 6b.** Confusion matrix, v5.1 (rows) by Hagan (columns), 125 in-extent latest-panel plots.
+
+| v5.1 class | Hagan Not LS | Trans LS | LS | OG-like | total |
+|---|---:|---:|---:|---:|---:|
+| Not LSOG | 93 | 21 | 1 | 0 | 115 |
+| Transitioning LS | 7 | 1 | 0 | 1 | 9 |
+| LS | 0 | 1 | 0 | 0 | 1 |
+| OG | 0 | 0 | 0 | 0 | 0 |
+| **total** | **100** | **23** | **1** | **1** | **125** |
+
+Cohen's kappa for v5.1 any-LSOG against Hagan any-LS is 0.065 (essentially random); the LS+OG and OG-only kappas are also near zero. The same comparison using v4 (without the GEDI canopy-height dimension) yields kappa = -0.011 for any-LSOG and -0.016 for LS+OG. Plot-by-plot agreement between FIA-proxy classifiers and the Hagan LiDAR product is therefore not robust at any class boundary.
+
+The aggregate v4 share of 16.8 percent is closer to the Hagan share of 20.0 percent than the v5.1 share of 8.0 percent. On Pingree, an actively-managed industrial timberland, the v5.1 GEDI canopy-height dimension is more conservative because it down-weights plots where total basal area has been depressed by recent selective harvest even when the residual canopy remains tall. v4 captures the same plots' canopy structure indirectly through stand age and large-tree basal area thresholds.
+
 ### 3.5 Cross-validation against Pelz USFS criteria
 
 Table 6 reports the confusion matrix between v5.1 class and Pelz-OG flag on 925 four-state NFS plots, and the corresponding Cohen's kappa values.
@@ -222,7 +255,7 @@ First, the v5.1 OG-class precision is low. Cohen's kappa is essentially random a
 
 Second, FIA plot fuzzing introduces approximately 30 meter uncertainty at the Potapov RH95 extraction step. The contribution to plot-level scoring noise is small but systematic. Access to true coordinates under a Data Use Agreement would tighten this dimension.
 
-Third, the Hagan et al. (2024) LiDAR raster, the canonical Maine UT old-growth reference, was not available for plot-level cross-validation in this study. The Phase 6 cross-validation pipeline is fully scaffolded and ready to run when the raster becomes accessible through the appropriate channel.
+Third, while the full Maine UT Hagan et al. (2024) LiDAR raster was not available, Seven Islands Land Company shared the Hagan M2V2b raster for their Pingree ownership (approximately 290 K ha). The Phase 9 cross-validation reported in Section 3.5a uses 125 in-extent latest-panel plots and finds essentially-random plot-by-plot agreement (kappa near zero across all class boundaries) despite reasonable share-level agreement between v4 and Hagan. The likely mechanism is that the two products measure different aspects of forest condition. The Hagan LSOG protocol is sensitive to skid trails and other legacy harvest impacts that depress canopy rugosity, mean height, and the upper cover fractions used as classifier inputs, but those impacts are not always reflected in FIA tree-level data because the FIA subplot may not overlap the disturbed pixels. The reverse is also at play: v5.1 and v4 weight tree-level FIA attributes (large-tree basal area, total basal area, snag tree-per-acre, structural diversity, and stand age) that can change after a selective harvest even when the residual canopy structure remains tall and continuous. Both classifier families are imperfect, and they capture genuinely different signals on heavily managed industrial timberland. Acquisition of the full UT Hagan raster would extend this cross-validation to the larger plot pool but is unlikely to alter the core conclusion that LSOG class assignment at the individual plot is methodology-specific.
 
 Fourth, the ORNL DAAC 2498 product trains its mature/OG probability layers on FIA labels, which makes our cross-validation a coherence check rather than blind validation.
 
