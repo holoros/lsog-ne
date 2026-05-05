@@ -343,6 +343,34 @@ VT shows the largest lift (taller mid-elevation forests); ME the
 smallest (heavy-harvest history). Same regional ranking as plot-based
 v5.1 in both wall-to-wall variants.
 
+### Phase 9 Seven Islands / Hagan cross-validation (commit 052b9a5, May 5, 2026)
+
+Seven Islands Land Company shared the Hagan M2V2b GFW23-masked LSOG raster
+for Pingree Ownership (~290 K ha NW Maine UT). 100m hectare grid, 4-class
+(Not LS / Trans LS / LS / OG-like). Sampled at FIA fuzzed plot centroids;
+125 in-extent latest-panel ME plots.
+
+| Source | any-LSOG | LS+OG | OG-only |
+|---|---:|---:|---:|
+| v5.1 (FIA + GEDI) | 8.0% | 0.8% | 0.0% |
+| v4 (FIA no GEDI) | 16.8% | 1.6% | 0.0% |
+| Hagan at FIA plots | 20.0% | 1.6% | 0.8% |
+| Hagan landscape Pingree | 18.8% | 2.4% | 0.6% |
+
+Plot-by-plot kappa essentially random across all class boundaries
+(0.065 for v5.1 any-LSOG vs Hagan any-LS; -0.011 for LS+OG; 0 for OG).
+v4 share matches Hagan share (16.8 vs 18.8) better than v5.1 (8.0).
+
+Mechanistic explanation: skid trails and selective-harvest legacy impacts.
+Hagan LiDAR canopy metrics are sensitive to canopy gaps from skid trails
+and light harvest, which depress rugosity / cover fractions but may not
+appear in FIA tree-level data. v5.1 weights tree-level FIA attributes
+(BA, snags, structural SD, age) that change after selective harvest even
+when residual canopy is tall. Both classifiers imperfect on heavily
+managed industrial timberland; they measure genuinely different signals.
+
+Files: R/phase9_seven_islands_validation.r, output_phase9/.
+
 ### Manuscript V1 (commit e54aa19, April 30, 2026)
 
 `manuscript/MANUSCRIPT_DRAFT_V1_BODY.md` covers Sections 2-5 (Methods,
