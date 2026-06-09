@@ -1,0 +1,17 @@
+V1,V2,N
+Not LSOG,Not LSOG,1252
+Transitioning LS,Not LSOG,125
+LS,Not LSOG,11
+OG,Not LSOG,0
+Not LSOG,Transitioning LS,249
+Transitioning LS,Transitioning LS,48
+LS,Transitioning LS,6
+OG,Transitioning LS,1
+Not LSOG,LS,36
+Transitioning LS,LS,14
+LS,LS,3
+OG,LS,0
+Not LSOG,OGL,12
+Transitioning LS,OGL,3
+LS,OGL,0
+OG,OGL,0
