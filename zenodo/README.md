@@ -37,6 +37,7 @@ included as a PDF in this deposit.
 | T*_*.csv | Area, agreement, concordance, fragility, temporal, and validation tables | CSV |
 | phase1x_*.r | Analysis scripts (reproduction, stress test, comparison, temporal) | R |
 | LSOG_Mapping_Uncertainty_Report.pdf | Full methods and findings report | PDF |
+| KEY_FINDINGS_graphical_abstract.png | One-page visual summary of all key findings | PNG |
 | figures/*.png | Quick-look summary figures | PNG |
 
 ## Spatial information
@@ -64,4 +65,4 @@ CC-BY-4.0.
 
 ## Citation
 Weiskittel, A.R. (2026). Multi-method LSOG mapping uncertainty for Maine's unorganized
-townships. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+townships. Zenodo. https://doi.org/10.5281/zenodo.20614497
