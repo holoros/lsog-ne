@@ -1,2 +1,3 @@
-v1 PUBLISHED 2026-06-09: DOI 10.5281/zenodo.20614497 (live)
-v1.1 DRAFT 20614845: adds KEY_FINDINGS graphical abstract + README DOI fix; awaiting publish
+v1 PUBLISHED: DOI 10.5281/zenodo.20614497 (live)
+v1.1 DRAFT 20615313: +graphical abstract (set as default preview) +CITATION.cff +README DOI fix; 42 files; awaiting publish
+(old draft 20614845 discarded)
