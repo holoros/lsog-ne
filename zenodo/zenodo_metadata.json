@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "title": "Multi-method late-successional and old-growth (LSOG) forest mapping uncertainty for Maine's unorganized townships",
+    "upload_type": "dataset",
+    "publication_date": "2026-06-09",
+    "creators": [
+      {"name": "Weiskittel, Aaron R.", "affiliation": "University of Maine, Center for Research on Sustainable Forests", "orcid": "0000-0003-2534-4478"}
+    ],
+    "description": "<p>This dataset quantifies the uncertainty in mapping late-successional and old-growth (LSOG) forest across the approximately 4.2 million hectares of Maine's unorganized townships, and tests whether LSOG is rapidly disappearing. Three to four independent, credible mapping methods are compared on a common 100 m grid: (M1) a reproduction of the Hagan et al. (2026) airborne-LiDAR canopy random forest, rebuilt from their public Zenodo deposit; (M2) a logistic model of the FIA field-structure LSOG class on Potapov (GEDI-calibrated) canopy height; (M3) a direct canopy-height threshold; and (M4) the FIA structural class imputed to every pixel via USFS TreeMap (2016, 2020, 2022).</p><p><strong>Headline findings.</strong> Credible methods disagree by roughly 2.8 times on how much LSOG exists (7.8 to 21.9 percent any-LSOG) and on the location of about four of every five LSOG hectares (Cohen kappa near 0.21 between the airborne-LiDAR and canopy-height views). Protecting the top 5 to 20 percent of hectares by one map versus another overlaps on only 16 to 30 percent of the ground, so single-map patch-level prioritization for large expenditures is fragile. Two independent stock measurements (TreeMap imputation and FIA design-based plot panels) show LSOG stable to increasing over 2016 to 2023 (+2.4 to +3.2 percent per year), the opposite sign to the rapid-loss premise; the apparent loss reported elsewhere is a gross harvest flux, not a net stock decline.</p><p><strong>Contents.</strong> Derived 100 m GeoTIFFs (reproduced Hagan class, v5.1-GEDI probability, TreeMap class, a per-cell method-consensus layer), summary tables (area by method, pairwise agreement, concordance, prioritization fragility, temporal trend, and FIA validation), the analysis R scripts, quick-look figures, and a full methods-and-findings report (PDF).</p><p><strong>Privacy.</strong> No FIA plot coordinates are included; all products are derived rasters or aggregate summary tables. <strong>Caveats:</strong> TreeMap year differences blend real change with FIA-panel vintage and imputation-model updates, so the robust temporal signal is direction rather than precise rate; TreeMap imputation smooths rare classes, so it is best read for amount and trend, not pixel location. See the README and report for full methods, provenance, and limitations.</p>",
+    "keywords": ["forestry", "old-growth", "late-successional", "LSOG", "LiDAR", "GEDI", "canopy height", "TreeMap", "FIA", "forest inventory", "Maine", "uncertainty", "conservation prioritization", "raster", "GeoTIFF"],
+    "license": "cc-by-4.0",
+    "version": "1.0.0",
+    "access_right": "open",
+    "language": "eng",
+    "communities": [{"identifier": "forestry"}],
+    "related_identifiers": [
+      {"relation": "isDerivedFrom", "identifier": "10.5281/zenodo.19696494", "scheme": "doi"},
+      {"relation": "references", "identifier": "10.1002/ecs2.70670", "scheme": "doi"}
+    ]
+  }
+}

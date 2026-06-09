@@ -1,0 +1,22 @@
+file,variable,description,units,type,allowed_values,nodata
+M1_hagan_class_100m.tif,value,Reproduced Hagan LSOG class,class,integer,"1=Not LSOG,2=Transitioning LS,3=LS,4=OGL",NA
+M2_v51gedi_pLSOG_100m.tif,value,Modeled probability of any-LSOG (FIA class ~ Potapov RH95),probability,float,0.0-1.0,NA
+M4_treemap_class_100m.tif,value,TreeMap-imputed v5.1 structural class (2022),class,integer,"1=Not LSOG,2=Transitioning LS,3=LS,4=OG",NA
+CONSENSUS_nmethods_100m.tif,value,Number of methods flagging the cell as LSOG,count,integer,0-3,NA
+T1_area_by_method.csv,method,Mapping method label,-,character,-,-
+T1_area_by_method.csv,any_LSOG_pct,Any-LSOG percent of AOI for that method,percent,numeric,0-100,-
+T1_area_by_method.csv,any_LSOG_ha,Any-LSOG hectares for that method,hectares,numeric,>=0,-
+T3_pairwise_agreement.csv,pair,Method pair compared,-,character,-,-
+T3_pairwise_agreement.csv,kappa,Cohen kappa of LSOG agreement,-,numeric,-1 to 1,-
+T3_pairwise_agreement.csv,jaccard,Jaccard overlap of LSOG sets,-,numeric,0-1,-
+T4_concordance_counts.csv,nmeth,Number of methods agreeing,count,integer,0-3,-
+T4_concordance_counts.csv,ha,Hectares at that concordance level,hectares,numeric,>=0,-
+T6_prioritization_jaccard.csv,top_frac,Fraction of hectares protected,fraction,numeric,0-1,-
+T6_prioritization_jaccard.csv,J_M1_M2,Jaccard overlap of Hagan vs GEDI protected sets,-,numeric,0-1,-
+T1_treemap_lsog_timeseries.csv,year,TreeMap vintage,year,integer,"2016,2020,2022",-
+T1_treemap_lsog_timeseries.csv,any_LSOG_pct,TreeMap any-LSOG percent of known forest,percent,numeric,0-100,-
+T1_treemap_lsog_timeseries.csv,LS_OG_pct,TreeMap LS+OG percent of known forest,percent,numeric,0-100,-
+T2_fiadb_v51_trend_ME.csv,eval_period,FIA evaluation period,-,character,-,-
+T2_fiadb_v51_trend_ME.csv,any_LSOG_pct,FIA plot-based any-LSOG percent (ME),percent,numeric,0-100,-
+T3_change_synthesis.csv,line,Comparison line label,-,character,-,-
+T3_change_synthesis.csv,annual_change_pct,Implied annual change rate,percent_per_year,numeric,-,-
