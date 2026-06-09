@@ -398,3 +398,17 @@ Update this file when:
 - Repo structure changes significantly
 
 Run `consolidate-memory` skill periodically to merge / prune as work evolves.
+
+## Phase 10 (June 9, 2026): Hagan 2026 reproduction + full-UT cross-validation
+
+Hagan et al. 2026 Ecosphere published with Zenodo deposit 10.5281/zenodo.19696494
+(463 training plots + 4.2M-ha AOI LiDAR grid + Ecosphere_code.Rmd). This UNBLOCKED Phase 6
+and supersedes Phase 9 (Pingree n=125).
+- Reproduced RF: binary Not-LSOG vs LSOG OOB 94.2% (paper 94.1%); top var cano_cover_15. OK.
+- Wall-to-wall on real 4.28M-ha grid: LS+OGL 179,891 ha / 4.20% (published 161,881 / 3.9%);
+  OGL 37,773 ha (published 37,060). Reproducible.
+- TRUE cross-val: n=1,760 UT plots (2019-2023). v5.1 any-LSOG 12.0% vs Hagan 21.1%;
+  v5.1 LS+OG 1.19% vs Hagan 3.86%; kappa_any 0.123, kappa_LSOG 0.050.
+  Hagan-at-plots (21.1%) = Hagan-landscape (19.7-21.9%): FIA sample unbiased over full UT.
+- Outputs: output_phase10/, docs/PHASE10_RESULTS.md, output_final2/T31_maine_ut_vs_hagan_REAL.csv
+  (supersedes T30). Job 11406090 (2m16s, 15GB). Commit 2c942ce. Staged data: data/zenodo_hagan/.
