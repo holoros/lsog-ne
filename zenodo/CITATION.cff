@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "Multi-method late-successional and old-growth (LSOG) forest mapping uncertainty for Maine's unorganized townships"
+abstract: "Quantifies the uncertainty in mapping late-successional and old-growth (LSOG) forest across Maine's unorganized townships by comparing three to four independent, credible mapping methods on a common 100 m grid, and tests the rapid-loss premise with an independent time series. Credible methods disagree by roughly 2.8 times on amount and on the location of about four of every five LSOG hectares, and two independent stock measurements show LSOG stable to increasing rather than rapidly disappearing."
+type: dataset
+authors:
+  - family-names: Weiskittel
+    given-names: Aaron R.
+    orcid: "https://orcid.org/0000-0003-2534-4478"
+    affiliation: "University of Maine, Center for Research on Sustainable Forests"
+version: "1.1.0"
+date-released: "2026-06-09"
+doi: "10.5281/zenodo.20614497"
+url: "https://doi.org/10.5281/zenodo.20614497"
+license: CC-BY-4.0
+keywords:
+  - forestry
+  - old-growth
+  - late-successional
+  - LiDAR
+  - GEDI
+  - TreeMap
+  - FIA
+  - Maine
+  - uncertainty
+  - conservation prioritization
