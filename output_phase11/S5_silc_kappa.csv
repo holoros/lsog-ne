@@ -1,0 +1,5 @@
+comparison,n,kappa
+SILC vs Reproduced-Hagan (any-LSOG),124,0.951353471949784
+SILC vs Reproduced-Hagan (LS+OG),124,1
+v5.1 vs SILC (any-LSOG),125,0.0645161290322577
+v5.1 vs Reproduced-Hagan (any-LSOG),124,0.0503952569169961
