@@ -1,0 +1,64 @@
+# Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA: Comment
+
+**Aaron R. Weiskittel** (University of Maine, Center for Research on Sustainable Forests) [co-authors TBD]
+
+*Draft for review. Ecosphere Comment format: no abstract; target <= 16 manuscript pages. Commenting on Hagan, J.M., B. Shamgochian, M.M.L. Taylor & J.M. Reed (2026), Ecosphere 17:e70670.*
+
+---
+
+## 1. Introduction
+
+Hagan et al. (2026) provide a valuable and timely contribution: a publicly documented, field-trained, wall-to-wall classification of late-successional and old-growth (LSOG) forest across roughly 4.2 million hectares of Maine's unorganized townships, built from airborne LiDAR. The work is reproducible (the authors archived their training data and code), the field effort is substantial, and the resulting map has already focused overdue attention on older forest in a working landscape. We reproduced their random forest exactly from the archived data: out-of-bag accuracy of 94.2% for the Not-LSOG versus LSOG distinction, against their reported 94.1%, with the same most-important predictor. None of what follows questions the competence or transparency of the original analysis.
+
+Our concern is with how the map is now being used. The Hagan et al. classification is already the spatial basis for conservation prioritization at scale: Thompson et al. (2026) build directly on it and estimate that protecting the highest-priority half of the mapped LSOG patches would cost on the order of US $200-300 million, in support of Maine's LD 1529. When a single map becomes the substrate for patch-level acquisition decisions and emerging carbon or conservation markets, the properties of that map that matter are no longer only its training accuracy. They are its accuracy relative to independent maps of the same target, its sensitivity to the definitional and methodological choices that any LSOG classification must make, and the uncertainty of the trend it is used to motivate.
+
+All forest-class maps are wrong in the sense that LSOG is a continuous, multi-dimensional, and partly subjective condition forced onto discrete classes; the relevant question is whether a given map is useful for a given decision (Box 1976). We argue, with analyses built largely on Hagan et al.'s own archived data and on independent public data over the same area, that (i) high training accuracy does not translate into agreement among independent LSOG maps; (ii) the canopy-structure signal the method relies on is partly insensitive to the deadwood and large-tree attributes that ecologically define old growth; (iii) publicly available spaceborne canopy-height products that cover the study area, and that the paper does not engage, offer an independent cross-check and a repeatable monitoring path; and (iv) the temporal "rapid loss" framing conflates a harvest flux with the net LSOG stock, which independent data show to be stable or increasing. Our intent is constructive: before this map anchors large expenditures, a cross-map accuracy assessment and an explicit uncertainty statement should accompany it.
+
+## 2. Training accuracy is high for every approach, and that is not the issue
+
+Using the 463 archived training plots, which carry both the eight LiDAR canopy metrics and a parallel set of ground structural measurements, we estimated cross-validated AUC (repeated stratified five-fold cross-validation, 40 repeats; 95% intervals from the repeat distribution) for three predictor sets against three binary targets (Table 1). Hagan's eight LiDAR metrics discriminate the field classes very well in-sample: AUC 0.990 (any-LSOG), 0.988 (LS+OG), and 0.966 (old growth). A ground-structure predictor set and even a three-variable canopy-height-only set also perform well for the broad classes. The training data are separable, and the published classifier is internally sound. We emphasize this because it is the premise that makes the rest of the argument matter: training accuracy is necessary but not sufficient for an operational map.
+
+**Table 1.** Cross-validated AUC (mean [95% interval]) recovering the field-assigned class from three predictor sets, on the 463 archived training plots.
+
+| Target (prevalence) | Hagan 8 LiDAR | Canopy height only | Ground structure |
+|---|---:|---:|---:|
+| any-LSOG (0.39) | 0.990 [0.988, 0.992] | 0.984 [0.981, 0.987] | 0.966 [0.962, 0.969] |
+| LS + OG (0.21) | 0.988 [0.984, 0.990] | 0.977 [0.973, 0.982] | 0.970 [0.967, 0.973] |
+| old growth (0.04) | 0.966 [0.954, 0.977] | **0.910 [0.868, 0.933]** | 0.974 [0.966, 0.981] |
+
+Two features of Table 1 matter. First, for the old-growth class specifically, a canopy-height-only model, the information content a spaceborne canopy-height product would carry, is the weakest of the three (AUC 0.910), while ground structure is the strongest (0.974). Second, even the full LiDAR set's strong ranking ability (AUC 0.966) coexists with the operating-point performance the authors themselves report: in their out-of-bag confusion matrix, only 29.4% of true old-growth plots were classified as old growth. High AUC and low operating accuracy are reconcilable under class imbalance and class overlap, but for a map used to select specific hectares for protection, it is the operating performance on the rare, high-value class that governs the decision.
+
+## 3. High training accuracy does not produce map agreement
+
+The decisive test for policy use is not how well a model separates its own training plots, but whether independent, equally defensible operationalizations of "LSOG" agree on the landscape. We compared three wall-to-wall classifications over the same area on a common 100 m grid: the reproduced Hagan LiDAR classifier; an FIA-field-structure class predicted from Potapov (GEDI-calibrated) canopy height; and the USFS TreeMap imputation of FIA structural class. They disagree substantially. Any-LSOG covers 21.9% of the area under the Hagan classifier, 14.0% under the canopy-height model, and 7.8% under TreeMap, a 2.8-fold range. Spatially, the Hagan and canopy-height maps overlap on only about 21% of the hectares either one flags (Cohen's kappa 0.21); across all three methods, only 21% of the flagged footprint is agreed by all three, and more than half is flagged by a single method. We also reproduced the privately held Seven Islands classification, which is effectively identical to the published model (pixel-level kappa 0.97 across ~290,000 ha), confirming that the disagreement among methods is genuine and not an artifact of our reproduction.
+
+The consequence for prioritization is direct. If a program protects the highest-priority hectares, the overlap of the protected sets selected by the Hagan map versus the canopy-height map is only 0.16 to 0.30 (Jaccard) for the top 5% to 20% of hectares; that is, 70% to 84% of the prioritized ground differs depending on which equally defensible map is used. A US $200-300 million acquisition program steered by one map would buy substantially different forest than the same program steered by another. This is the core point: each map can have excellent training accuracy and the maps can still disagree on most of the ground, because the disagreement lives in the definitional and methodological choices, not in the fit to any one training set.
+
+## 4. What the canopy signal can and cannot see
+
+Why do canopy-LiDAR and structure-based maps diverge? Old growth is defined ecologically by large old trees, structural complexity, and abundant dead wood (standing snags and coarse woody debris). Using the archived plots, we asked how well the eight LiDAR canopy metrics predict these defining attributes (cross-validated R^2). They predict large-tree basal area moderately (R^2 = 0.68) but are largely blind to dead wood: coarse woody debris volume R^2 = 0.20 and standing dead basal area R^2 = 0.24. A classification keyed on canopy height and cover therefore registers tall, continuous canopy whether it is produced by an old, structurally complex stand or by an 80- to 100-year-old fast-growing stand; the authors note exactly this failure mode for Populus stands. The map's most-important old-growth discriminators are a mix of canopy cover above 15 m and ground-structural variables (live and large-tree basal area, diameter variability), consistent with a signal that captures the tall-canopy component of old growth while missing the dead-wood component. None of this makes the map wrong; it makes the map a map of canopy structure, which is correlated with but not equivalent to the field definition of LSOG, and that distinction is material when the map is read as a map of old forest for acquisition.
+
+## 5. An independent cross-check exists and is not used
+
+The paper situates airborne LiDAR against the broader remote-sensing literature, including spaceborne and GEDI LiDAR, in its introduction. It does not, however, engage the publicly available wall-to-wall spaceborne canopy-height products (e.g., Potapov et al. 2021; Lang et al. 2023) that already cover the study area. These products are coarser and noisier than airborne LiDAR, but they are global, repeatable, and free, and they provide exactly the independent, structurally comparable cross-check that a single airborne map lacks. Our canopy-height-based classification above is built from one such product. We are not proposing it as a superior map; we are noting that an independent accuracy assessment against such a product is feasible, cheap, and absent, and that its omission leaves the airborne map without the external benchmark that policy use requires.
+
+## 6. The temporal premise: a harvest flux is not a stock decline
+
+The map is motivated in part by rapid LSOG loss, reported at 1.37% per year overall and 2.19% per year on commercial timberland. That figure is a gross harvest flux: it counts mapped LSOG hectares that subsequently experienced canopy removal in the Global Forest Watch record. It does not net out ingrowth, the younger stands that mature into LSOG condition each year. Two independent measurements of the LSOG stock over the same area point the other way. The TreeMap-imputed LSOG area rose from 6.5% (2016) to 7.8% (2022), and FIA design-based plot panels show the structural LSOG share rising over the same period (approximately +2 to +3% per year in both). Both lines are consistent with a stock that is stable to increasing because aging more than replaces the hectares harvested, in agreement with regional syntheses (e.g., Birdsey et al. 2025). Both statements can be true at once: LSOG stands are being harvested at roughly 2% per year, and the total LSOG stock is not declining. The conservation-relevant quantity, the trend in the amount of LSOG, is not in free fall, and the urgency framing should distinguish the flux from the stock. (We are extending this with formal FIA design-based estimates and sampling-error intervals, and a hexagon-scale spatial comparison, which we will include in the submitted version.)
+
+## 7. Implications
+
+None of the above argues against mapping LSOG with LiDAR, nor against conserving older forest in Maine, which we strongly support. It argues that a single classification, however well trained, is not a sufficient basis for patch-level expenditures of the magnitude now contemplated, and that three practices should accompany its policy use. First, LSOG extent should be reported as a range across methods with explicit uncertainty rather than as a single number. Second, before hectares are prioritized for acquisition or enrolled in markets, the map should be checked against at least one independent product and field-verified at the parcel scale, as the authors themselves recommend for management decisions. Third, the distinction between harvest flux and net stock should be made explicit wherever the rate of loss is invoked. The Hagan et al. map is a useful and reproducible product; our point is that its usefulness for high-stakes allocation depends on the cross-map accuracy assessment and uncertainty characterization that should now accompany it.
+
+## Data and code availability
+
+All analyses and derived products supporting this Comment, with code, are archived at Zenodo (concept DOI 10.5281/zenodo.20614496). Hagan et al.'s training data and code are at Zenodo 10.5281/zenodo.19696494.
+
+## Selected references
+
+Box, G.E.P. 1976. Science and statistics. JASA 71:791-799.
+Birdsey, R. et al. 2025. [northeastern old-growth aging vs harvest].
+Hagan, J.M., B. Shamgochian, M.M.L. Taylor & J.M. Reed. 2026. Ecosphere 17:e70670.
+Lang, N. et al. 2023. A high-resolution canopy height model of the Earth. Nat. Ecol. Evol.
+Potapov, P. et al. 2021. Mapping global forest canopy height. Remote Sens. Environ. 253:112165.
+Thompson, J.R., A. Daigneault, J. Plisinski, I. Moon & J. Norton. 2026. Pathways for Protecting Maine's Remaining Late-Successional and Old-Growth Forests. PERC.
