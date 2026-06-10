@@ -28,6 +28,25 @@ Read the full 24-page Ecosphere article (DOI 10.1002/ecs2.70670) line by line an
 
 3. Gross flux vs net stock. Hagan et al. state plainly: "We had no way in this study to estimate the amount and rate of forest growing into an LSOG condition," and cite the federal Pacific Northwest case where older forest increased over 1993-2017 because ingrowth exceeded harvest. Our flux-vs-stock argument is therefore not a gotcha against an unaware author; it is the side the authors said their data could not measure. The Comment now quotes this directly, which both credits their transparency and makes the point much harder to dispute.
 
+## Does Hagan acknowledge limitations, future work, and uncertainty? (Yes, qualitatively)
+
+This is the key fairness check. The paper is genuinely transparent, so the Comment's language was tightened to credit it and to make the narrower, defensible claim.
+
+What the authors DO acknowledge:
+- A dedicated Limitations section (did not map stunted high-elevation/wetland old forest; did not evaluate indigenous land; mixed leaf-on/leaf-off LiDAR).
+- The model classifies true old growth correctly only 29.4% of the time, and they propose future metrics, canopy-gap density and large downed-log density, to better separate LS from true OG. This directly anticipates our Section 4 dead-wood result.
+- They could not estimate ingrowth ("We had no way in this study to estimate the amount and rate of forest growing into an LSOG condition") and cite the PNW case where ingrowth exceeded harvest. This is our flux point, conceded.
+- Definitions matter: they cite a landscape where relaxing the old-growth definition moved the estimate from 2.7% to 15%. This is our cross-method-spread point, in their own words.
+- They recommend ground-truthing before any management or conservation decision.
+
+What the authors do NOT do (the gap the Comment fills):
+- No confidence intervals or sampling error on any quantity (area, loss rate). Accuracy is reported as OOB/field point estimates only.
+- No spatiotemporal trend with error estimates; the 1.37%/yr and 2.19%/yr loss rates are bare point estimates, and the half-lives are deterministic zero-order projections.
+- No comparison against an independent map.
+- No design-based ground (FIA) estimate for Maine.
+
+Language consequence: the Comment now states plainly that the authors flag these limits qualitatively and that our contribution is to quantify them, since the map is being used quantitatively at a scale its stated uncertainties were never propagated to. Three sentences were added to the Comment (intro credit of the Limitations section; Section 4 noting they propose downed-log/gap metrics; Section 3 noting they stress definitions matter). The email was tightened the same way: it credits his Limitations section explicitly and frames our work as putting numbers and intervals on his own caveats. We avoid any phrasing that implies he ignored uncertainty, because he did not; he discussed it without quantifying it.
+
 ## Residual risks to keep in mind (not errors)
 
 - Definitional non-equivalence. Their commercial-timberland LS+OGL is 1.8% (a canopy class); our private-commercial older forest is 3.3% (stand age >= 120 yr, FIA). These are different targets over different denominators; the Comment already flags the definition-alignment issue and does not equate them. Worth a sentence in person if John raises it.
