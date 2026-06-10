@@ -56,6 +56,10 @@ He cites both, so any claim that he ignored the national or global literature is
 
 Consequence for language: do not imply he worked in isolation. The defensible critique is the opposite and stronger: despite citing this literature, the analysis never uses any independent product as a benchmark, never places a sampling interval on its quantities, and never grounds the Maine estimate in the design-based FIA sample. The Comment intro now states exactly this, so the critique survives because he cites the literature, not in spite of it.
 
+## GEDI / remote-sensing noise and geolocation error (handled, not relied upon)
+
+The Comment does not treat GEDI or any remote-sensing product as a reference. GEDI is sparse-footprint and noisier than airborne LiDAR or a NAIP-derived canopy height model, and it carries a systematic geolocation error on the order of 10 m (Shannon, Finley, Hayes, Noralez, Weiskittel, Cook, and Babcock 2024, Environmetrics 35:e2840). Section 5 now states this plainly, and Section 3 notes that geolocation and co-registration error (which affects ALS and NAIP products too, not only GEDI) inflates pixel-level disagreement. This is why the Comment leans on (1) disagreement in total amount, which is position-insensitive; (2) 8-km hex aggregation, where positional error averages out; and (3) the design-based FIA estimate, which has no map geolocation error at all, as the sole reference. Net effect: the argument is robust to, and partly corroborated by, the GEDI-noise concern rather than dependent on GEDI being accurate.
+
 ## Residual risks to keep in mind (not errors)
 
 - Definitional non-equivalence. Their commercial-timberland LS+OGL is 1.8% (a canopy class); our private-commercial older forest is 3.3% (stand age >= 120 yr, FIA). These are different targets over different denominators; the Comment already flags the definition-alignment issue and does not equate them. Worth a sentence in person if John raises it.
