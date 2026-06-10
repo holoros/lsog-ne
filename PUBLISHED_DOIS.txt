@@ -1,1 +1,2 @@
 v1.2.0  10.5281/zenodo.20628341  (concept 10.5281/zenodo.20614496)  published 2026-06-10
+v1.2.3  10.5281/zenodo.20631007  (concept 10.5281/zenodo.20614496)  corrected complete Comment, sole author
