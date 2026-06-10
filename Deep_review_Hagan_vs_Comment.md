@@ -47,6 +47,15 @@ What the authors do NOT do (the gap the Comment fills):
 
 Language consequence: the Comment now states plainly that the authors flag these limits qualitatively and that our contribution is to quantify them, since the map is being used quantitatively at a scale its stated uncertainties were never propagated to. Three sentences were added to the Comment (intro credit of the Limitations section; Section 4 noting they propose downed-log/gap metrics; Section 3 noting they stress definitions matter). The email was tightened the same way: it credits his Limitations section explicitly and frames our work as putting numbers and intervals on his own caveats. We avoid any phrasing that implies he ignored uncertainty, because he did not; he discussed it without quantifying it.
 
+## Did Hagan cite Woodall and the GEDI LSOG literature? (Yes, do not run a "Maine vacuum" line)
+
+He cites both, so any claim that he ignored the national or global literature is factually wrong and easily rebutted from his reference list.
+- Woodall appears as a co-author on three cited works: Gray et al. 2023 (the wicked-problem synthesis), Pelz et al. 2023, and Ducey et al. 2013.
+- GEDI LSOG work is cited directly: Spracklen and Spracklen 2021 (GEDI old growth), de Conto et al. 2024 (GEDI structural complexity), and Bauer et al. 2021 (GEDI fusion). He calls spaceborne lidar "one of the best ways to identify LSOG forest."
+- Comparative LiDAR mapping is engaged too: de Assis Barros and Elkin 2021 (BC), Trouvé et al. 2024 (Australia), and the federal MOG inventory (Barndt et al. 2023; Barnett 2023; Pelz 2023).
+
+Consequence for language: do not imply he worked in isolation. The defensible critique is the opposite and stronger: despite citing this literature, the analysis never uses any independent product as a benchmark, never places a sampling interval on its quantities, and never grounds the Maine estimate in the design-based FIA sample. The Comment intro now states exactly this, so the critique survives because he cites the literature, not in spite of it.
+
 ## Residual risks to keep in mind (not errors)
 
 - Definitional non-equivalence. Their commercial-timberland LS+OGL is 1.8% (a canopy class); our private-commercial older forest is 3.3% (stand age >= 120 yr, FIA). These are different targets over different denominators; the Comment already flags the definition-alignment issue and does not equate them. Worth a sentence in person if John raises it.
