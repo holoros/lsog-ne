@@ -66,6 +66,20 @@ The Comment does not treat GEDI or any remote-sensing product as a reference. GE
 - Different time windows. Their loss is 2015-2023 (GFW canopy removal); our trend is 2003-2024 (FIA panels). We claim direction, not rate, which is the defensible claim across both windows.
 - Our AOI grid (4,282,675 ha) is slightly larger than their analyzed area (4,185,869 ha); immaterial to the conclusions.
 
+## Stress test (data verification, June 2026)
+
+Every quantity in the Comment was re-checked against the source CSV outputs on Cardinal:
+- Table 1 AUC (all nine cells and the three prevalences): matches T1_cv_auc_by_approach.csv exactly.
+- Table 4 FIA design-based area and trend (age 100/120/150 and large-tree BA, statewide and northern, plus all four slopes): matches T1_designbased_oldforest_trend.csv and T3_trend_slopes.csv exactly.
+- Table 3 structure R-squared (five attributes): matches T2_lidar_predicts_structure_R2.csv.
+- Cross-map kappa/Jaccard (0.21, 0.01, 0.03) and prioritization Jaccard (0.16 to 0.30 over top 5-20%): match T2_pairwise_kappa_4method.csv and T6_prioritization_jaccard.csv.
+- Ownership (private age>=120 3.3% slope +0.031; public 10.8%; private large-tree 11.5%): matches S1_oldforest_by_ownership.csv.
+- 20-seed ensemble LS+OGL 4.23% (SD 0.06): matches S1_multiseed_summary.csv.
+- TreeMap any-LSOG 7.8%: matches T1_treemap_lsog_timeseries.csv (2022, native 30 m), the basis the Table 2 caption states. A separate 100 m/full-AOI figure (2.88%) exists in T1_area_4method.csv but is not used in the Comment; either basis preserves the "2.5 to 2.8-fold" range.
+- Numbers attributed to Hagan et al. (94.1%, 29.4%, canopy above 15 m, 1.37%/2.19% loss, LS+OGL 3.9%, any-LSOG 19.7%): verified against the article.
+
+Reference integrity: every reference is cited in-text and every in-text citation has a reference. One orphan was found and fixed: Shamgochian et al. 2025 (the RAP field protocol) is now cited at the field-verification recommendation in Section 6. Clean rebuild of both documents validates. A build-crash from an unescaped quote (line 72) was found and fixed; it had frozen the deposited PDF at an earlier draft through Zenodo v1.2.2, corrected in v1.2.3.
+
 ## Bottom line
 
 Nothing in the Comment overturns or misstates the original science. After these edits it credits the authors' transparency at every relevant point, uses their own admissions where they help, corrects the one citation error, and reconciles the one number a careful reader (or John) would have flagged. It is now harder to push back on, not softer.
