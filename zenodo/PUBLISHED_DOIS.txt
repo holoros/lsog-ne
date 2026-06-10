@@ -3,3 +3,5 @@ Concept DOI (cite this; always latest): 10.5281/zenodo.20614496
   v1.0.0 version DOI: 10.5281/zenodo.20614497 (report, no graphic)
   v1.1.0 version DOI: 10.5281/zenodo.20615313 (adds graphical-abstract cover + CITATION.cff)  <-- current latest
 Record: https://zenodo.org/records/20615313
+v1.2.0 DRAFT record 20625615: +Phase15-18 code/FIADB/AUC/stress/hex (57 files); awaiting publish
+Review: https://zenodo.org/deposit/20625615
