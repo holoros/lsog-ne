@@ -1,22 +1,21 @@
 # Draft email to John Hagan (jhagan@ourclimatecommon.org)
 
 **To:** jhagan@ourclimatecommon.org
-**Subject:** Your Ecosphere LSOG paper — input on a grounded follow-up, or a Comment
+**Subject:** July 8, and some LSOG analysis I would love your eyes on
 
 John,
 
-Good to see the LSOG work out, and congratulations on it. I spent real time with the paper and your archived data, partly because of the CFRU connection, and the first thing I want to say is that the transparency is exactly right. I reproduced your random forest cleanly (94.2% against your 94.1%), and the field effort behind it is obvious.
+Congratulations on the LSOG paper. Regina mentioned you are heading into the field on July 8, and I would love to join if there is room. I have been spending real time with your paper and your archived data, partly because of the CFRU connection, and getting out with you and your team to see the stands is exactly the right way to ground all of it.
 
-I am writing because the map is now carrying real weight. The Thompson and Daigneault report prices the top half of the patches at $200-300 million for LD 1529, and I gather you have been raising the LSOG findings with the Maine Forest Products Council around pending policy and third-party certification challenges for landowners. That is exactly why I think the accuracy and the uncertainty need to be nailed down, and it is the reason I went carefully through your own training plots and independent public data over the same area rather than just reacting.
+First and most important: I want to be clear that I read your work as careful and transparent. You are candid about the pitfalls, including that airborne LiDAR cannot cleanly separate late-successional from old-growth structure, and the data and code are all out in the open, which is how it should be. I reproduced your random forest cleanly (94.2% against your 94.1%). Nothing I have done questions the competence or the openness of the analysis. I also know the MNAP truthing is showing the model under-predicts in places like western Maine, which is consistent with the larger point I keep landing on: a single map carries real, locally variable error in both directions, and that is hard to avoid with this signal.
 
-The short version of what I found: training accuracy is high for every approach, but independent maps disagree by roughly 2.8x on the broad LSOG class and on most of the location, while at the strict old-growth level they actually agree. The unbiased FIA design-based estimate puts older forest at about 3.9% (3.3 to 4.6%) and rising, including on private commercial timberland, rather than rapidly declining. Ian Prior at Seven Islands has been looking at this with me and is willing to put his name on it, which I think helps keep it grounded in the working-forest reality.
+What I have put together is a cross-map comparison and an FIA design-based analysis over the same area, with confidence intervals on the quantities. The short version is that training accuracy is high for every approach, independent maps still disagree by roughly 2.8x on the broad LSOG class, and the unbiased FIA estimate puts older forest at about 3.9% (3.3 to 4.6) and rising, including on private commercial timberland. None of that contradicts your science; it quantifies the uncertainty and puts error bars where the policy conversation currently has none. Ian Prior at Seven Islands has been looking at it with me.
 
-I would genuinely rather work this with you than around you, so here is the ask, with two options. The first, and my preference, is that you lead a grounded follow-up, with us if it is useful, that adds a cross-map accuracy assessment and confidence intervals before the map gets locked further into policy and certification. The second, if you would rather not, is that I submit the attached as a formal Comment to Ecosphere, where you would of course be invited to reply. Either way I would rather you see it first.
+I raise it now because the map is starting to carry real weight, with the Thompson and Daigneault numbers and the certification and policy questions you have been raising with the Maine Forest Products Council. I would much rather we turn this into a grounded joint follow-up, a cross-map accuracy assessment and confidence intervals before the map gets locked further into those decisions, than have it land as anything adversarial. I have written the analysis up, and I am happy to share the draft so you can react to it directly. You see it first either way.
 
-Happy to talk any time. All the code and data behind this are openly archived.
+Let me know about July 8 and the data handoff, and I will work it out with Regina. Looking forward to it.
 
-Thanks again,
 Aaron
 
 ---
-*Notes: Authors are Weiskittel and Prior (Seven Islands). Tone is warm and collegial, acknowledges the CFRU connection and the MFPC/certification context, and offers two paths (collaborative follow-up preferred, or formal Comment). When ready, I can create this as a Gmail draft and attach the Comment + Supplement as PDFs. Hagan's email (jhagan@ourclimatecommon.org) is the corresponding-author address from the paper.*
+*Notes: Leads with accepting the July 8 field day and the collaborative path; credits transparency and the MNAP underestimation finding (bidirectional error); frames the formal comment as a draft to share, not a threat. Authors are Weiskittel and Prior. Attach the two PDFs (Comment + Supporting Info) only if Aaron wants John to see the full write-up now; otherwise offer to send after July 8.*
