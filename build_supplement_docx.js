@@ -86,6 +86,10 @@ k.push(H("Figure S3. Maine ensemble bivariate (agreement by uncertainty)",Headin
 k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_ensemble_bivariate.png"),transformation:{width:330,height:330},altText:{title:"bivariate",description:"bivariate",name:"bivariate"}})]}));
 k.push(cap("Figure S3. Bivariate map of the prototype ensemble agreement score (horizontal) by uncertainty (vertical) for the Maine study area, tercile breaks. The defensible acquisition targets are the high-agreement, low-uncertainty hexes; most of the landscape carries high uncertainty."));
 
+k.push(H("Figure S5. Why LSOG is where it is: terrain and disturbance",HeadingLevel.HEADING_1));
+k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_drivers.png"),transformation:{width:468,height:260},altText:{title:"drv",description:"drv",name:"drv"}})]}));
+k.push(cap("Figure S5. Distributions of (a) modeled disturbance probability and (b) slope (degrees, an accessibility proxy) for LSOG versus non-LSOG pixels over the Maine AOI (n = 3.8 million). LSOG concentrates on steeper, less accessible, more disturbance-prone ground; the LSOG share rises from 12% to 37% across slope terciles and from 17% to 35% across disturbance terciles. Aaron's CONUS harvest-probability model does not cover the Maine unorganized townships, so slope stands in for harvestability."));
+
 const doc=new Document({styles:{default:{document:{run:{font:"Times New Roman",size:21}}},
   paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,color:GREEN,font:"Times New Roman"},paragraph:{spacing:{before:220,after:100}}}]},
   sections:[{properties:{page:{size:{width:12240,height:15840},margin:{top:1440,right:1080,bottom:1440,left:1080}}},children:k}]});

@@ -7,3 +7,4 @@ v1.2.7  10.5281/zenodo.20641723  (concept 10.5281/zenodo.20614496)  simulated pe
 v1.2.8  10.5281/zenodo.20642112  NE hex ensemble + temporal thresholds + AUC + refinements
 v1.2.9  10.5281/zenodo.20642166  Metzler: snapshot/future-LSOG + toolset
 v1.3.0  10.5281/zenodo.20642403  what-is-LSOG multidimensional core + dimensions figure + skid-trail continuity
+v1.4.0  10.5281/zenodo.20642675  repeatable multi-axis true-LSOG classification (funnel 6.5
