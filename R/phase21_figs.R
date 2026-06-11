@@ -46,6 +46,12 @@ fwrite(es[, .(n=.N, mean_prob=round(mean(prob),3)), by=ut][order(ut)], file.path
 hx <- st_read(file.path(NEW,"hex_lsog_by_method.gpkg"), quiet=TRUE)
 hx$ens  <- rowMeans(st_drop_geometry(hx)[,c("hagan","gedi","treemap")], na.rm=TRUE)
 hx$unc  <- apply(st_drop_geometry(hx)[,c("hagan","gedi","treemap")], 1, sd, na.rm=TRUE)
+fwrite(data.table(metric=c("hex ensemble agreement score","hex uncertainty (SD across methods)","hex disagreement (max-min)"),
+  mean=round(c(mean(hx$ens,na.rm=TRUE),mean(hx$unc,na.rm=TRUE),mean(hx$disagree,na.rm=TRUE)),3),
+  median=round(c(median(hx$ens,na.rm=TRUE),median(hx$unc,na.rm=TRUE),median(hx$disagree,na.rm=TRUE)),3),
+  iqr=round(c(IQR(hx$ens,na.rm=TRUE),IQR(hx$unc,na.rm=TRUE),IQR(hx$disagree,na.rm=TRUE)),3),
+  p90=round(c(quantile(hx$ens,.9,na.rm=TRUE),quantile(hx$unc,.9,na.rm=TRUE),quantile(hx$disagree,.9,na.rm=TRUE)),3)),
+  file.path(OUT,"E5_hex_variation.csv"))
 p_prob <- ggplot(hx) + geom_sf(aes(fill=ens), color=NA) +
   scale_fill_gsea(name="agreement\nscore (0-1)", limits=c(0,1), oob=squish) +
   labs(title="(a) Multi-method ensemble LSOG agreement score") + th
@@ -103,14 +109,24 @@ sens <- rbindlist(lapply(cut, function(k){ pp<-pv2>=k
     accuracy=mean(pp==truth)) }))
 sens[, TSS := sensitivity+specificity-1]
 fwrite(sens, file.path(OUT,"E3_threshold_sensitivity.csv"))
+# threshold-independent rank ability: ROC AUC (Mann-Whitney) with bootstrap 95% CI
+auc_fun <- function(p, y){ r<-rank(p); (sum(r[y]) - sum(y)*(sum(y)+1)/2)/(sum(y)*sum(!y)) }
+auc <- auc_fun(pv2, truth)
+set.seed(7); bsa <- replicate(2000, { i<-sample(length(truth), replace=TRUE); auc_fun(pv2[i], truth[i]) })
+auc_lo <- quantile(bsa, .025); auc_hi <- quantile(bsa, .975)
+fwrite(data.table(metric="OOB ROC AUC (any-LSOG)", auc=round(auc,3), lo=round(auc_lo,3), hi=round(auc_hi,3)),
+       file.path(OUT,"E4_binary_auc.csv"))
 sl <- melt(sens, id.vars="cutoff", measure.vars=c("mapped_pos_rate","accuracy","TSS"))
 p_thr <- ggplot(sl, aes(cutoff, value, color=variable)) + geom_line(linewidth=0.9) + geom_point(size=1.6) +
   scale_color_npg(name=NULL, labels=c("mapped LSOG fraction","overall accuracy","TSS")) +
-  scale_x_continuous(breaks=seq(0.1,0.9,0.2)) +
+  scale_x_continuous(breaks=seq(0.1,0.9,0.2)) + ylim(0,1) +
   labs(title="Sensitivity of mapped LSOG to the probability cutoff",
-       x="random forest probability cutoff for calling LSOG", y="value") +
-  theme_minimal(base_size=11) + theme(plot.background=element_rect(fill="white",color=NA), legend.position="top")
-thumb(p_thr, "Fig_threshold.png", w=6, h=4.2)
+       subtitle=sprintf("Threshold-independent rank ability is high (ROC AUC = %.3f [%.3f, %.3f]); accuracy, TSS and mapped extent still depend on the cutoff", auc, auc_lo, auc_hi),
+       x="random forest probability cutoff for calling LSOG", y="value (on labelled plots)") +
+  theme_minimal(base_size=11) + theme(plot.background=element_rect(fill="white",color=NA), legend.position="top",
+    plot.subtitle=element_text(size=8.5,color="grey35"))
+thumb(p_thr, "Fig_threshold.png", w=6.2, h=4.4)
+cat(sprintf("OOB ROC AUC any-LSOG = %.3f [%.3f, %.3f]\n", auc, auc_lo, auc_hi))
 
 # ---- (5) temporal panel: FIA age120 + large-tree BA + TreeMap over time -----
 tr <- fread(file.path(NEW,"T1_designbased_oldforest_trend.csv"))
@@ -135,6 +151,23 @@ pC <- ggplot(tm, aes(year, any_LSOG_pct)) + geom_line(color="#E15554",linewidth=
        x="TreeMap year", y="any-LSOG % (known cells)") + theme_minimal(base_size=10) +
   theme(plot.background=element_rect(fill="white",color=NA), plot.subtitle=element_text(size=8,color="grey40"))
 thumb(pA/pB/pC, "Fig_temporal_panel.png", w=5.2, h=8.4)
+
+# ---- (6) LSOG/older-forest over time under different definitions and thresholds ----
+trd <- fread(file.path(NEW,"T1_designbased_oldforest_trend.csv"))[region=="statewide"]
+trd[, dl := fcase(grepl("100",domain),"age >= 100 yr", grepl("120",domain),"age >= 120 yr",
+                  grepl("150",domain),"age >= 150 yr", grepl("BA",domain),"large-tree BA >= 30 ft2/ac",
+                  default=domain)]
+trd[, dl := factor(dl, levels=c("age >= 100 yr","large-tree BA >= 30 ft2/ac","age >= 120 yr","age >= 150 yr"))]
+p_tt <- ggplot(trd, aes(YEAR, area_perc, color=dl, fill=dl)) +
+  geom_ribbon(aes(ymin=perc_lo,ymax=perc_hi), alpha=0.10, color=NA) +
+  geom_line(linewidth=0.9) +
+  scale_color_d3(name=NULL) + scale_fill_d3(name=NULL) +
+  labs(title="Older forest over time under different definitions and thresholds",
+       subtitle="Maine, FIA design-based. The level depends on the criterion; the increasing direction does not.",
+       x="inventory year", y="% of forestland") +
+  theme_minimal(base_size=10) + theme(legend.position="top",
+    plot.background=element_rect(fill="white",color=NA), plot.subtitle=element_text(size=8.5,color="grey35"))
+thumb(p_tt, "Fig_temporal_thresholds.png", w=6.6, h=4.4)
 
 cat("PHASE 21 DONE\n"); cat("ensemble flagged px terciles written; confusion + threshold + temporal done\n")
 print(sens[, .(cutoff, mapped_pos_rate=round(mapped_pos_rate,3), accuracy=round(accuracy,3), TSS=round(TSS,3))])

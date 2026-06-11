@@ -1,0 +1,2 @@
+metric,auc,lo,hi
+OOB ROC AUC (any-LSOG),0.979,0.967,0.989

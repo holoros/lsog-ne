@@ -1,0 +1,4 @@
+metric,mean,median,iqr,p90
+hex ensemble agreement score,0.133,0.115,0.105,0.245
+hex uncertainty (SD across methods),0.115,0.098,0.1,0.224
+hex disagreement (max-min),0.22,0.187,0.192,0.429
