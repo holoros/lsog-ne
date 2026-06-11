@@ -70,6 +70,15 @@ k.push(H("Table S8. Sensitivity of the classification to the probability cutoff"
 k.push(tcap("Table S8. As the random forest probability cutoff for calling LSOG varies, the fraction of labelled plots called LSOG, sensitivity, specificity, overall accuracy, and the true-skill statistic (TSS) all shift (Fig. 2 of the Comment)."));
 k.push(csvTable(S+"E3_threshold_sensitivity.csv",["cutoff","mapped_pos_rate","sensitivity","specificity","accuracy","TSS"],{mapped_pos_rate:"frac called LSOG",accuracy:"accuracy"}));
 
+k.push(H("Table S9. Independent third-party old-growth comparison (Pelz et al. 2023)",HeadingLevel.HEADING_1));
+k.push(tcap("Table S9. Plot-level agreement (Cohen's kappa) between the field-structure classification used here and the U.S. Forest Service national old-growth inventory (Pelz et al. 2023), evaluated on the FIA plots where both apply: National Forest System land in Maine, New Hampshire, New York, and Vermont (n about 925, concentrated in NH and VT because Maine holds little federal forest). Agreement is weak even between two independently authored operationalizations of old forest, corroborating the cross-map disagreement documented in the Comment."));
+(()=>{const out=[["Comparison","Cohen's kappa"],["v5.1 old growth vs Pelz old growth","0.04"],["v5.1 late-successional + old growth vs Pelz old growth","0.25"],["v5.1 any-LSOG vs Pelz old growth","0.12"]];
+const w0=Math.floor(CW*0.74), w1=CW-w0; const widths=[w0,w1]; const last=out.length-1;
+k.push(new Table({width:{size:CW,type:WidthType.DXA},columnWidths:widths,
+ rows:out.map((r,ri)=>new TableRow({cantSplit:true,children:r.map((c,ci)=>new TableCell({borders:bds,width:{size:widths[ci],type:WidthType.DXA},
+   shading:{fill:ri===0?GREEN:"FFFFFF",type:ShadingType.CLEAR},margins:{top:40,bottom:40,left:80,right:80},
+   children:[new Paragraph({keepNext:ri<last,children:[new TextRun({text:String(c),bold:ri===0,color:ri===0?"FFFFFF":"000000",size:16})]})]}))}))}));})();
+
 k.push(H("Figure S1. Hex-scale cross-map disagreement",HeadingLevel.HEADING_1));
 k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_hex.png"),transformation:{width:468,height:143},altText:{title:"hex",description:"hex",name:"hex"}})]}));
 k.push(cap("Figure S1. Any-LSOG fraction by method aggregated to 8 km hexagons over the area of interest, and the cross-method disagreement (max minus min). Disagreement concentrates in the northern and central townships."));
