@@ -74,9 +74,13 @@ k.push(H("Figure S1. Hex-scale cross-map disagreement",HeadingLevel.HEADING_1));
 k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_hex.png"),transformation:{width:468,height:143},altText:{title:"hex",description:"hex",name:"hex"}})]}));
 k.push(cap("Figure S1. Any-LSOG fraction by method aggregated to 8 km hexagons over the area of interest, and the cross-method disagreement (max minus min). Disagreement concentrates in the northern and central townships."));
 
-k.push(H("Figure S2. Maine ensemble bivariate (agreement by uncertainty)",HeadingLevel.HEADING_1));
+k.push(H("Figure S2. Maine study-area ensemble (agreement and uncertainty)",HeadingLevel.HEADING_1));
+k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_ensemble_hex.png"),transformation:{width:300,height:522},altText:{title:"me_ens",description:"me_ens",name:"me_ens"}})]}));
+k.push(cap("Figure S2. Prototype multi-method ensemble for the Maine study area, aggregated to 8 km hexagons: (a) agreement score (unweighted mean of three method memberships) and (b) uncertainty (standard deviation). The companion New England version is Fig. 8 of the Comment."));
+
+k.push(H("Figure S3. Maine ensemble bivariate (agreement by uncertainty)",HeadingLevel.HEADING_1));
 k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_ensemble_bivariate.png"),transformation:{width:330,height:330},altText:{title:"bivariate",description:"bivariate",name:"bivariate"}})]}));
-k.push(cap("Figure S2. Bivariate map of the prototype ensemble agreement score (horizontal) by uncertainty (vertical) for the Maine study area, tercile breaks. The defensible acquisition targets are the high-agreement, low-uncertainty hexes; most of the landscape carries high uncertainty."));
+k.push(cap("Figure S3. Bivariate map of the prototype ensemble agreement score (horizontal) by uncertainty (vertical) for the Maine study area, tercile breaks. The defensible acquisition targets are the high-agreement, low-uncertainty hexes; most of the landscape carries high uncertainty."));
 
 const doc=new Document({styles:{default:{document:{run:{font:"Times New Roman",size:21}}},
   paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,color:GREEN,font:"Times New Roman"},paragraph:{spacing:{before:220,after:100}}}]},
