@@ -79,6 +79,15 @@ k.push(new Table({width:{size:CW,type:WidthType.DXA},columnWidths:widths,
    shading:{fill:ri===0?GREEN:"FFFFFF",type:ShadingType.CLEAR},margins:{top:40,bottom:40,left:80,right:80},
    children:[new Paragraph({keepNext:ri<last,children:[new TextRun({text:String(c),bold:ri===0,color:ri===0?"FFFFFF":"000000",size:16})]})]}))}))}));})();
 
+k.push(H("Table S10. FIA older-forest trend clipped to the published map area of interest",HeadingLevel.HEADING_1));
+k.push(tcap("Table S10. FIA design-based older-forest area within Hagan et al.'s exact area-of-interest polygon (the unorganized townships, about 4.28 million ha), by rFIA spatial estimation (polys), 2003 to 2024. Within the map's own footprint older forest is increasing on every measure, with all weighted-regression slopes positive and 95% intervals excluding zero. This confirms the statewide trend is not masking a within-UT decline."));
+(()=>{const out=[["Ground criterion","2003 (%)","2024 (%)","Trend %/yr [95% CI]"],["Stand age >= 120 yr","3.1","4.0","+0.058 [0.043, 0.073]"],["Stand age >= 100 yr","9.4","13.2","+0.199 [0.149, 0.249]"],["Large-tree BA >= 30 ft-sq/ac","9.1","9.7","+0.052 [0.036, 0.069]"]];
+const widths=[3360,1800,1800,2400]; const last=out.length-1;
+k.push(new Table({width:{size:CW,type:WidthType.DXA},columnWidths:widths,
+ rows:out.map((r,ri)=>new TableRow({cantSplit:true,children:r.map((c,ci)=>new TableCell({borders:bds,width:{size:widths[ci],type:WidthType.DXA},
+   shading:{fill:ri===0?GREEN:"FFFFFF",type:ShadingType.CLEAR},margins:{top:40,bottom:40,left:80,right:80},
+   children:[new Paragraph({keepNext:ri<last,children:[new TextRun({text:String(c),bold:ri===0,color:ri===0?"FFFFFF":"000000",size:16})]})]}))}))}));})();
+
 k.push(H("Figure S1. Hex-scale cross-map disagreement",HeadingLevel.HEADING_1));
 k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_hex.png"),transformation:{width:468,height:143},altText:{title:"hex",description:"hex",name:"hex"}})]}));
 k.push(cap("Figure S1. Any-LSOG fraction by method aggregated to 8 km hexagons over the area of interest, and the cross-method disagreement (max minus min). Disagreement concentrates in the northern and central townships."));
