@@ -62,6 +62,14 @@ k.push(csvTable(S+"T2_lidar_predicts_structure_R2.csv",["structural_var","cv_R2_
 k.push(tcap("Table S6b. Old-growth discriminators (random forest variable importance) across LiDAR and ground-structure variables."));
 k.push(csvTable(S+"T3_OG_variable_importance.csv",["variable","set","MeanDecreaseAccuracy"],{MeanDecreaseAccuracy:"importance (MDA)"}));
 
+k.push(H("Table S7. Reproduced random forest out-of-bag confusion matrix",HeadingLevel.HEADING_1));
+k.push(tcap("Table S7. Out-of-bag confusion matrix (counts) for the reproduced airborne-LiDAR random forest. Rows are field-assigned classes, columns predicted. True old growth is recovered only about a quarter of the time (Fig. 1 of the Comment)."));
+k.push(csvTable(S+"E2_confusion_counts.csv"));
+
+k.push(H("Table S8. Sensitivity of the classification to the probability cutoff",HeadingLevel.HEADING_1));
+k.push(tcap("Table S8. As the random forest probability cutoff for calling LSOG varies, the fraction of labelled plots called LSOG, sensitivity, specificity, overall accuracy, and the true-skill statistic (TSS) all shift (Fig. 2 of the Comment)."));
+k.push(csvTable(S+"E3_threshold_sensitivity.csv",["cutoff","mapped_pos_rate","sensitivity","specificity","accuracy","TSS"],{mapped_pos_rate:"frac called LSOG",accuracy:"accuracy"}));
+
 k.push(H("Figure S1. Hex-scale cross-map disagreement",HeadingLevel.HEADING_1));
 k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_hex.png"),transformation:{width:468,height:143},altText:{title:"hex",description:"hex",name:"hex"}})]}));
 k.push(cap("Figure S1. Any-LSOG fraction by method aggregated to 8 km hexagons over the area of interest, and the cross-method disagreement (max minus min). Disagreement concentrates in the northern and central townships."));
