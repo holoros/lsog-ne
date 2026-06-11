@@ -76,7 +76,11 @@ k.push(cap("Figure S1. Any-LSOG fraction by method aggregated to 8 km hexagons o
 
 k.push(H("Figure S2. Maine study-area ensemble (agreement and uncertainty)",HeadingLevel.HEADING_1));
 k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_ensemble_hex.png"),transformation:{width:300,height:522},altText:{title:"me_ens",description:"me_ens",name:"me_ens"}})]}));
-k.push(cap("Figure S2. Prototype multi-method ensemble for the Maine study area, aggregated to 8 km hexagons: (a) agreement score (unweighted mean of three method memberships) and (b) uncertainty (standard deviation). The companion New England version is Fig. 8 of the Comment."));
+k.push(cap("Figure S2. Prototype multi-method ensemble for the Maine study area, aggregated to 8 km hexagons: (a) agreement score (unweighted mean of three method memberships) and (b) uncertainty (standard deviation). The companion New England version is Fig. 7 of the Comment."));
+
+k.push(H("Figure S4. Older forest over time under different definitions and thresholds",HeadingLevel.HEADING_1));
+k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_temporal_thresholds.png"),transformation:{width:468,height:312},altText:{title:"tt",description:"tt",name:"tt"}})]}));
+k.push(cap("Figure S4. Maine older forest over time (FIA design-based) under four ground definitions: stand age >= 100, >= 120, and >= 150 yr, and large-tree basal area >= 30 ft-sq/ac, each with a 95% band. The level depends on the criterion, but every definition increases over 2003-2024."));
 
 k.push(H("Figure S3. Maine ensemble bivariate (agreement by uncertainty)",HeadingLevel.HEADING_1));
 k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_ensemble_bivariate.png"),transformation:{width:330,height:330},altText:{title:"bivariate",description:"bivariate",name:"bivariate"}})]}));
