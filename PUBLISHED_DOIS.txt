@@ -10,3 +10,4 @@ v1.3.0  10.5281/zenodo.20642403  what-is-LSOG multidimensional core + dimensions
 v1.4.0  10.5281/zenodo.20642675  repeatable multi-axis true-LSOG classification (funnel 6.5v1.5.0  10.5281/zenodo.20643542  LSOG x disturbance/slope drivers
 v1.5.1  10.5281/zenodo.20643697  three-reviewer revision
 v1.6.0  10.5281/zenodo.20643962  Landsat continuity + FIA tempering + Fig2 AUC
+v1.7.0  10.5281/zenodo.20644318  (concept 10.5281/zenodo.20614496)  Table 8 LSOG-estimate synthesis; 16pp
