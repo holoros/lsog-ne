@@ -1,0 +1,10 @@
+|---------|---------|---------|---------|=========================================                                          |---------|---------|---------|---------|=========================================                                                 lsog       n mean_loss_frac pct_any_loss pct_disturbed_ge10
+     <char>   <int>          <num>        <num>              <num>
+1:     LSOG  938289          0.116         42.8               23.8
+2: Not LSOG 3342456          0.195         59.1               39.6
+                          class   pct
+                         <char> <num>
+1:   intact (passes continuity)  76.2
+2: disturbed since 2001 (fails)  23.8
+Of canopy-mapped LSOG, 23.8% shows Landsat stand-replacing disturbance since 2001 (fails strict continuity). 
+PHASE 28 DONE

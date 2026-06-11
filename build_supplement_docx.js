@@ -90,6 +90,10 @@ k.push(H("Figure S5. Why LSOG is where it is: terrain and disturbance",HeadingLe
 k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_drivers.png"),transformation:{width:468,height:260},altText:{title:"drv",description:"drv",name:"drv"}})]}));
 k.push(cap("Figure S5. Distributions of (a) modeled disturbance probability and (b) slope (degrees, an accessibility proxy) for LSOG versus non-LSOG pixels over the Maine AOI (n = 3.8 million). LSOG concentrates on steeper, less accessible, more disturbance-prone ground; the LSOG share rises from 12% to 37% across slope terciles and from 17% to 35% across disturbance terciles. Aaron's CONUS harvest-probability model does not cover the Maine unorganized townships, so slope stands in for harvestability."));
 
+k.push(H("Figure S6. A Landsat continuity layer for true-LSOG mapping",HeadingLevel.HEADING_1));
+k.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:80,after:40},children:[new ImageRun({type:"png",data:fs.readFileSync("figs/Fig_continuity.png"),transformation:{width:300,height:500},altText:{title:"cont",description:"cont",name:"cont"}})]}));
+k.push(cap("Figure S6. The temporal-continuity axis made mappable from Landsat (Hansen Global Forest Change, 2001-2023), 8 km hexagons: (a) fraction of each hex with stand-replacing canopy loss since 2001; (b) fraction of the canopy-mapped LSOG that is intact over the record. Of canopy-mapped LSOG, 24% shows stand-replacing disturbance since 2001 (failing strict continuity) and 76% is intact; partial harvests and pre-2001 entry (legacy skid trails) are not captured, so this is a lenient test."));
+
 const doc=new Document({styles:{default:{document:{run:{font:"Times New Roman",size:21}}},
   paragraphStyles:[{id:"Heading1",name:"Heading 1",basedOn:"Normal",next:"Normal",quickFormat:true,run:{size:23,bold:true,color:GREEN,font:"Times New Roman"},paragraph:{spacing:{before:220,after:100}}}]},
   sections:[{properties:{page:{size:{width:12240,height:15840},margin:{top:1440,right:1080,bottom:1440,left:1080}}},children:k}]});

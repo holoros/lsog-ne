@@ -118,11 +118,14 @@ fwrite(data.table(metric="OOB ROC AUC (any-LSOG)", auc=round(auc,3), lo=round(au
        file.path(OUT,"E4_binary_auc.csv"))
 sl <- melt(sens, id.vars="cutoff", measure.vars=c("mapped_pos_rate","accuracy","TSS"))
 p_thr <- ggplot(sl, aes(cutoff, value, color=variable)) + geom_line(linewidth=0.9) + geom_point(size=1.6) +
+  geom_hline(yintercept=auc, linetype=2, color="grey45", linewidth=0.5) +
+  annotate("text", x=0.905, y=auc, label=sprintf("ROC AUC %.3f\n[%.3f, %.3f]", auc, auc_lo, auc_hi),
+           hjust=1, vjust=1.25, size=2.9, color="grey30", lineheight=0.9) +
   scale_color_npg(name=NULL, labels=c("mapped LSOG fraction","overall accuracy","TSS")) +
-  scale_x_continuous(breaks=seq(0.1,0.9,0.2)) + ylim(0,1) +
+  scale_x_continuous(breaks=seq(0.1,0.9,0.2), expand=expansion(mult=c(0.02,0.08))) + ylim(0,1) +
   labs(title="Sensitivity of mapped LSOG to the probability cutoff",
-       subtitle=sprintf("Threshold-independent rank ability is high (ROC AUC = %.3f [%.3f, %.3f]); accuracy, TSS and mapped extent still depend on the cutoff", auc, auc_lo, auc_hi),
-       x="random forest probability cutoff for calling LSOG", y="value (on labelled plots)") +
+       subtitle="Threshold-independent rank ability is high; accuracy, TSS and mapped extent still depend on the cutoff (labelled plots)",
+       x="random forest probability cutoff for calling LSOG", y="value") +
   theme_minimal(base_size=11) + theme(plot.background=element_rect(fill="white",color=NA), legend.position="top",
     plot.subtitle=element_text(size=8.5,color="grey35"))
 thumb(p_thr, "Fig_threshold.png", w=6.2, h=4.4)
