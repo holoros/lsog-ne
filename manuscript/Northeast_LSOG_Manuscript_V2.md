@@ -1,8 +1,12 @@
-# Late-successional and old-growth forest across the Northeast: a multi-axis, FIA-anchored classification and cross-map assessment
+# It depends how you count: definition, disturbance history, and the distribution of late-successional and old-growth forest across the northeastern United States
 
-**Authors (working):** Aaron R. Weiskittel{1}, Adam Daigneault{1}, Daniel J. Hayes{1}, [additional co-authors TBD]
+**Authors (working):** Aaron R. Weiskittel{1}, Christopher W. Woodall{2}, Anthony W. D'Amato{3}, Erin Simons-Legaard{1}, Adam Daigneault{1}, Daniel J. Hayes{1}
 
-{1} University of Maine, Center for Research on Sustainable Forests, Orono, ME 04469, USA
+{1} University of Maine, Center for Research on Sustainable Forests and School of Forest Resources, Orono, ME 04469, USA
+{2} USDA Forest Service [unit and location to confirm]
+{3} University of Vermont, Rubenstein School of Environment and Natural Resources, Burlington, VT 05405, USA
+
+[Author order and the affiliations marked to confirm are placeholders pending coauthor agreement.]
 
 **Target journal:** Ecological Applications
 
@@ -50,7 +54,7 @@ We analyzed FIA Phase 2 inventory plots across the Northeastern United States, w
 
 ### 2.2 The six-dimension v5.1 structural proxy
 
-The integrated v5.1 classifier scores each plot on six structural dimensions and aggregates into a 0-12 total (Table 1). Class thresholds are Transitioning LS (TLS) at score >= 4, Late Successional (LS) at >= 6, and Old Growth (OG) at >= 8. Dimensions 1-5 derive from FIA tree and condition tables; dimension 6 derives from the Potapov et al. (2021) GEDI/Landsat 30 m canopy-height mosaic sampled at the plot centroid. The thresholds were calibrated by grid search against two external references, the Hagan et al. (2026) LiDAR classification for Maine's unorganized townships and the ORNL DAAC 2498 mature/old-growth probability layers, and are intentionally tighter than the published RAP v2.0 reference values; an earlier relaxed configuration produced implausibly high regional shares (65-69% in New Hampshire and Vermont) and was rejected. A deadwood-scoring error in an earlier version (snag counts drawn from outside the plot boundary in some cases) was corrected on 19 March 2026; all results here use the corrected classifier.
+The integrated v5.1 classifier scores each plot on six structural dimensions and aggregates into a 0-12 total (Table S1). Class thresholds are Transitioning LS (TLS) at score >= 4, Late Successional (LS) at >= 6, and Old Growth (OG) at >= 8. Dimensions 1-5 derive from FIA tree and condition tables; dimension 6 derives from the Potapov et al. (2021) GEDI/Landsat 30 m canopy-height mosaic sampled at the plot centroid. The thresholds were calibrated by grid search against two external references, the Hagan et al. (2026) LiDAR classification for Maine's unorganized townships and the ORNL DAAC 2498 mature/old-growth probability layers, and are intentionally tighter than the published RAP v2.0 reference values; an earlier relaxed configuration produced implausibly high regional shares (65-69% in New Hampshire and Vermont) and was rejected. A deadwood-scoring error in an earlier version (snag counts drawn from outside the plot boundary in some cases) was corrected on 19 March 2026; all results here use the corrected classifier.
 
 ### 2.3 A refined four-axis LSOG classification
 
@@ -58,7 +62,7 @@ The six-dimension score is convenient but collapses distinct ecological axes int
 
 ### 2.3a Landsat time-since-disturbance continuity layer
 
-The temporal-continuity axis is the one a canopy sensor cannot see but the Landsat record can. We built it from the USFS Landscape Change Monitoring System (LCMS v2024-10) annual "change, cause of change" product, a Landsat-based classification giving, for every 30 m pixel and every year 1985-2023, the dominant change cause among sixteen classes. We cropped each annual layer to Maine, resampled to a common 100 m grid, and reduced the stack to the year of most recent stand-replacing or harvest disturbance, defined as any year flagged Tree Removal, Mechanical, Wildfire, Hurricane, Prescribed Fire, or Other Loss; time-since-disturbance is the current year minus that year. A condition passes A4 only if no such disturbance is detected at its plot over the full record (a 3 x 3 focal maximum absorbs FIA coordinate fuzzing). Tree Removal is by far the dominant LCMS cause in Maine, so this layer captures the partial and selective harvest that the binary Global Forest Watch loss layer (used by the original analysis) and the FIA treatment codes both miss. Because the choice of disturbance-class set, time window, and spatial buffer is itself a modeling decision, we tested the sensitivity of the resulting true-LSOG share to five continuity definitions (Section 3.4, Table 11).
+The temporal-continuity axis is the one a canopy sensor cannot see but the Landsat record can. We built it from the USFS Landscape Change Monitoring System (LCMS v2024-10) annual "change, cause of change" product, a Landsat-based classification giving, for every 30 m pixel and every year 1985-2023, the dominant change cause among sixteen classes. We cropped each annual layer to Maine, resampled to a common 100 m grid, and reduced the stack to the year of most recent stand-replacing or harvest disturbance, defined as any year flagged Tree Removal, Mechanical, Wildfire, Hurricane, Prescribed Fire, or Other Loss; time-since-disturbance is the current year minus that year. A condition passes A4 only if no such disturbance is detected at its plot over the full record (a 3 x 3 focal maximum absorbs FIA coordinate fuzzing). Tree Removal is by far the dominant LCMS cause in Maine, so this layer captures the partial and selective harvest that the binary Global Forest Watch loss layer (used by the original analysis) and the FIA treatment codes both miss. Because the choice of disturbance-class set, time window, and spatial buffer is itself a modeling decision, we tested the sensitivity of the resulting true-LSOG share to five continuity definitions (Section 3.4, Table 5).
 
 ### 2.4 Dimensionality of LSOG attributes
 
@@ -86,27 +90,27 @@ All code is at github.com/holoros/lsog-ne and the analyses ran on the OSC Cardin
 
 ### 3.1 Regional context: older forest with intervals
 
-Under the integrated v5.1 proxy, Maine carries the lowest combined LSOG share in the four-state core at 14.1% (95% CI 12.9-15.3), against 31.2% (28.0-34.3) in New Hampshire, 28.8% (25.4-32.3) in Vermont, and 27.2% (25.2-29.0) in New York; Maine's interval does not overlap any neighbor's (Table 2). New York carries the highest old-growth-class share (1.5%), consistent with the Adirondacks. By the design-based ground criteria, Maine older forest is 12.1% [10.9, 13.2] at stand age >= 100 yr, 3.9% [3.3, 4.6] at >= 120 yr, and 0.7% [0.4, 1.0] at >= 150 yr, with large-tree basal area at 12.5% [11.4, 13.7] (Table 3). These intervals, absent from map-only accounts, are the appropriate unit for high-stakes use.
+Under the integrated v5.1 proxy, Maine carries the lowest combined LSOG share in the four-state core at 14.1% (95% CI 12.9-15.3), against 31.2% (28.0-34.3) in New Hampshire, 28.8% (25.4-32.3) in Vermont, and 27.2% (25.2-29.0) in New York; Maine's interval does not overlap any neighbor's (Table S2). New York carries the highest old-growth-class share (1.5%), consistent with the Adirondacks. By the design-based ground criteria, Maine older forest is 12.1% [10.9, 13.2] at stand age >= 100 yr, 3.9% [3.3, 4.6] at >= 120 yr, and 0.7% [0.4, 1.0] at >= 150 yr, with large-tree basal area at 12.5% [11.4, 13.7] (Table 1). These intervals, absent from map-only accounts, are the appropriate unit for high-stakes use.
 
 ### 3.2 The axes rank states differently
 
-The integrated "Maine lowest" result does not hold on every axis, and that is the point. On the stand-age >= 120 yr criterion, Maine (3.9% [3.3, 4.6]) actually exceeds New Hampshire (1.8% [0.9, 2.6]) and Vermont (1.0% [0.4, 1.6]); on the live-structure (large-tree basal area) axis, however, Maine is the lowest in the region at 12.5%, far below New Hampshire (37.9%), Vermont (39.1%), and the southern New England states (47-58%) (Table 4). Maine thus has comparatively old forest that lacks large-tree structure, a signature of long-managed stands, while its neighbors have younger forest on more productive sites carrying more large-tree structure. Because the axes disagree on the ranking, no single-axis number is a sufficient summary, and the integrated proxy that combines them is what produces the "Maine lowest" headline.
+The integrated "Maine lowest" result does not hold on every axis, and that is the point. On the stand-age >= 120 yr criterion, Maine (3.9% [3.3, 4.6]) actually exceeds New Hampshire (1.8% [0.9, 2.6]) and Vermont (1.0% [0.4, 1.6]); on the live-structure (large-tree basal area) axis, however, Maine is the lowest in the region at 12.5%, far below New Hampshire (37.9%), Vermont (39.1%), and the southern New England states (47-58%) (Table S3). Maine thus has comparatively old forest that lacks large-tree structure, a signature of long-managed stands, while its neighbors have younger forest on more productive sites carrying more large-tree structure. Because the axes disagree on the ranking, no single-axis number is a sufficient summary, and the integrated proxy that combines them is what produces the "Maine lowest" headline.
 
 ### 3.3 LSOG attributes are genuinely multidimensional
 
-The correlation structure confirms separable axes. Large-tree basal area, large-tree count, quadratic mean diameter, and diameter diversity are tightly intercorrelated (r = 0.74-0.98), forming a coherent live-structure axis, but standing dead basal area (r = 0.38-0.51 with the live-structure cluster) and coarse woody debris (r = 0.23-0.48) load only weakly on it (Table 5). The first principal component captures 58.8% of variance and the second 13.8%; four components are needed to reach 91% (Table 5). A one-axis (canopy or live-structure) classifier therefore discards the dead-wood and continuity information that the four-axis definition retains, which is the mechanistic reason canopy-based maps register big-tree forest rather than old growth.
+The correlation structure confirms separable axes. Large-tree basal area, large-tree count, quadratic mean diameter, and diameter diversity are tightly intercorrelated (r = 0.74-0.98), forming a coherent live-structure axis, but standing dead basal area (r = 0.38-0.51 with the live-structure cluster) and coarse woody debris (r = 0.23-0.48) load only weakly on it (Table S4). The first principal component captures 58.8% of variance and the second 13.8%; four components are needed to reach 91% (Table S4). A one-axis (canopy or live-structure) classifier therefore discards the dead-wood and continuity information that the four-axis definition retains, which is the mechanistic reason canopy-based maps register big-tree forest rather than old growth.
 
 ### 3.4 The four-axis funnel: how much is "true" LSOG
 
-Requiring more axes sharply reduces the qualifying share, and the reduction differs by state (Table 6, Fig. 2). Across all four states 84-96% of forest passes at least one axis, but only a small fraction passes all four, which we treat as *true LSOG*: 3.1% (95% CI 2.5-3.7) in Maine, 12.8% (10.7-15.0) in New Hampshire, 15.2% (12.7-17.6) in Vermont, and 12.2% (11.1-13.4) in New York. The headline is therefore not a single percentage but a curve, and the same forest is anywhere from 3% to over 90% LSOG depending on how many axes a definition requires.
+Requiring more axes sharply reduces the qualifying share, and the reduction differs by state (Table 2, Fig. 2). Across all four states 84-96% of forest passes at least one axis, but only a small fraction passes all four, which we treat as *true LSOG*: 3.1% (95% CI 2.5-3.7) in Maine, 12.8% (10.7-15.0) in New Hampshire, 15.2% (12.7-17.6) in Vermont, and 12.2% (11.1-13.4) in New York. The headline is therefore not a single percentage but a curve, and the same forest is anywhere from 3% to over 90% LSOG depending on how many axes a definition requires.
 
 The state ordering at the all-four threshold is driven by the two axes that vary most. Live structure is the scarcest axis everywhere (passing 12.5% of forest in Maine versus 38-39% in the other states), and the Landsat continuity axis is markedly tighter in Maine: it passes 40.1% of Maine forest against 54.7% in New Hampshire, 67.4% in Vermont, and 70.1% in New York. Maine is the only state where recent disturbance rivals live structure as the limiting axis (continuity missing in 22.7% of Maine near-misses, against 13-23% elsewhere). This is the working-forest signal the new axis exposes: 70.5% of Maine forest carries Landsat-detected stand-replacing or harvest disturbance since 1985, at a median 12 years ago, versus 50.0% in New Hampshire, 34.7% in Vermont, and 31.7% in New York (Fig. 2b). Maine's low true-LSOG share is thus as much a continuity result, reflecting active management, as a structural one.
 
-The true-LSOG estimates are robust to how the continuity axis is drawn (Table 11). Across five definitions, varying the disturbance-class set (all heavy classes, stand-replacing only, or any detected loss), the time window (the full 1985-2023 record or only the last 20 years), and the spatial buffer (a 3 x 3 focal maximum or the plot pixel alone), Maine true LSOG ranges from 3.1% to 5.2%, New Hampshire from 12.6% to 18.8%, Vermont from 15.0% to 18.8%, and New York from 12.1% to 15.0%. The base definition (full record, heavy classes, focal buffer) is the most conservative; relaxing any one choice raises the share modestly, and broadening the class set to any detected loss barely changes it because canopy-removing causes already dominate detection. Most important, the regional ordering is invariant: Maine is the lowest state under every definition, at roughly a third to a quarter of its neighbors. The conclusion that true LSOG is rare and lowest in Maine does not depend on the particular continuity threshold.
+The true-LSOG estimates are robust to how the continuity axis is drawn (Table 5). Across five definitions, varying the disturbance-class set (all heavy classes, stand-replacing only, or any detected loss), the time window (the full 1985-2023 record or only the last 20 years), and the spatial buffer (a 3 x 3 focal maximum or the plot pixel alone), Maine true LSOG ranges from 3.1% to 5.2%, New Hampshire from 12.6% to 18.8%, Vermont from 15.0% to 18.8%, and New York from 12.1% to 15.0%. The base definition (full record, heavy classes, focal buffer) is the most conservative; relaxing any one choice raises the share modestly, and broadening the class set to any detected loss barely changes it because canopy-removing causes already dominate detection. Most important, the regional ordering is invariant: Maine is the lowest state under every definition, at roughly a third to a quarter of its neighbors. The conclusion that true LSOG is rare and lowest in Maine does not depend on the particular continuity threshold.
 
 ### 3.5 Cross-map assessment: credible maps disagree
 
-The three wall-to-wall classifications disagree substantially over the study area (Table 7, Fig. 3). Any-LSOG covers 21.9% under the Hagan LiDAR classifier, 14.0% under the canopy-height map, and 7.8% under TreeMap, a 2.8-fold range. The Hagan and canopy-height maps agree spatially on only about 21% of the hectares either flags (Cohen's kappa 0.21); across all three, only 21.0% of the flagged footprint is agreed by all three, and more than half is flagged by a single method. The 30 m ensemble surface shows mean agreement of 0.115, only 8.9% of forested pixels at high agreement (at least two of three concurring) and 0.7% with all three agreeing, while 24.3% carry high classification uncertainty. For prioritization the consequence is direct: the overlap of the top-priority protected sets selected by the Hagan versus the canopy-height map is only 0.16-0.30 (Jaccard) for the top 5-20% of hectares, so 70-84% of the prioritized ground differs depending on which equally defensible map is used.
+The three wall-to-wall classifications disagree substantially over the study area (Table 3, Fig. 3). Any-LSOG covers 21.9% under the Hagan LiDAR classifier, 14.0% under the canopy-height map, and 7.8% under TreeMap, a 2.8-fold range. The Hagan and canopy-height maps agree spatially on only about 21% of the hectares either flags (Cohen's kappa 0.21); across all three, only 21.0% of the flagged footprint is agreed by all three, and more than half is flagged by a single method. The 30 m ensemble surface shows mean agreement of 0.115, only 8.9% of forested pixels at high agreement (at least two of three concurring) and 0.7% with all three agreeing, while 24.3% carry high classification uncertainty. For prioritization the consequence is direct: the overlap of the top-priority protected sets selected by the Hagan versus the canopy-height map is only 0.16-0.30 (Jaccard) for the top 5-20% of hectares, so 70-84% of the prioritized ground differs depending on which equally defensible map is used.
 
 ### 3.6 External validation: the OG class is product-specific
 
@@ -114,17 +118,17 @@ Against the Pelz et al. (2023) USFS criteria on 925 Northeastern NFS plots, the 
 
 ### 3.7 Trend: stock stable to rising, flux notwithstanding
 
-Older-forest stock increased by every ground measure over 2003-2024, with confidence intervals excluding zero: stand age >= 100 yr at +0.19%/yr [0.15, 0.23], >= 120 yr at +0.065%/yr [0.054, 0.075], and large-tree basal area at +0.17%/yr [0.15, 0.18], while total forestland area was flat (Table 3, Fig. 4). The northern units show the same increases; only the oldest class (age >= 150 yr) in the north declines slightly (-0.019%/yr [-0.031, -0.008]). This coexists with the reported gross loss of mapped LSOG (1.37%/yr overall, 2.19%/yr on commercial timberland): stands are harvested while aging more than replaces the hectares removed. The two statements describe a gross flux and a net stock and should not be conflated.
+Older-forest stock increased by every ground measure over 2003-2024, with confidence intervals excluding zero: stand age >= 100 yr at +0.19%/yr [0.15, 0.23], >= 120 yr at +0.065%/yr [0.054, 0.075], and large-tree basal area at +0.17%/yr [0.15, 0.18], while total forestland area was flat (Table 1, Fig. 4). The northern units show the same increases; only the oldest class (age >= 150 yr) in the north declines slightly (-0.019%/yr [-0.031, -0.008]). This coexists with the reported gross loss of mapped LSOG (1.37%/yr overall, 2.19%/yr on commercial timberland): stands are harvested while aging more than replaces the hectares removed. The two statements describe a gross flux and a net stock and should not be conflated.
 
 ### 3.8 Where LSOG sits in the working landscape
 
-LSOG occurrence rises with both modeled harvest probability and terrain slope. The LSOG rate is 13.1% on the lowest harvest-probability tercile, 24.1% on the middle, and 33.5% on the highest; and 11.8%, 21.7%, and 37.3% across low, medium, and high slope terciles (Table 8). The picture is two-sided: mapped LSOG sits disproportionately on the most merchantable ground yet also on steeper, more disturbance-prone terrain that raises harvest cost and logistics. Risk to these stands is therefore heterogeneous rather than uniform. Consistent with the continuity axis (Sections 2.3a, 3.4), LSOG plots are disturbed in the Landsat record at lower rates than non-LSOG forest, so most but not all mapped LSOG carries intact recent continuity; the share that fails the continuity test is highest in Maine, where active management is most extensive.
+LSOG occurrence rises with both modeled harvest probability and terrain slope. The LSOG rate is 13.1% on the lowest harvest-probability tercile, 24.1% on the middle, and 33.5% on the highest; and 11.8%, 21.7%, and 37.3% across low, medium, and high slope terciles (Table S5). The picture is two-sided: mapped LSOG sits disproportionately on the most merchantable ground yet also on steeper, more disturbance-prone terrain that raises harvest cost and logistics. Risk to these stands is therefore heterogeneous rather than uniform. Consistent with the continuity axis (Sections 2.3a, 3.4), LSOG plots are disturbed in the Landsat record at lower rates than non-LSOG forest, so most but not all mapped LSOG carries intact recent continuity; the share that fails the continuity test is highest in Maine, where active management is most extensive.
 
 ### 3.9 Representation of true LSOG across forest types and ecoregions
 
-Pooling the four states, true LSOG (all four axes) is present in eight of the nine forest-type groups in the region, but its abundance varies more than thirtyfold among them (Table 9). The largest absolute pools are in the most extensive types: northern hardwood (maple-beech-birch) holds 2.68 million acres of true LSOG at an 11.6% rate, and the white-red-jack pine type holds 0.72 million acres at the highest rate of any group, 21.2%. The oak-pine and oak-hickory types contribute another 0.54 million acres combined. The spruce-fir type, often treated as the signature Acadian LSOG forest, carries a much smaller share (2.1%, 0.15 million acres), and the aspen-birch and elm-ash-cottonwood types carry almost none. Representation is therefore broad but highly uneven: the late-successional condition occurs across nearly all forest types in the region, but it is concentrated in the northern hardwood and pine types and is thin in the early-successional and some softwood types.
+Pooling the four states, true LSOG (all four axes) is present in eight of the nine forest-type groups in the region, but its abundance varies more than thirtyfold among them (Table S6). The largest absolute pools are in the most extensive types: northern hardwood (maple-beech-birch) holds 2.68 million acres of true LSOG at an 11.6% rate, and the white-red-jack pine type holds 0.72 million acres at the highest rate of any group, 21.2%. The oak-pine and oak-hickory types contribute another 0.54 million acres combined. The spruce-fir type, often treated as the signature Acadian LSOG forest, carries a much smaller share (2.1%, 0.15 million acres), and the aspen-birch and elm-ash-cottonwood types carry almost none. Representation is therefore broad but highly uneven: the late-successional condition occurs across nearly all forest types in the region, but it is concentrated in the northern hardwood and pine types and is thin in the early-successional and some softwood types.
 
-Spatially joining the FIA plots to EPA Level III ecoregions gives the same picture geographically (Table 10). True LSOG is present in all nine ecoregion sections that hold at least 50,000 acres of forest in the four-state region, but it concentrates strongly: the Northeastern Highlands, the mountainous northern-hardwood region spanning western Maine, New Hampshire, Vermont, and the Adirondacks, hold 2.99 million acres of true LSOG at a 12.5% rate, more than the rest of the region combined. The Northern Allegheny Plateau (0.50 million acres, 9.2%) and the Northeastern Coastal Zone (0.17 million acres, 9.4%) carry intermediate shares. The Acadian Plains and Hills, the glaciated lowland that is the core of Maine's industrial timberland, carries the lowest share of any major ecoregion at 2.1% (0.19 million acres) despite covering 8.9 million acres of forest. The representation pattern, rather than any single state's aggregate share, is the appropriate target for a regional late-successional strategy.
+Spatially joining the FIA plots to EPA Level III ecoregions gives the same picture geographically (Table 4). True LSOG is present in all nine ecoregion sections that hold at least 50,000 acres of forest in the four-state region, but it concentrates strongly: the Northeastern Highlands, the mountainous northern-hardwood region spanning western Maine, New Hampshire, Vermont, and the Adirondacks, hold 2.99 million acres of true LSOG at a 12.5% rate, more than the rest of the region combined. The Northern Allegheny Plateau (0.50 million acres, 9.2%) and the Northeastern Coastal Zone (0.17 million acres, 9.4%) carry intermediate shares. The Acadian Plains and Hills, the glaciated lowland that is the core of Maine's industrial timberland, carries the lowest share of any major ecoregion at 2.1% (0.19 million acres) despite covering 8.9 million acres of forest. The representation pattern, rather than any single state's aggregate share, is the appropriate target for a regional late-successional strategy.
 
 ---
 
@@ -152,7 +156,7 @@ That live structure is the limiting axis in 84% of failures, and that dead wood 
 
 ### 4.5 Limitations
 
-First, the OG-class precision is low (near-random agreement against Pelz and Seven Islands at the plot level), and we do not over-interpret state-level OG percentages. Second, FIA coordinate fuzzing introduces ~30 m uncertainty at the canopy-height extraction; a Data Use Agreement for true coordinates would tighten dimension 6. Third, the ORNL 2498 product trains on FIA labels, making that comparison a coherence check rather than blind validation. Fourth, the wall-to-wall TreeMap layer is a representative-plot imputation that smooths rare classes, so its area is a lower bound. Fifth, the four-axis continuity criterion depends on the Landsat disturbance record's sensitivity and may under-detect light partial harvest; because it flags any canopy-removing disturbance of any intensity over the satellite era, it is conservative for stands subject to light single-tree selection, and the sensitivity analysis (Section 3.4, Table 11) brackets the resulting range. Sixth, the continuity axis is evaluated at the plot's single coordinate and applied to all conditions on that plot, whereas the structural axes are scored per condition, so a multi-condition plot inherits one continuity call; and the design-based estimator addresses sampling variance but not residual spatial autocorrelation among plots, which a spatially explicit model could incorporate in future work.
+First, the OG-class precision is low (near-random agreement against Pelz and Seven Islands at the plot level), and we do not over-interpret state-level OG percentages. Second, FIA coordinate fuzzing introduces ~30 m uncertainty at the canopy-height extraction; a Data Use Agreement for true coordinates would tighten dimension 6. Third, the ORNL 2498 product trains on FIA labels, making that comparison a coherence check rather than blind validation. Fourth, the wall-to-wall TreeMap layer is a representative-plot imputation that smooths rare classes, so its area is a lower bound. Fifth, the four-axis continuity criterion depends on the Landsat disturbance record's sensitivity and may under-detect light partial harvest; because it flags any canopy-removing disturbance of any intensity over the satellite era, it is conservative for stands subject to light single-tree selection, and the sensitivity analysis (Section 3.4, Table 5) brackets the resulting range. Sixth, the continuity axis is evaluated at the plot's single coordinate and applied to all conditions on that plot, whereas the structural axes are scored per condition, so a multi-condition plot inherits one continuity call; and the design-based estimator addresses sampling variance but not residual spatial autocorrelation among plots, which a spatially explicit model could incorporate in future work.
 
 ### 4.6 Implications for policy
 
@@ -198,27 +202,7 @@ USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS vers
 
 ## Tables
 
-**Table 1.** v5.1 six-dimension structural proxy: dimension definitions and scoring.
-
-| Dim | Variable | Source | 1 point | 2 points |
-|---|---|---|---|---|
-| 1 | Large-tree basal area | FIA trees, DBH >= 20 in | >= 40 ft^2/ac | >= 80 ft^2/ac |
-| 2 | Stand maturity | STDAGE (max DBH fallback) | >= 80 yr (or DBH >= 24 in) | >= 120 yr |
-| 3 | Structural diversity | TPA-weighted SD of DBH | >= 5 in | >= 8 in |
-| 4 | Total stocking | Total live basal area | >= 100 ft^2/ac | >= 150 ft^2/ac |
-| 5 | Deadwood | Standing snag TPA (DBH >= 5 in) | >= 75th pct | >= 90th pct |
-| 6 | Canopy height | Potapov 2021 RH95, 30 m | >= 18 m | >= 25 m |
-
-**Table 2.** Integrated v5.1 LSOG share by state, 2019-2023 panel (design-based, 95% CI).
-
-| State | n plots | Any-LSOG % [95% CI] | OG-class % |
-|---|---|---|---|
-| Maine | 3,125 | 14.1 [12.9, 15.3] | 0.19 |
-| New York | 2,107 | 27.2 [25.2, 29.0] | 1.5 |
-| Vermont | 657 | 28.8 [25.4, 32.3] | 0.30 |
-| New Hampshire | 757 | 31.2 [28.0, 34.3] | 0.66 |
-
-**Table 3.** FIA design-based older-forest area, Maine, 2024 (95% CI) and 2003-2024 trend.
+**Table 1.** FIA design-based older-forest area, Maine, 2024 (95% CI) and 2003-2024 trend.
 
 | Ground criterion | Statewide % [95% CI] | Northern units % [95% CI] | Trend (%/yr) [95% CI] |
 |---|---|---|---|
@@ -227,31 +211,7 @@ USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS vers
 | Stand age >= 150 yr | 0.7 [0.4, 1.0] | 0.6 [0.2, 1.0] | +0.000 [-0.005, 0.006] |
 | Large-tree BA >= 30 ft^2/ac | 12.5 [11.4, 13.7] | 9.8 [8.4, 11.2] | +0.17 [0.15, 0.18] |
 
-**Table 4.** Design-based older forest by axis across the Northeast (2024, % of forestland), showing axes rank states differently.
-
-| State | Stand age >= 120 yr % [95% CI] | Large-tree BA >= 30 ft^2/ac % [95% CI] |
-|---|---|---|
-| Maine | 3.9 [3.3, 4.6] | 12.5 [11.3, 13.6] |
-| New Hampshire | 1.8 [0.9, 2.6] | 37.9 [34.7, 41.0] |
-| Vermont | 1.0 [0.4, 1.6] | 39.1 [35.8, 42.4] |
-| Massachusetts | 1.5 [0.4, 2.5] | 56.1 [51.6, 60.7] |
-| Connecticut | 6.8 [3.8, 9.8] | 57.7 [51.6, 63.8] |
-| Rhode Island | 1.2 [0.0, 3.1] | 47.0 [37.9, 56.1] |
-
-**Table 5.** Dimensionality of LSOG attributes (Maine plots): selected pairwise correlations and PCA variance.
-
-| Attribute pair / component | Value |
-|---|---|
-| Large-tree BA vs large-tree count | r = 0.98 |
-| Large-tree BA vs diameter diversity | r = 0.77 |
-| Large-tree BA vs standing dead BA | r = 0.51 |
-| Large-tree BA vs coarse woody debris | r = 0.48 |
-| Standing dead BA vs coarse woody debris | r = 0.47 |
-| PC1 variance explained | 58.8% |
-| PC1-PC2 cumulative | 72.6% |
-| PC1-PC4 cumulative | 90.8% |
-
-**Table 6.** Four-axis LSOG funnel by state (design-based % of forestland), with the LCMS continuity axis. "% disturbed since 1985" is the share of forest with Landsat-detected stand-replacing or harvest disturbance in the LCMS record.
+**Table 2.** Four-axis LSOG funnel by state (design-based % of forestland), with the LCMS continuity axis. "% disturbed since 1985" is the share of forest with Landsat-detected stand-replacing or harvest disturbance in the LCMS record.
 
 | State | >= 1 axis | >= 2 axes | >= 3 axes | true LSOG (all 4) [95% CI] | A4 continuity alone | % disturbed since 1985 |
 |---|---|---|---|---|---|---|
@@ -260,7 +220,7 @@ USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS vers
 | Vermont | 95.6 | 77.5 | 44.6 | 15.2 [12.7, 17.6] | 67.4 | 34.7 |
 | New York | 94.4 | 69.8 | 37.9 | 12.2 [11.1, 13.4] | 70.1 | 31.7 |
 
-**Table 7.** Cross-map any-LSOG area and agreement over the study area.
+**Table 3.** Cross-map any-LSOG area and agreement over the study area.
 
 | Method | Any-LSOG (% area) | vs Hagan: kappa | vs Hagan: Jaccard |
 |---|---|---|---|
@@ -270,28 +230,7 @@ USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS vers
 | 3-way agreed footprint | 21.0 | | |
 | Ensemble: high-uncertainty pixels | 24.3 | | |
 
-**Table 8.** LSOG occurrence rate by harvest-probability and slope tercile.
-
-| Tercile | LSOG rate by harvest probability % | LSOG rate by slope % |
-|---|---|---|
-| Low | 13.1 | 11.8 |
-| Medium | 24.1 | 21.7 |
-| High | 33.5 | 37.3 |
-
-**Table 9.** Representation of true LSOG (all four axes, LCMS continuity) across forest-type groups, pooled across the four states (design-based).
-
-| Forest-type group | Total forest (K ac) | True LSOG (%) | True LSOG (K ac) |
-|---|---|---|---|
-| Maple/beech/birch (northern hardwood) | 22,995 | 11.6 | 2,676 |
-| Spruce/fir | 7,428 | 2.1 | 153 |
-| Oak/hickory | 4,432 | 6.6 | 294 |
-| White/red/jack pine | 3,387 | 21.2 | 720 |
-| Aspen/birch | 2,527 | 0.6 | 15 |
-| Elm/ash/cottonwood | 1,772 | 0.0 | 0 |
-| Oak/pine | 1,475 | 16.4 | 242 |
-| Other softwood | 258 | 1.8 | 5 |
-
-**Table 10.** Representation of true LSOG across EPA Level III ecoregions, pooled across the four states (design-based; sections with >= 50 K ac of forest).
+**Table 4.** Representation of true LSOG across EPA Level III ecoregions, pooled across the four states (design-based; sections with >= 50 K ac of forest).
 
 | Ecoregion (EPA Level III) | Total forest (K ac) | True LSOG (%) | True LSOG (K ac) |
 |---|---|---|---|
@@ -305,7 +244,7 @@ USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS vers
 | Ridge and Valley | 239 | 6.6 | 16 |
 | Atlantic Coastal Pine Barrens | 188 | 2.1 | 4 |
 
-**Table 11.** Sensitivity of design-based true LSOG (% of forestland, all four axes) to the A4 continuity definition. base = heavy disturbance classes, full 1985-2023 record, 3 x 3 focal buffer; strict_SR = stand-replacing classes only; recent20 = heavy classes but only the last 20 years; local = heavy classes, full record, plot pixel only (no focal); anyloss = any detected loss or stress class. The Maine-lowest ordering holds under every definition.
+**Table 5.** Sensitivity of design-based true LSOG (% of forestland, all four axes) to the A4 continuity definition. base = heavy disturbance classes, full 1985-2023 record, 3 x 3 focal buffer; strict_SR = stand-replacing classes only; recent20 = heavy classes but only the last 20 years; local = heavy classes, full record, plot pixel only (no focal); anyloss = any detected loss or stress class. The Maine-lowest ordering holds under every definition.
 
 | State | base | strict_SR | recent20 | local | anyloss | range |
 |---|---|---|---|---|---|---|
@@ -327,3 +266,72 @@ USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS vers
 **Fig. 4.** FIA design-based older-forest area for Maine, 2003-2024, with 95% CI, showing rising stock against flat total forestland and the gross harvest flux for contrast.
 
 **Fig. 5.** Regional context: integrated v5.1 LSOG share by state with confidence intervals, and the axis decomposition showing that stand age and live structure rank the states differently.
+
+---
+
+## Supplemental Materials
+
+**Table S1.** v5.1 six-dimension structural proxy: dimension definitions and scoring.
+
+| Dim | Variable | Source | 1 point | 2 points |
+|---|---|---|---|---|
+| 1 | Large-tree basal area | FIA trees, DBH >= 20 in | >= 40 ft^2/ac | >= 80 ft^2/ac |
+| 2 | Stand maturity | STDAGE (max DBH fallback) | >= 80 yr (or DBH >= 24 in) | >= 120 yr |
+| 3 | Structural diversity | TPA-weighted SD of DBH | >= 5 in | >= 8 in |
+| 4 | Total stocking | Total live basal area | >= 100 ft^2/ac | >= 150 ft^2/ac |
+| 5 | Deadwood | Standing snag TPA (DBH >= 5 in) | >= 75th pct | >= 90th pct |
+| 6 | Canopy height | Potapov 2021 RH95, 30 m | >= 18 m | >= 25 m |
+
+**Table S2.** Integrated v5.1 LSOG share by state, 2019-2023 panel (design-based, 95% CI).
+
+| State | n plots | Any-LSOG % [95% CI] | OG-class % |
+|---|---|---|---|
+| Maine | 3,125 | 14.1 [12.9, 15.3] | 0.19 |
+| New York | 2,107 | 27.2 [25.2, 29.0] | 1.5 |
+| Vermont | 657 | 28.8 [25.4, 32.3] | 0.30 |
+| New Hampshire | 757 | 31.2 [28.0, 34.3] | 0.66 |
+
+**Table S3.** Design-based older forest by axis across the Northeast (2024, % of forestland), showing axes rank states differently.
+
+| State | Stand age >= 120 yr % [95% CI] | Large-tree BA >= 30 ft^2/ac % [95% CI] |
+|---|---|---|
+| Maine | 3.9 [3.3, 4.6] | 12.5 [11.3, 13.6] |
+| New Hampshire | 1.8 [0.9, 2.6] | 37.9 [34.7, 41.0] |
+| Vermont | 1.0 [0.4, 1.6] | 39.1 [35.8, 42.4] |
+| Massachusetts | 1.5 [0.4, 2.5] | 56.1 [51.6, 60.7] |
+| Connecticut | 6.8 [3.8, 9.8] | 57.7 [51.6, 63.8] |
+| Rhode Island | 1.2 [0.0, 3.1] | 47.0 [37.9, 56.1] |
+
+**Table S4.** Dimensionality of LSOG attributes (Maine plots): selected pairwise correlations and PCA variance.
+
+| Attribute pair / component | Value |
+|---|---|
+| Large-tree BA vs large-tree count | r = 0.98 |
+| Large-tree BA vs diameter diversity | r = 0.77 |
+| Large-tree BA vs standing dead BA | r = 0.51 |
+| Large-tree BA vs coarse woody debris | r = 0.48 |
+| Standing dead BA vs coarse woody debris | r = 0.47 |
+| PC1 variance explained | 58.8% |
+| PC1-PC2 cumulative | 72.6% |
+| PC1-PC4 cumulative | 90.8% |
+
+**Table S5.** LSOG occurrence rate by harvest-probability and slope tercile.
+
+| Tercile | LSOG rate by harvest probability % | LSOG rate by slope % |
+|---|---|---|
+| Low | 13.1 | 11.8 |
+| Medium | 24.1 | 21.7 |
+| High | 33.5 | 37.3 |
+
+**Table S6.** Representation of true LSOG (all four axes, LCMS continuity) across forest-type groups, pooled across the four states (design-based).
+
+| Forest-type group | Total forest (K ac) | True LSOG (%) | True LSOG (K ac) |
+|---|---|---|---|
+| Maple/beech/birch (northern hardwood) | 22,995 | 11.6 | 2,676 |
+| Spruce/fir | 7,428 | 2.1 | 153 |
+| Oak/hickory | 4,432 | 6.6 | 294 |
+| White/red/jack pine | 3,387 | 21.2 | 720 |
+| Aspen/birch | 2,527 | 0.6 | 15 |
+| Elm/ash/cottonwood | 1,772 | 0.0 | 0 |
+| Oak/pine | 1,475 | 16.4 | 242 |
+| Other softwood | 258 | 1.8 | 5 |
