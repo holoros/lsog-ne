@@ -1,0 +1,10 @@
+t,driver,rate
+low,harvest probability,13.1
+med,harvest probability,24.1
+high,harvest probability,33.5
+low,slope (cost/logistics),11.8
+med,slope (cost/logistics),21.7
+high,slope (cost/logistics),37.3
+low,disturbance probability,16.9
+med,disturbance probability,18.9
+high,disturbance probability,35
