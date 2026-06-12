@@ -26,3 +26,4 @@ Northeast_LSOG_Project.pptx
 
 # Zenodo-archived LiDAR (kept on Cardinal/Zenodo, too large for git)
 data/zenodo_hagan/AOI_unzipped/
+output_phase31/*.tif
