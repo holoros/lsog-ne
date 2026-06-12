@@ -1,0 +1,113 @@
+const fs=require("fs");
+const {Document,Packer,Paragraph,TextRun,Table,TableRow,TableCell,AlignmentType,HeadingLevel,BorderStyle,WidthType,PageBreak,ImageRun}=require("docx");
+const CW=9360;
+const bd={style:BorderStyle.SINGLE,size:1,color:"000000"}; const bds={top:bd,bottom:bd,left:bd,right:bd};
+// Double-spaced (line:480), 12pt Times (size:24), left-aligned (no justify), per ESA manuscript style.
+const P=(t)=>new Paragraph({spacing:{after:0,line:480},alignment:AlignmentType.LEFT,children:[new TextRun({text:t,size:24,font:"Times New Roman"})]});
+const H=(t)=>new Paragraph({spacing:{before:240,after:0,line:480},children:[new TextRun({text:t,bold:true,size:24,font:"Times New Roman"})]});
+const plain=(t,o={})=>new Paragraph({spacing:{after:0,line:480},...o,children:[new TextRun({text:t,size:24,font:"Times New Roman"})]});
+function cell(t,w,head){return new TableCell({borders:bds,width:{size:w,type:WidthType.DXA},margins:{top:40,bottom:40,left:90,right:90},
+  children:[new Paragraph({spacing:{line:240},children:[new TextRun({text:t,bold:!!head,size:20,font:"Times New Roman"})]})]});}
+function tbl(rows,widths){return new Table({width:{size:CW,type:WidthType.DXA},columnWidths:widths,
+  rows:rows.map((r,ri)=>new TableRow({children:r.map((c,ci)=>cell(c,widths[ci],ri===0))}))});}
+const k=[];
+
+// ---- Title page (no abstract for a Comment) ----
+k.push(new Paragraph({spacing:{after:0,line:480},children:[new TextRun({text:"Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA: Comment",bold:true,size:24,font:"Times New Roman"})]}));
+k.push(plain(""));
+k.push(plain("Aaron R. Weiskittel"));
+k.push(plain("University of Maine, Center for Research on Sustainable Forests, Orono, Maine 04469 USA"));
+k.push(plain("E-mail: aaron.weiskittel@maine.edu"));
+k.push(plain(""));
+k.push(plain("Positionality: the author conducts forest inventory and biometric modeling in Maine and has a professional interest in how forest-inventory information is used in state policy. All analyses use the original authors' archived data and public FIA and remote-sensing data, and all code is openly archived."));
+k.push(plain(""));
+k.push(new Paragraph({spacing:{after:0,line:480},children:[new TextRun({text:"Key words: ",bold:true,size:24,font:"Times New Roman"}),new TextRun({text:"airborne LiDAR; conservation prioritization; design-based estimation; forest inventory and analysis; late-successional and old-growth forest; LSOG; Maine; map uncertainty; old growth; remote sensing.",size:24,font:"Times New Roman"})]}));
+k.push(new Paragraph({children:[new PageBreak()]}));
+
+// ---- Introduction ----
+k.push(H("Introduction"));
+k.push(P("All maps and models are wrong; the useful question is whether they are fit for the decision at hand (Box 1976). That question is acute for late-successional and old-growth (LSOG) forest, a continuous, multidimensional, and partly subjective condition that any classification must force into discrete classes (Gray et al. 2023). Hagan et al. (2026) provide a valuable and timely product: a field-trained, wall-to-wall classification of LSOG across roughly 4.2 million hectares of Maine's unorganized townships from public airborne LiDAR, with archived data and code. I reproduced their random forest exactly from the archived data, obtaining the same out-of-bag accuracy (94.2% versus their 94.1%) and the same leading predictor (canopy cover above 15 m). Nothing here questions the competence or openness of that work, and the authors are candid about its limits, including that airborne LiDAR cannot cleanly separate late-successional from old-growth structure, that the model classifies true old growth correctly only 29.4% of the time, that ingrowth could not be estimated, and that old-forest definitions vary widely."));
+k.push(P("The concern is narrow and methodological. The map is now being used quantitatively, to prioritize roughly $200-300 million in conservation funding under Maine's LD 1529 (Thompson et al. 2026), at a scale to which its stated uncertainties were never propagated. Fitness at those stakes depends on three properties the original analysis did not report: agreement with independent maps, agreement with unbiased ground inventory, and a confidence interval on the quantities taken from the map. This Comment supplies all three using the authors' own data and public inventory over the same area, and then sketches a constructive, repeatable alternative. The aim is to strengthen, not diminish, the use of LiDAR for this purpose. Supporting analyses (regional context, current protection, a multi-method ensemble prototype, a Landsat continuity layer, harvest-probability and terrain drivers, and a carbon comparison) are summarized in the Appendices."));
+
+// ---- 1. accuracy / cross-map ----
+k.push(H("High training accuracy does not produce map agreement"));
+k.push(P("Training accuracy is high for every approach and is not the issue. In the reproduced out-of-bag confusion matrix the model recovers Not-LSOG (95%) and the broad classes well but classifies true old growth correctly only about a quarter of the time (24%, close to the authors' 29.4%), confusing it with late-successional and transitioning forest. The threshold-independent rank ability is high (out-of-bag ROC AUC 0.979), so the classifier ranks well; the difficulty is that the single probability cutoff baked into a delivered map, and the mapped extent it produces, are consequential and rarely reported."));
+k.push(P("The decisive test for policy use is whether independent, equally defensible operationalizations agree on the landscape. I compared three wall-to-wall classifications over the same area on a common 100 m grid: the reproduced Hagan LiDAR classifier; an FIA field-structure class predicted from Potapov (GEDI-calibrated) canopy height (Potapov et al. 2021); and the USFS TreeMap imputation of FIA structural class. They disagree substantially (Table 1, Fig. 1). Any-LSOG covers 21.9% of the area under the reproduced Hagan classifier (close to the authors' reported 19.7%), 14.0% under the canopy-height model, and 7.8% under TreeMap, a 2.5- to 2.8-fold range. The Hagan and canopy-height maps overlap on only about 21% of the hectares either flags (Cohen's kappa 0.21); across all three methods only 21% of the flagged footprint is agreed by all three, and top-priority protected sets selected by different maps overlap on only 16-30% of the ground. Part of any pixel-level disagreement reflects geolocation error among products (spaceborne GEDI alone carries about 10 m; Shannon et al. 2024), which is why I emphasize disagreement in total amount, aggregate to 8 km hexagons in the Appendix, and treat the design-based FIA estimate as the reference. A 20-seed ensemble bounds the reproduced area at 4.23% (SD 0.06), so the disagreement is genuine, not an artifact of reproduction. None of these products is ground truth, including the two I built; the point is that credible operationalizations of the same target disagree by this much, which is the property a single-map prioritization must reckon with."));
+k.push(P("An independently authored product points the same way. The U.S. Forest Service national old-growth inventory (Pelz et al. 2023), built under region-specific structural definitions, agrees only weakly with the field-structure classification on the FIA plots where both apply (National Forest System land across Maine, New Hampshire, New York, and Vermont, n about 925): Cohen's kappa is 0.25 for late-successional-plus-old-growth and 0.12 for any-LSOG. Because Pelz et al. is a third-party product, this addresses the objection that maps disagree only when compared with their own variants."));
+
+// ---- 2. dead wood ----
+k.push(H("What a canopy sensor cannot see"));
+k.push(P("Old growth is defined ecologically by large old trees, structural complexity, and abundant dead wood (Franklin and Van Pelt 2004; Gray et al. 2023). Using the archived plots, I asked how well the eight LiDAR canopy metrics predict these defining attributes by cross-validated R-squared (Table 2). They predict large-tree basal area moderately (R-squared = 0.68) but are largely blind to dead wood: coarse woody debris volume R-squared = 0.20 and standing-dead basal area R-squared = 0.24. This quantifies the authors' own caution: the dead-wood component central to separating late-successional from old-growth structure is the attribute least predictable from canopy metrics, which is why a height- and cover-based classifier registers tall, continuous canopy whether it is produced by an old, complex stand or by a fast-growing 80- to 100-year-old stand. LSOG is therefore better treated as a multidimensional condition (live structure, dead wood, compositional maturity, and temporal continuity) than as a single canopy axis; on the training plots a dominant stand-development gradient explains 59% of the variance among defining attributes, but dead wood forms a partially independent axis (Spearman r about 0.5)."));
+
+// ---- 3. ground baseline ----
+k.push(H("Ground-based inventory: the estimate, with the interval the map omits"));
+k.push(P("The USDA Forest Inventory and Analysis (FIA) program measures forest structure under a probability sample, permitting design-based estimates with sampling-error variance (Stanke et al. 2020). FIA is unbiased for area but, at its plot density, imprecise; it cannot by itself locate the rare small patches a wall-to-wall map can flag, so inventory and map are complementary rather than rival. Using rFIA over all Maine inventory years, older forest by transparent ground criteria is (2024, 95% CI): stand age >= 120 yr, 3.9% [3.3, 4.6] of forestland; and large-tree basal area (trees >= 40 cm dbh exceeding 30 ft-squared/ac), 12.5% [11.4, 13.7] (Table 3). The point estimate brackets the authors' published LS+OGL figure of 3.9%, which is reassuring, but that figure was reported without an interval; the unbiased ground baseline places it in a range of roughly 3.3-4.6%, and that uncertainty is exactly what a $200-300 million prioritization should carry."));
+k.push(P("The design-based series also addresses the loss premise. The map is motivated partly by rapid LSOG loss (reported at 1.37% per year overall and 2.19% on commercial timberland). That figure is a gross harvest flux: it counts mapped LSOG that later shows canopy removal in the Global Forest Watch record and does not net out ingrowth, and its threshold (>30% canopy removal) sweeps in partial harvests that often retain late-successional structure. Over 2003-2024 older forest increased by every ground measure, with confidence intervals excluding zero (stand age >= 120 yr at +0.065% of forestland per year; large-tree basal area at +0.17% per year), while total forestland was essentially flat; on private commercial timberland older forest is 3.3% and also rising. A stock that rises while about 2% of commercial land is cut each year implies that ingrowth exceeds removals, so the reported loss is a gross flux and the net flow is positive. Because the published map covers only the unorganized townships, I clipped the same design-based estimate to the map's exact area-of-interest polygon: within that footprint older forest is also increasing, not declining (stand age >= 120 yr from 3.1 to 4.0%, large-tree basal area from 9.1 to 9.7%, all slopes positive with intervals excluding zero). The statewide trend is therefore not masking a within-townships loss."));
+
+// ---- 4. classification ----
+k.push(H("Toward a repeatable classification of true LSOG"));
+k.push(P("The constructive endpoint is a classification tied to what LSOG actually is and repeatable from transparent FIA measurements. I define true LSOG as forest satisfying four axes: live structure (large-tree basal area >= 30 ft-squared/ac), dead wood (standing-dead basal area >= 5 ft-squared/ac), compositional maturity (>= 50% of live basal area in shade-tolerant, long-lived species), and temporal continuity (no recent cutting and natural stand origin). Each criterion is a deterministic function of FIA records, so the classification yields a design-based area with a confidence interval. Requiring more axes narrows the class sharply: 96% of Maine forestland meets at least one axis, 71% two, 30% three, and only 6.5% [5.6, 7.4] all four (Fig. 2), which sits sensibly between strict age-based old growth (3.9%) and broad canopy LSOG (about 20%). Live structure is the scarcest single axis (12.5%); the thresholds are illustrative and the dead-wood axis (snags only) and continuity axis (treatment codes) are permissive, so 6.5% is best read as an upper bound. Each axis is mappable with an explicit data source (LiDAR for live structure, the Landsat disturbance record for continuity, plots or imputation for dead wood and composition), so the definition has a path to a map calibrated to FIA. The requirement that several axes be met at once is what separates true LSOG from tall, big-treed, or merely mature forest, and is robust to the exact thresholds."));
+
+// ---- 5. implications ----
+k.push(H("Implications and recommendations"));
+k.push(P("Read as what it measures, tall large-tree forest, the classification is a valuable screening tool; read as a map of strict old growth to be protected at high cost, it counts much transitioning and late-successional forest. That breadth is a legitimate, objective-dependent choice rather than an error, but it must be read as such, and local errors run in both directions, with independent field truthing indicating under-classification in parts of western Maine even as the aggregate class is broad. The risk lies less in the map than in its use. Where mapped LSOG sits is also informative and two-sided: it falls disproportionately on high modeled harvest-probability ground (it is merchantable) yet also on steeper, more disturbance-prone terrain that raises cost and logistics (Appendix), so harvest risk is heterogeneous and parcel-specific rather than uniform. An influential but uncertain map may also change behavior ahead of policy; there are anecdotal reports that some landowners may be accelerating harvest in mapped LSOG in anticipation of regulation, which, if real, would be a further reason to attach uncertainty and verify before designation."));
+k.push(P("A single classification, however well trained, is not a sufficient basis for parcel-level expenditures of the magnitude contemplated. Four practices would make it sufficient: benchmark against the design-based FIA estimate; cross-compare against an independent product rather than rely on one classifier, reporting per-pixel agreement and an uncertainty layer (the no-regrets logic of systematic conservation planning, in which the defensible parcels are those prioritized across all designs; Schloss et al. 2024); field-verify a probability sample of prioritized parcels before acquisition (Shamgochian et al. 2025); and report accuracy and uncertainty on every quantity, with the gross harvest flux distinguished from the net stock. These matter most where a map underwrites cost estimates at the scale of the recent statewide assessment (Thompson et al. 2026), whose estimate is computed parcel by parcel from the mapped patches and inherits the map's accuracy and uncertainty directly. None of this argues against mapping LSOG with LiDAR or against conserving older forest in Maine, both of which I support; it argues for using the map within its demonstrated precision."));
+
+k.push(H("Acknowledgments"));
+k.push(P("I thank the authors of the original study for archiving their data and code, which made this Comment possible, and colleagues at the Center for Research on Sustainable Forests for discussion. All analysis code and derived products are archived (Zenodo)."));
+
+// ---- Literature Cited ----
+k.push(H("Literature Cited"));
+const refs=[
+"Box, G. E. P. 1976. Science and statistics. Journal of the American Statistical Association 71:791-799.",
+"Franklin, J. F., and R. Van Pelt. 2004. Spatial aspects of structural complexity in old-growth forests. Journal of Forestry 102:22-28.",
+"Gray, A. N., K. Pelz, G. D. Hayward, T. Schuler, W. Salverson, M. Palmer, C. Schumacher, and C. W. Woodall. 2023. Perspectives: the wicked problem of defining and inventorying mature and old-growth forests. Forest Ecology and Management 546:121350.",
+"Hagan, J. M., B. Shamgochian, M. M. L. Taylor, and J. M. Reed. 2026. Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA. Ecosphere 17:e70670.",
+"Pelz, K. A., G. Hayward, A. N. Gray, E. Berryman, C. Woodall, A. Nathanson, and N. Morgan. 2023. Quantifying old-growth forest of United States Forest Service public lands. Forest Ecology and Management 549:121437.",
+"Potapov, P., X. Li, A. Hernandez-Serna, A. Tyukavina, M. C. Hansen, A. Kommareddy, A. Pickens, S. Turubanova, H. Tang, C. E. Silva, et al. 2021. Mapping global forest canopy height through the fusion of GEDI and Landsat data. Remote Sensing of Environment 253:112165.",
+"Schloss, C. A., D. R. Cameron, B. Franklin, S. A. Morrison, and C. Nolte. 2024. An approach to designing efficient implementation of 30x30 terrestrial conservation commitments. Conservation Science and Practice 6:e13232.",
+"Shamgochian, B., J. Hagan, M. Taylor, and M. Reed. 2025. LSOG Rapid Assessment Protocol (RAP) for Maine. Our Climate Common Report, Georgetown, Maine, USA.",
+"Shannon, E. S., A. O. Finley, D. J. Hayes, S. N. Noralez, A. R. Weiskittel, B. D. Cook, and C. Babcock. 2024. Quantifying and correcting geolocation error in spaceborne LiDAR forest canopy observations using high spatial accuracy data: a Bayesian model approach. Environmetrics 35:e2840.",
+"Stanke, H., A. O. Finley, A. S. Weed, B. F. Walters, and G. M. Domke. 2020. rFIA: an R package for estimation of forest attributes with the FIA database. Environmental Modelling and Software 127:104664.",
+"Thompson, J. R., A. Daigneault, J. Plisinski, I. Moon, and J. Norton. 2026. Pathways for protecting Maine's remaining late-successional and old-growth forests. Property and Environment Research Center, Bozeman, Montana, USA.",
+];
+refs.forEach(r=>k.push(new Paragraph({spacing:{after:0,line:480},indent:{left:360,hanging:360},children:[new TextRun({text:r,size:24,font:"Times New Roman"})]})));
+
+// ---- Tables ----
+k.push(new Paragraph({children:[new PageBreak()]}));
+k.push(plain("Table 1. Wall-to-wall any-LSOG area and pairwise agreement across three independent maps over the study area. The Hagan any-LSOG area is the reproduction (21.9%); the authors report 19.7%."));
+k.push(plain(""));
+k.push(tbl([["Method","any-LSOG (% area)","kappa vs Hagan","Jaccard vs Hagan"],
+["Reproduced Hagan (airborne LiDAR)","21.9","1.00","1.00"],
+["Canopy-height model (GEDI-calibrated)","14.0","0.21","0.16"],
+["TreeMap imputation (30 m)","7.8","0.18","0.13"]],[3360,2160,1920,1920]));
+k.push(plain(""));
+k.push(plain("Table 2. Cross-validated R-squared for predicting ground structural attributes from the eight LiDAR canopy metrics. Dead wood is poorly predicted."));
+k.push(plain(""));
+k.push(tbl([["Structural attribute","CV R-squared from LiDAR"],
+["Large-tree basal area","0.68"],
+["Standing-dead basal area","0.24"],
+["Coarse woody debris volume","0.20"]],[5760,3600]));
+k.push(plain(""));
+k.push(plain("Table 3. FIA design-based older-forest area (2024) with 95% CI and 2003-2024 trend, statewide. Both measures are increasing."));
+k.push(plain(""));
+k.push(tbl([["Domain (ground criterion)","2024 % [95% CI]","Trend %/yr [95% CI]"],
+["Stand age >= 120 yr","3.9 [3.3, 4.6]","+0.065 [0.054, 0.075]"],
+["Large-tree basal area >= 30 ft-squared/ac","12.5 [11.4, 13.7]","+0.17 [0.15, 0.18]"]],[4560,2400,2400]));
+
+// ---- Figure captions ----
+k.push(new Paragraph({children:[new PageBreak()]}));
+k.push(H("Figure captions"));
+k.push(P("Fig. 1. Cross-map disagreement. (a) any-LSOG area by method (about 2.8-fold range); (b) the same window classified by each method; (c) only 21% of the flagged footprint is agreed by all three methods; (d) overlap of top-priority protected hectares between maps (Jaccard 0.16-0.30)."));
+k.push(P("Fig. 2. A repeatable four-axis classification of true LSOG, FIA design-based for Maine. (a) The class narrows from 96% of forestland meeting one axis to 6.5% meeting all four (true LSOG). (b) Each axis alone; live structure (large trees) is scarcest. Error bars are 95% confidence intervals."));
+
+// ---- Figures appended for review convenience (submission supplies separate files) ----
+function figpage(path,w,h,label){return [new Paragraph({children:[new PageBreak()]}),
+  new Paragraph({spacing:{line:240},children:[new TextRun({text:label,size:20,italics:true,font:"Times New Roman"})]}),
+  new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:60},children:[new ImageRun({type:"png",data:fs.readFileSync(path),transformation:{width:w,height:h},altText:{title:label,description:label,name:label}})]})];}
+k.push(...figpage("figs/Fig1_crossmap.png",430,568,"Fig. 1 (separate file at submission)."));
+k.push(...figpage("figs/Fig_classification.png",430,469,"Fig. 2 (separate file at submission)."));
+
+const doc=new Document({styles:{default:{document:{run:{font:"Times New Roman",size:24}}}},
+  sections:[{properties:{page:{size:{width:12240,height:15840},margin:{top:1440,right:1440,bottom:1440,left:1440}}},children:k}]});
+Packer.toBuffer(doc).then(b=>{fs.writeFileSync("Ecosphere_Comment_Hagan_SUBMISSION.docx",b);console.log("WROTE submission manuscript");});
