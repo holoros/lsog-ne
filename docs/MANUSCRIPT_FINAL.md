@@ -54,7 +54,7 @@ We analyzed FIA Phase 2 inventory plots across the Northeastern United States, w
 
 ### 2.2 The six-dimension v5.1 structural proxy
 
-The integrated v5.1 classifier scores each plot on six structural dimensions and aggregates into a 0-12 total (Table S1). Class thresholds are Transitioning LS (TLS) at score >= 4, Late Successional (LS) at >= 6, and Old Growth (OG) at >= 8. Dimensions 1-5 derive from FIA tree and condition tables; dimension 6 derives from the Potapov et al. (2021) GEDI/Landsat 30 m canopy-height mosaic sampled at the plot centroid. The thresholds were calibrated by grid search against two external references, the Hagan et al. (2026) LiDAR classification for Maine's unorganized townships and the ORNL DAAC 2498 mature/old-growth probability layers, and are intentionally tighter than the published RAP v2.0 reference values; an earlier relaxed configuration produced implausibly high regional shares (65-69% in New Hampshire and Vermont) and was rejected. A deadwood-scoring error in an earlier version (snag counts drawn from outside the plot boundary in some cases) was corrected on 19 March 2026; all results here use the corrected classifier.
+The integrated v5.1 classifier scores each plot on six structural dimensions and aggregates into a 0-12 total (Table S1). Class thresholds are Transitioning LS (TLS) at score >= 4, Late Successional (LS) at >= 6, and Old Growth (OG) at >= 8. Dimensions 1-5 derive from FIA tree and condition tables; dimension 6 derives from the Potapov et al. (2021) GEDI/Landsat 30 m canopy-height mosaic sampled at the plot centroid. The thresholds were calibrated by grid search against two external references, the Hagan et al. (2026) LiDAR classification for Maine's unorganized townships and the ORNL DAAC 2498 mature/old-growth probability layers, and are intentionally tighter than the RAP v2.0 reference structural values (Shamgochian et al. 2025, Appendix A: a late-successional class averaging roughly 90 large trees >= 40 cm dbh per hectare, coarse woody material near 80 m^3/ha, and 56% of basal area in trees >= 40 cm); an earlier relaxed configuration produced implausibly high regional shares (65-69% in New Hampshire and Vermont) and was rejected. A deadwood-scoring error in an earlier version (snag counts drawn from outside the plot boundary in some cases) was corrected on 19 March 2026; all results here use the corrected classifier.
 
 ### 2.3 A refined four-axis LSOG classification
 
@@ -148,7 +148,7 @@ Fourth, coordinate fuzzing accounts for much of the apparent plot-level disagree
 
 ### 4.1 Reframing LSOG accounting from a number to a range
 
-The central methodological result is that the honest answer to "how much LSOG" is a range with its definition and its sampling interval attached. The four-axis funnel makes the definitional component explicit: the same Northeastern forest is 6% true LSOG under a four-axis requirement and over 90% under a one-axis continuity requirement. The design-based intervals make the sampling component explicit: Maine older forest is 3.9% [3.3, 4.6] at age >= 120 yr, not a single point. Reporting a single percentage, whatever its source, conceals both. For policy use, the combined LS+OG class is the most stable category across both definitions and products; the OG-only class is genuinely product-specific and should always carry uncertainty bounds.
+The central methodological result is that the honest answer to "how much LSOG" is a range with its definition and its sampling interval attached. The four-axis funnel makes the definitional component explicit: the same Northeastern forest is 6% true LSOG under a four-axis requirement and over 90% under a one-axis continuity requirement. The design-based intervals make the sampling component explicit: Maine older forest is 3.9% [3.3, 4.6] at age >= 120 yr, not a single point. Reporting a single percentage, whatever its source, conceals both. The need for a state-targeted design-based estimate is underscored by the federal mature-and-old-growth threat analysis (USDA and USDI 2024), which could not statistically resolve eastern old growth at the national scale "because there were few or no FIA plots"; a probability sample concentrated on the region of interest, reported with its interval, is the appropriate unit precisely where the resource is rare. For policy use, the combined LS+OG class is the most stable category across both definitions and products; the OG-only class is genuinely product-specific and should always carry uncertainty bounds.
 
 ### 4.2 Why credible maps disagree, and what to do about it
 
@@ -164,7 +164,7 @@ The Northeast functions as a landscape-scale triad in the sense of Seymour and H
 
 ### 4.4 The dead-wood blind spot and the limiting axis
 
-That live structure is the limiting axis in 84% of failures, and that dead wood loads separately from live structure, together explain why canopy- and height-based classifications over-include relative to structural definitions. Such classifiers read tall continuous canopy whether it is produced by an old complex stand or a fast-growing young one, and they are largely blind to the dead-wood component that distinguishes old growth. A classification intended to identify true LSOG, rather than big-tree forest, must measure the dead-wood and continuity axes directly, which is the design rationale for the four-axis definition.
+That live structure is the limiting axis in 84% of failures, and that dead wood loads separately from live structure, together explain why canopy- and height-based classifications over-include relative to structural definitions. Such classifiers read tall continuous canopy whether it is produced by an old complex stand or a fast-growing young one, and they are largely blind to the dead-wood component that distinguishes old growth. A classification intended to identify true LSOG, rather than big-tree forest, must measure the dead-wood and continuity axes directly, which is the design rationale for the four-axis definition. The same blind spot reaches into the field protocol behind the LiDAR map: in the random-forest classifier of the RAP v2.0 rapid-assessment protocol (Shamgochian et al. 2025), large standing dead trees rank last of seventeen metrics in importance and large downed logs thirteenth, while harvest-history evidence (sawn stumps, skid trails) ranks among the strongest predictors. Dead wood is thus under-weighted not only by canopy LiDAR but by the field instrument used to train it, whereas the harvest-history signal it relies on is precisely what an explicit temporal-continuity axis captures from the disturbance record.
 
 ### 4.4a From a single threshold to a multi-objective product
 
@@ -206,17 +206,25 @@ Maine Natural Areas Program and The Nature Conservancy. Ecological Reserve Monit
 
 Potapov, P., X. Li, A. Hernandez-Serna, A. Tyukavina, M.C. Hansen, A. Kommareddy, A. Pickens, S. Turubanova, H. Tang, C.E. Silva, J. Armston, R. Dubayah, J.B. Blair & M. Hofton. 2021. Mapping global forest canopy height through integration of GEDI and Landsat data. Remote Sensing of Environment 253:112165.
 
-Riley, K.L., et al. 2021, 2022. TreeMap: a tree-level model of the forests of the conterminous United States. [VERIFY citation(s).]
+Riley, K.L., I.C. Grenfell, M.A. Finney & J.M. Wiener. 2021. TreeMap, a tree-level model of conterminous US forests circa 2014 produced by imputation of FIA plot data. Scientific Data 8:11. https://doi.org/10.1038/s41597-020-00782-x
+
+Lang, N., W. Jetz, K. Schindler & J.D. Wegner. 2023. A high-resolution canopy height model of the Earth. Nature Ecology & Evolution 7:1778-1789. https://doi.org/10.1038/s41559-023-02206-6
 
 Seymour, R.S. & M.L. Hunter Jr. 1999. Principles of ecological forestry. Pages 22-61 in M.L. Hunter Jr., editor. Maintaining Biodiversity in Forest Ecosystems. Cambridge University Press, Cambridge, UK.
 
 Stanke, H., A.O. Finley, A.S. Weed, B.F. Walters & G.M. Domke. 2020. rFIA: An R package for estimation of forest attributes with the FIA database. Environmental Modelling & Software 127:104664.
 
-Thompson, J.R., A. Daigneault, J. Plisinski, I. Moon & J. Norton. 2026. Pathways for Protecting Maine's Remaining Late-Successional and Old-Growth Forests. Property and Environment Research Center. [VERIFY venue and year.]
+Thompson, J.R., A. Daigneault, J. Plisinski, I. Moon & J. Norton. 2026. Pathways for protecting Maine's remaining late-successional and old-growth forests. Property and Environment Research Center, Bozeman, Montana, USA. 86 pp.
+
+Shamgochian, B., J. Hagan, M. Taylor & M. Reed. 2025. LSOG Rapid Assessment Protocol (RAP) for Maine (v2.0). Our Climate Common, Georgetown, Maine, USA. 36 pp.
+
+USDA Forest Service and U.S. Department of the Interior, Bureau of Land Management. 2023. Mature and old-growth forests: definition, identification, and initial inventory on lands managed by the Forest Service and Bureau of Land Management in fulfillment of Section 2(b) of Executive Order No. 14072. Washington, DC, USA.
+
+USDA Forest Service and U.S. Department of the Interior, Bureau of Land Management. 2024. Mature and old-growth forests: analysis of threats on lands managed by the Forest Service and Bureau of Land Management in fulfillment of Section 2(c) of Executive Order No. 14072. FS-1215c. Washington, DC, USA.
 
 USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS version 2024-10. USDA Forest Service Geospatial Technology and Applications Center, Salt Lake City, UT. https://data.fs.usda.gov/geodata/LCMS/
 
-[ADD: RAP v2.0 protocol reference; Lang et al. 2023 (canopy height); Birdsey regional-carbon synthesis if a verified reference is intended; Adirondack old-growth references for Section 1.4.]
+[REMAINING TO ADD: an Adirondack old-growth reference for Section 1.4; the RAP v2.0 reference is now Shamgochian et al. 2025 (above). The "Birdsey et al." regional-carbon synthesis was not independently verifiable and the text has been written to stand without it.]
 
 ---
 
