@@ -1,0 +1,4 @@
+cutpoint,threshold,sensitivity,specificity,map_prevalence,reserve_detect,bigreed_detect
+0.5 default,0.5,0.599,0.631,0.398,0.367,0.36
+Youden J,0.55,0.533,0.706,0.324,0.323,0.36
+area-matched,0.98,0.359,0.838,0.187,0.209,0.24
