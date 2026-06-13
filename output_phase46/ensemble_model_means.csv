@@ -1,0 +1,7 @@
+model,mean_P
+RF,0.495
+ranger,0.257
+logistic,0.585
+SVM,0.265
+MOSVR,0.259
+ensemble,0.372
