@@ -50,7 +50,7 @@ We make three contributions, each anchored in the FIA probability sample. First,
 
 ### 2.1 Study area and FIA data
 
-We analyzed FIA Phase 2 inventory plots across the Northeastern United States, with the four-state core of Maine, New Hampshire, Vermont, and New York and supplementary estimates for Massachusetts, Connecticut, and Rhode Island. Plots span the 1999-2023 inventory period across five evaluation panels. Sample sizes for the most recent panel (2019-2023) are 3,125 in Maine, 757 in New Hampshire, 657 in Vermont, and 2,107 in New York. FIA plot coordinates are publicly fuzzed up to approximately 1 km to protect landowner privacy; fuzzed coordinates were used for all spatial extractions, and the resulting noise on 30 m raster sampling is discussed in Section 4.6. We assembled a master plot-level analytical table (`output_unified/lsog_ne_plot_table.csv`, 13,432 rows x 32 columns) containing, for each plot-period, state, panel, plot CN, inventory year, fuzzed coordinates, stand age, total and large-tree basal area, TPA-weighted SD of diameter, maximum diameter, snag density, the dimension scores, the v4 and v5.1 classifications, the ORNL DAAC 2498 probability bands (Bruening et al. 2026), and the Potapov (2021) RH95 canopy height at the plot centroid.
+We analyzed FIA Phase 2 inventory plots across the Northeastern United States, with the four-state core of Maine, New Hampshire, Vermont, and New York and supplementary estimates for Massachusetts, Connecticut, and Rhode Island. Plots span the 1999-2023 inventory period across five evaluation panels. Sample sizes for the most recent panel (2019-2023) are 3,125 in Maine, 757 in New Hampshire, 657 in Vermont, and 2,107 in New York. FIA plot coordinates are publicly fuzzed up to approximately 1 km to protect landowner privacy; fuzzed coordinates were used for all spatial extractions, and the resulting noise on 30 m raster sampling is discussed in Section 4.6. We assembled a master plot-level analytical table (`output_unified/lsog_ne_plot_table.csv`, 13,432 rows x 32 columns) containing, for each plot-period, state, panel, plot CN, inventory year, fuzzed coordinates, stand age, total and large-tree basal area, TPA-weighted SD of diameter, maximum diameter, snag density, the dimension scores, the v4 and v5.1 classifications, the ORNL DAAC 2498 probability bands (Bruening et al. 2026), and the Potapov (2021) RH95 canopy height at the plot centroid. The FIA plots and the independent validation datasets used here, the MNAP/TNC ecological reserve network including Big Reed Forest Reserve and the Baxter SFMA continuous forest inventory, are shown in Fig. 1.
 
 ### 2.2 The six-dimension v5.1 structural proxy
 
@@ -140,6 +140,8 @@ Second, a single structural threshold misclassifies low-stature old growth. Unde
 
 Third, the wall-to-wall area is sensitive to the classifier. Refitting the published random forest on its own training data with standard class balancing raises old-growth operating accuracy from 23.5% to 70.6% at negligible cost to overall accuracy (0.87 to 0.84) and nearly doubles the mapped old-growth area (109,000 to 192,000 acres). Fusing our LCMS Landsat-disturbance layer with canopy height improves a balanced wall-to-wall model's discrimination of the structural definition (cross-validated AUC 0.61 to 0.67), but remote-sensing prediction of multi-axis structure remains modest, which reinforces design-based plot estimation, rather than any single map, as the appropriate backbone for area accounting.
 
+Fourth, coordinate fuzzing accounts for much of the apparent plot-level disagreement. Using true FIA plot coordinates rather than the public fuzzed coordinates more than doubles the cross-map agreement between the FIA proxy and the Hagan map (Cohen's kappa 0.13 to 0.29 for any-LSOG on 1,737 plots). Roughly half the plot-level disagreement reported in earlier single-ownership cross-validations therefore reflects the kilometre-scale location error in public FIA data, not genuine classifier disagreement, and the same artifact explains why a sparse, fuzzed inventory appears to "miss" a small reserve like Big Reed.
+
 ---
 
 ## 4. Discussion
@@ -163,6 +165,10 @@ The Northeast functions as a landscape-scale triad in the sense of Seymour and H
 ### 4.4 The dead-wood blind spot and the limiting axis
 
 That live structure is the limiting axis in 84% of failures, and that dead wood loads separately from live structure, together explain why canopy- and height-based classifications over-include relative to structural definitions. Such classifiers read tall continuous canopy whether it is produced by an old complex stand or a fast-growing young one, and they are largely blind to the dead-wood component that distinguishes old growth. A classification intended to identify true LSOG, rather than big-tree forest, must measure the dead-wood and continuity axes directly, which is the design rationale for the four-axis definition.
+
+### 4.4a From a single threshold to a multi-objective product
+
+The mapping problem is multi-objective, and treating it as single-objective is the root of the rare-class failure. A classifier that minimizes one scalar loss attenuates the rare, high-value old-growth class (Section 3.10), and any single probability threshold then trades detection against area: on our balanced canopy-plus-disturbance model, a default 0.5 cut over-predicts (mapped prevalence 40%, exceeding even the original LiDAR map), while calibrating the threshold to the design-based area controls over-prediction only at the cost of sensitivity. No single cutpoint achieves both. Two responses follow. First, the appropriate product is a probability surface, P(LSOG), archived as a 100 m raster, with any binary class calibrated to the design-based area rather than to an arbitrary threshold, so the omission-commission trade-off is explicit and over-prediction is bounded by the unbiased estimate. Second, the estimator itself should be multi-objective: methods that jointly minimize total error and systematic (attenuation) error, such as the multi-objective support vector regression of Legaard et al. (2020), are designed for the rare, high-value tail that single-objective learners suppress, and are a natural direction for mapping LSOG. The four-axis definition is already multi-objective at the structural layer, requiring the axes jointly rather than collapsing them to one optimized score.
 
 ### 4.5 Limitations
 
@@ -191,6 +197,8 @@ Bechtold, W.A. & P.L. Patterson (eds.). 2005. The enhanced Forest Inventory and 
 Bruening, J.M., et al. 2026. Mature and old-growth forest probability maps for the conterminous United States. ORNL DAAC dataset 2498. [VERIFY full author list, title, and citation.]
 
 Hagan, J.M., B. Shamgochian, M.M.L. Taylor & J.M. Reed. 2026. Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA. Ecosphere 17:e70670. [VERIFY citation details against published paper.]
+
+Legaard, K., E. Simons-Legaard & A. Weiskittel. 2020. Multi-objective support vector regression reduces systematic error in moderate resolution maps of tree species abundance. Remote Sensing 12:1739.
 
 Pelz, K.A., G. Hayward, A.N. Gray, E.M. Berryman, C.W. Woodall, A. Nathanson & N.A. Morgan. 2023. Quantifying old-growth forest of United States Forest Service public lands. Forest Ecology and Management 549:121437.
 
@@ -269,7 +277,7 @@ USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS vers
 
 ## Figure Legends
 
-**Fig. 1.** Conceptual four-axis LSOG definition (live structure, dead wood, composition, continuity) and how requiring more axes narrows the qualifying share.
+**Fig. 1.** Datasets used in the analysis over Maine: USDA FIA inventory plots (grey) on their systematic probability grid, the MNAP/TNC ecological reserve monitoring network (teal) including Big Reed Forest Reserve (red), and the Baxter SFMA continuous forest inventory (orange). FIA provides the design-based estimation backbone; the ecological reserves and Baxter SFMA are independent validation references that no map in the comparison used for training.
 
 **Fig. 2.** (a) The four-axis true-LSOG funnel by state: design-based share of forestland passing at least one through all four axes, with the LCMS Landsat continuity axis; true LSOG (all four axes) ranges from 3.1% in Maine to 12-15% in New Hampshire, Vermont, and New York. (b) Share of forest with Landsat-detected stand-replacing or harvest disturbance since 1985, the working-forest signal that makes the continuity axis most limiting in Maine.
 
@@ -278,6 +286,8 @@ USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS vers
 **Fig. 4.** FIA design-based older-forest area for Maine, 2003-2024, with 95% CI, showing rising stock against flat total forestland and the gross harvest flux for contrast.
 
 **Fig. 5.** Regional context: integrated v5.1 LSOG share by state with confidence intervals, and the axis decomposition showing that stand age and live structure rank the states differently.
+
+[Fig. 6 forthcoming: LSOG probability surface for Maine from the refined balanced model (canopy height plus the LCMS Landsat disturbance and continuity layer), archived as a 100 m raster. The probability product is the honest primary map; any binary class should be calibrated to the design-based area rather than an arbitrary threshold, which bounds over-prediction by the unbiased estimate. Render pending a raster-alignment fix.]
 
 ---
 
