@@ -261,16 +261,16 @@ USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS vers
 
 **Table 4.** Representation of true LSOG across EPA Level III ecoregions, pooled across the four states (design-based; sections with >= 50 K ac of forest).
 
-| Ecoregion (EPA Level III) | Total forest (K ac) | True LSOG (%) | True LSOG (K ac) |
+| Ecoregion (EPA Level III) | Total forest (K ac) | True LSOG % [95% CI] | True LSOG (K ac) |
 |---|---|---|---|
-| Northeastern Highlands | 23,883 | 12.5 | 2,990 |
-| Acadian Plains and Hills | 8,887 | 2.1 | 188 |
-| Northern Allegheny Plateau | 5,421 | 9.2 | 497 |
-| Eastern Great Lakes Lowlands | 3,709 | 4.0 | 147 |
-| Northeastern Coastal Zone | 1,851 | 9.4 | 173 |
-| North Central Appalachians | 614 | 8.5 | 52 |
-| Erie Drift Plain | 372 | 8.0 | 30 |
-| Ridge and Valley | 239 | 6.6 | 16 |
+| Northeastern Highlands | 23,883 | 12.5 [11.5, 13.5] | 2,990 |
+| Acadian Plains and Hills | 8,887 | 2.1 [1.4, 2.9] | 188 |
+| Northern Allegheny Plateau | 5,421 | 9.2 [7.1, 11.2] | 497 |
+| Eastern Great Lakes Lowlands | 3,709 | 4.0 [2.3, 5.6] | 147 |
+| Northeastern Coastal Zone | 1,851 | 9.4 [5.9, 12.8] | 173 |
+| North Central Appalachians | 614 | 8.5 [2.2, 14.8] | 52 |
+| Erie Drift Plain | 372 | 8.0 [0.1, 15.8] | 30 |
+| Ridge and Valley | 239 | 6.6 [0.0, 15.5] | 16 |
 | Atlantic Coastal Pine Barrens | 188 | 2.1 | 4 |
 
 **Table 5.** Sensitivity of design-based true LSOG (% of forestland, all four axes) to the A4 continuity definition. base = heavy disturbance classes, full 1985-2023 record, 3 x 3 focal buffer; strict_SR = stand-replacing classes only; recent20 = heavy classes but only the last 20 years; local = heavy classes, full record, plot pixel only (no focal); anyloss = any detected loss or stress class. The Maine-lowest ordering holds under every definition.
