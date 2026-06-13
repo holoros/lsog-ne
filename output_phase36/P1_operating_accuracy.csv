@@ -1,0 +1,4 @@
+model,oob_overall,OG_operating_acc
+unbalanced,0.868,0.235
+balanced (downsample),0.836,0.706
+class-weighted,0.862,0.412
