@@ -198,7 +198,7 @@ Bechtold, W.A. & P.L. Patterson (eds.). 2005. The enhanced Forest Inventory and 
 
 Bruening, J.M., P.B. May, R.O. Dubayah, L. Wertis, C. Quinn, N. Pederson, A.H. Armstrong & B. Poulter. 2026. Mature and old-growth forest probability maps for the conterminous United States. ORNL DAAC, Oak Ridge, Tennessee, USA. Dataset 2498. https://doi.org/10.3334/ORNLDAAC/2498
 
-Hagan, J.M., B. Shamgochian, M.M.L. Taylor & J.M. Reed. 2026. Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA. Ecosphere 17:e70670. [VERIFY citation details against published paper.]
+Hagan, J.M., B. Shamgochian, M.M.L. Taylor & J.M. Reed. 2026. Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA. Ecosphere 17(6):e70670. https://doi.org/10.1002/ecs2.70670
 
 Legaard, K., E. Simons-Legaard & A. Weiskittel. 2020. Multi-objective support vector regression reduces systematic error in moderate resolution maps of tree species abundance. Remote Sensing 12:1739.
 

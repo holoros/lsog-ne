@@ -4,7 +4,7 @@ Aaron R. Weiskittel{1}, [co-authors TBD]
 
 {1} University of Maine, Center for Research on Sustainable Forests, 5755 Nutting Hall, Orono, ME 04469, USA. aaron.weiskittel@maine.edu
 
-Comment on Hagan, J.M., B. Shamgochian, M.M.L. Taylor & J.M. Reed. 2026. Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA. Ecosphere 17:e70670. [VERIFY exact volume/article number/DOI and the published LS+OGL area figure against the final Ecosphere paper; an independent search confirmed the 2024 Our Climate Common report but could not confirm the 2026 Ecosphere citation details.]
+Comment on Hagan, J.M., B. Shamgochian, M.M.L. Taylor & J.M. Reed. 2026. Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA. Ecosphere 17(6):e70670. https://doi.org/10.1002/ecs2.70670. [VERIFY exact volume/article number/DOI and the published LS+OGL area figure against the final Ecosphere paper; an independent search confirmed the 2024 Our Climate Common report but could not confirm the 2026 Ecosphere citation details.]
 
 Ecosphere Comment format: no abstract; <= 16 double-spaced manuscript pages; figures as separate files; tables after Literature Cited.
 
@@ -22,7 +22,7 @@ We write as forest biometricians with a professional interest in how inventory d
 
 ## 2. Training accuracy is high for every approach, and is not the issue
 
-The 463 archived training plots carry both the eight LiDAR canopy metrics and a parallel set of ground structural measurements (live and dead basal area, basal area and number of trees >= 40 cm dbh, quadratic mean diameter, coarse woody debris, and diameter variability). Using these, we estimated cross-validated AUC (repeated stratified five-fold cross-validation, 40 repeats; intervals from the repeat distribution) for three predictor sets against three binary targets (Table 1). Hagan's eight LiDAR metrics discriminate the field classes very well in-sample: AUC 0.990 for any-LSOG, 0.988 for LS+OG, and 0.966 for old growth. A canopy-height-only set and a ground-structure set also perform well for the broad classes. The training data are separable and the published classifier is internally sound; we emphasize this because it is the premise that makes the rest of the argument matter. Two features of Table 1 are nonetheless relevant. For old growth specifically, a canopy-height-only model, which approximates the information a spaceborne canopy-height product carries, is the weakest of the three (AUC 0.910 [0.868, 0.933]), while ground structure is the strongest. And the full LiDAR model's high ranking ability coexists with the operating-point performance the authors report: in their own out-of-bag confusion matrix, only 29.4% of true old-growth plots were classified as old growth. High AUC and low operating accuracy are reconcilable under class imbalance and overlap, but for a map used to select specific hectares, it is operating performance on the rare, high-value class that governs the decision.
+The 463 known-class training hectares carry both the eight LiDAR canopy metrics and a parallel set of ground structural measurements (live and dead basal area, basal area and number of trees >= 40 cm dbh, quadratic mean diameter, coarse woody debris, and diameter variability). Using these, we estimated cross-validated AUC (repeated stratified five-fold cross-validation, 40 repeats; intervals from the repeat distribution) for three predictor sets against three binary targets (Table 1). Hagan's eight LiDAR metrics discriminate the field classes very well in-sample: AUC 0.990 for any-LSOG, 0.988 for LS+OG, and 0.966 for old growth. A canopy-height-only set and a ground-structure set also perform well for the broad classes. The training data are separable and the published classifier is internally sound; we emphasize this because it is the premise that makes the rest of the argument matter. Two features of Table 1 are nonetheless relevant. For old growth specifically, a canopy-height-only model, which approximates the information a spaceborne canopy-height product carries, is the weakest of the three (AUC 0.910 [0.868, 0.933]), while ground structure is the strongest. And the full LiDAR model's high ranking ability coexists with the operating-point performance the authors report: in their own out-of-bag confusion matrix, only 29.4% of true old-growth hectares were classified as old-growth-like. High AUC and low operating accuracy are reconcilable under class imbalance and overlap, but for a map used to select specific hectares, it is operating performance on the rare, high-value class that governs the decision. The point is sharpened by the paper's field validation, which contained no true old-growth sites at all (Hagan et al. 2026, Table 6): the rarest and highest-value class was evaluated only against the authors' own training labels and never field-verified.
 
 This rare-class shortfall reflects the algorithm's handling of class imbalance more than the data. Refitting the published random forest on the archived training data with standard class balancing raises old-growth operating accuracy from 23.5% to 70.6%, at a negligible cost to overall accuracy (0.87 to 0.84), and nearly doubles the mapped old-growth area, from about 109,000 to 192,000 acres, with any-LSOG rising from 21.5% to 32.3% of the study area (Supporting Information). The wall-to-wall area a single classifier reports is therefore sensitive to a routine modeling choice, a further reason it should not by itself anchor parcel-level expenditure.
 
@@ -60,7 +60,7 @@ All analyses, code, and derived products supporting this Comment are archived at
 
 Box, G.E.P. 1976. Science and statistics. Journal of the American Statistical Association 71:791-799.
 
-Hagan, J.M., B. Shamgochian, M.M.L. Taylor & J.M. Reed. 2026. Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA. Ecosphere 17:e70670. [VERIFY citation details against published paper.]
+Hagan, J.M., B. Shamgochian, M.M.L. Taylor & J.M. Reed. 2026. Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA. Ecosphere 17(6):e70670. https://doi.org/10.1002/ecs2.70670. [VERIFY citation details against published paper.]
 
 Lang, N., W. Jetz, K. Schindler & J.D. Wegner. 2023. A high-resolution canopy height model of the Earth. Nature Ecology & Evolution 7:1778-1789.
 
@@ -78,7 +78,7 @@ Thompson, J.R., A. Daigneault, J. Plisinski, I. Moon & J. Norton. 2026. Pathways
 
 ## Tables
 
-**Table 1.** Cross-validated AUC (mean [95% interval]) recovering the field-assigned class from three predictor sets, on the 463 archived training plots.
+**Table 1.** Cross-validated AUC (mean [95% interval]) recovering the field-assigned class from three predictor sets, on the 463 known-class training hectares.
 
 | Target (prevalence) | Hagan 8 LiDAR | Canopy height only | Ground structure |
 |---|---|---|---|
