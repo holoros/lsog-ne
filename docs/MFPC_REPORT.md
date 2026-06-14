@@ -52,7 +52,7 @@ The downstream prioritization delineates its patches and ranks them for acquisit
 
 ### 2.6 A single number without an interval
 
-The mapped area is reported as a single percentage without the sampling interval that any estimate of a rare condition should carry. A routine modeling choice, rebalancing the classifier to better detect the rare old-growth class, nearly doubles the mapped old-growth area, which shows directly that the single headline number should not be taken at face value.
+The mapped area is reported as a single percentage without the sampling interval that any estimate of a rare condition should carry. A menu of standard fixes for rare events, class weighting, balanced sub-sampling, and lowering the voting threshold, raises old-growth detection from about a quarter to over 80 percent and roughly doubles the mapped old-growth area, which shows directly that the single headline number is a modeling choice rather than a fixed quantity and should not be taken at face value.
 
 ### 2.7 The training data are not a representative sample of the landscape
 

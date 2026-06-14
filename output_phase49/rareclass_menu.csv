@@ -1,0 +1,5 @@
+strategy,OG_recall,OG_recall_lo,OG_recall_hi,overall_acc,OG_area_pct
+default (unbalanced),0.235,0.348,0.927,0.868,1.03
+class weighting (classwt),0.294,0.36,0.95,0.86,0.82
+balanced subsample (sampsize/strata),0.706,0.667,1,0.84,1.94
+threshold-adjusted (OG vote >= 0.2),0.824,,,0.868,2.28
