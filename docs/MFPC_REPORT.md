@@ -102,6 +102,96 @@ Report LSOG extent as a method range with design-based sampling intervals, not a
 
 ---
 
+## Appendix: detailed results with 95% confidence intervals
+
+This appendix collects the full quantitative basis for the findings above. Every estimate carries a 95% confidence interval: design-based intervals for the inventory and representation estimates, Wilson intervals for the validation proportions.
+
+**Table A1. Design-based older-forest and LSOG area for Maine, with 95% CI.** From the FIA probability sample (rFIA, post-stratified). The single-axis age and structure criteria are 2024; the multi-axis classes are the 2019-2023 panel.
+
+| Criterion | Maine forestland % [95% CI] |
+|---|---|
+| Stand age >= 100 yr | 12.1 [10.9, 13.2] |
+| Stand age >= 120 yr | 3.9 [3.3, 4.6] |
+| Stand age >= 150 yr | 0.7 [0.4, 1.0] |
+| Large-tree basal area (trees >= 40 cm dbh, >= 30 ft^2/ac) | 12.5 [11.4, 13.7] |
+| Integrated any-LSOG (structural proxy) | 14.1 [12.9, 15.3] |
+| True LSOG, all four axes (incl. Landsat continuity) | 3.1 [2.5, 3.7] |
+
+**Table A2. The four-axis funnel: true LSOG by state, with 95% CI.** Requiring all four axes (live large-tree structure, dead wood, composition, Landsat-verified continuity).
+
+| State | True LSOG % [95% CI] | Integrated any-LSOG % [95% CI] |
+|---|---|---|
+| Maine | 3.1 [2.5, 3.7] | 14.1 [12.9, 15.3] |
+| New Hampshire | 12.8 [10.7, 15.0] | 31.2 [28.0, 34.3] |
+| Vermont | 15.2 [12.7, 17.6] | 28.8 [25.4, 32.3] |
+| New York | 12.2 [11.1, 13.4] | 27.2 [25.2, 29.0] |
+
+**Table A3. Representation of true LSOG by forest-type group (design-based, four states pooled), with 95% CI.**
+
+| Forest-type group | Total forest (K ac) | True LSOG % [95% CI] |
+|---|---|---|
+| Maple/beech/birch (northern hardwood) | 22,995 | 11.6 [10.6, 12.7] |
+| Spruce/fir | 7,428 | 2.1 [1.3, 2.8] |
+| Oak/hickory | 4,432 | 6.6 [4.7, 8.6] |
+| White/red/jack pine | 3,387 | 21.2 [17.2, 25.3] |
+| Aspen/birch | 2,527 | 0.6 [0.0, 1.3] |
+| Elm/ash/cottonwood | 1,772 | 0.0 [0.0, 0.0] |
+| Oak/pine | 1,475 | 16.4 [10.8, 22.0] |
+| Other softwood | 258 | 1.8 [0.0, 5.0] |
+
+**Table A4. Representation of true LSOG by EPA Level III ecoregion (design-based), with 95% CI.**
+
+| Ecoregion | Total forest (K ac) | True LSOG % [95% CI] |
+|---|---|---|
+| Northeastern Highlands | 23,883 | 12.5 [11.5, 13.5] |
+| Acadian Plains and Hills | 8,887 | 2.1 [1.4, 2.9] |
+| Northern Allegheny Plateau | 5,421 | 9.2 [7.1, 11.2] |
+| Eastern Great Lakes Lowlands | 3,709 | 4.0 [2.3, 5.6] |
+| Northeastern Coastal Zone | 1,851 | 9.4 [5.9, 12.8] |
+
+**Table A5. Cross-map comparison: three independent remote-sensing operationalizations over the Maine study area.**
+
+| Map | Any-LSOG (% of area) | kappa vs Hagan | kappa vs canopy |
+|---|---|---|---|
+| Hagan airborne LiDAR | 21.9 | -- | 0.22 |
+| Potapov/GEDI spaceborne canopy height | 14.0 | 0.22 | -- |
+| ORNL old-growth stratum (Bruening) | 36.1 | -0.02 | -0.07 |
+| Agreed by all three (% of flagged area) | 2.7 | | |
+
+**Table A6. Rare-class remedies for the reproduced Hagan random forest (old growth = rare event).** Old-growth detection and mapped area both move sharply, confirming the headline area is a modeling choice.
+
+| Strategy | OG detection (recall) | Mapped OG area (%) |
+|---|---|---|
+| Default, unbalanced | 0.24 | 1.0 |
+| Class weighting | 0.29 | 0.8 |
+| Balanced sub-sampling | 0.71 | 1.9 |
+| Voting-threshold adjustment | 0.82 | 2.3 |
+
+**Table A7. Independent validation against field reserves, with Wilson 95% CI.** Our four-axis structural criteria versus the reproduced Hagan map at the same coordinates.
+
+| Reference (n plots) | Our criteria % [95% CI] | Hagan map % [95% CI] |
+|---|---|---|
+| Big Reed Forest Reserve (25) | 72 [52, 86] | 80 [61, 91] |
+| Ecological reserve network (819) | 67 [64, 70] | 57 [54, 60] |
+| Baxter SFMA, large-tree axis (90) | 98 [92, 99] | -- |
+| Baxter SFMA, continuity axis (90) | 82 [73, 89] | -- |
+| Baxter SFMA, Hagan LSOG (90) | -- | 57 [46, 66] |
+
+**Table A8. Final robustness summary: each headline conclusion and the stress it survives.**
+
+| Conclusion | Stress applied | Result | Robust |
+|---|---|---|---|
+| Maine carries the lowest LSOG share | thresholds, drop canopy dimension, FIA panels | lowest in 8 of 9 tests | yes |
+| True LSOG is rare (3 to 5% in Maine) | five continuity definitions | 3.1 to 5.2% | yes |
+| Credible maps disagree | three independent RS products | 1.6 to 2.6 fold | yes |
+| Half the cross-map disagreement is geolocation | fuzzed vs true coordinates | kappa 0.13 to 0.29 | yes |
+| Rare-class detection and area are choice-driven | four RF strategies | recall 0.24 to 0.82; area 1.0 to 2.3% | yes |
+| Model structure dominates map uncertainty | five-learner ensemble | mean P 0.26 to 0.59, SD 0.18 | quantified |
+| Canopy height drives the signal | Sobol indices | first-order ~1.0 | yes |
+| Both maps detect most reserve old growth | reserve/Big Reed/Baxter validation | see Table A7 | yes |
+
+---
+
 ## 7. Methods and data availability
 
 Estimates use design-based, post-stratified FIA estimation (Bechtold and Patterson 2005; rFIA, Stanke et al. 2020) over all available inventory years for Maine, New Hampshire, Vermont, and New York. The four-axis classification combines FIA tree- and condition-level structure with a temporal-continuity axis derived from the USFS Landscape Change Monitoring System (LCMS) Landsat disturbance record, 1985 to 2023. The cross-map assessment compares a reproduced airborne-LiDAR classifier, a Potapov GEDI-calibrated spaceborne canopy-height model, and the ORNL national old-growth product on a common 100 meter grid. The multi-model probability surface ensembles five learners and reports across-model uncertainty, with global sensitivity quantified by variance-based Sobol indices. All code and derived products are openly archived (Zenodo concept DOI 10.5281/zenodo.20614496). No FIA plot coordinates are released; all products are derived rasters or aggregate summary tables.
