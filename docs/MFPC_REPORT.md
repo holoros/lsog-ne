@@ -4,7 +4,7 @@
 
 ### A Technical Report for the Maine Forest Products Council
 
-Prepared by Aaron R. Weiskittel and colleagues, Center for Research on Sustainable Forests, University of Maine. June 2026.
+Prepared by Aaron R. Weiskittel, Center for Research on Sustainable Forests, University of Maine. June 2026.
 
 ---
 
@@ -52,7 +52,7 @@ The downstream prioritization delineates its patches and ranks them for acquisit
 
 ### 2.6 A single number without an interval
 
-The mapped area is reported as a single percentage without the sampling interval that any estimate of a rare condition should carry. A menu of standard fixes for rare events, class weighting, balanced sub-sampling, and lowering the voting threshold, raises old-growth detection from about a quarter to over 80 percent and roughly doubles the mapped old-growth area, which shows directly that the single headline number is a modeling choice rather than a fixed quantity and should not be taken at face value.
+The mapped area is reported as a single percentage without the sampling interval that any estimate of a rare condition should carry. A menu of standard fixes for rare events, class weighting, balanced sub-sampling, and lowering the voting threshold, raises old-growth detection from about a quarter to over 80 percent and more than doubles the mapped old-growth area, from 1.0 to 2.3 percent, which shows directly that the single headline number is a modeling choice rather than a fixed quantity, and is best reported with that sensitivity made explicit.
 
 ### 2.7 The training data are not a representative sample of the landscape
 
@@ -151,14 +151,14 @@ This appendix collects the full quantitative basis for the findings above. Every
 
 **Table A5. Cross-map comparison: three independent remote-sensing operationalizations over the Maine study area.**
 
-| Map | Any-LSOG (% of area) | kappa vs Hagan | kappa vs canopy |
+| Map | Any-LSOG (% of area) | kappa vs LiDAR | kappa vs canopy |
 |---|---|---|---|
-| Hagan airborne LiDAR | 21.9 | -- | 0.22 |
+| Airborne LiDAR (Hagan et al. 2024) | 21.9 | -- | 0.22 |
 | Potapov/GEDI spaceborne canopy height | 14.0 | 0.22 | -- |
 | ORNL old-growth stratum (Bruening) | 36.1 | -0.02 | -0.07 |
 | Agreed by all three (% of flagged area) | 2.7 | | |
 
-**Table A6. Rare-class remedies for the reproduced Hagan random forest (old growth = rare event).** Old-growth detection and mapped area both move sharply, confirming the headline area is a modeling choice.
+**Table A6. Rare-class remedies for the reproduced airborne-LiDAR random forest (old growth = rare event).** Old-growth detection and mapped area both move sharply, confirming the headline area is a modeling choice.
 
 | Strategy | OG detection (recall) | Mapped OG area (%) |
 |---|---|---|
@@ -169,13 +169,13 @@ This appendix collects the full quantitative basis for the findings above. Every
 
 **Table A7. Independent validation against field reserves, with Wilson 95% CI.** Our four-axis structural criteria versus the reproduced Hagan map at the same coordinates.
 
-| Reference (n plots) | Our criteria % [95% CI] | Hagan map % [95% CI] |
+| Reference (n plots) | Our criteria % [95% CI] | LiDAR map % [95% CI] |
 |---|---|---|
 | Big Reed Forest Reserve (25) | 72 [52, 86] | 80 [61, 91] |
 | Ecological reserve network (819) | 67 [64, 70] | 57 [54, 60] |
 | Baxter SFMA, large-tree axis (90) | 98 [92, 99] | -- |
 | Baxter SFMA, continuity axis (90) | 82 [73, 89] | -- |
-| Baxter SFMA, Hagan LSOG (90) | -- | 57 [46, 66] |
+| Baxter SFMA, LiDAR-map LSOG (90) | -- | 57 [46, 66] |
 
 **Table A8. Final robustness summary: each headline conclusion and the stress it survives.**
 

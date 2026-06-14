@@ -1,10 +1,13 @@
 # Phase 51: refined definitive LSOG map. Smoother Maine outline, and the named
 # reference reserves Hagan-style work focuses on overlaid: the MNAP/TNC ecological
 # reserve network, Baxter State Park CFI, and Big Reed Forest Reserve labeled.
-suppressPackageStartupMessages({ library(terra) }); terraOptions(memfrac=0.6)
+suppressPackageStartupMessages({ library(terra); library(maps); library(sf) }); terraOptions(memfrac=0.6)
 B<-"/users/PUOM0008/crsfaaron/LSOG"; OUT<-file.path(B,"output_phase46")
 SHP<-file.path(B,"data/validation_restricted/shp")
 log<-function(...) {cat(sprintf(...),"\n"); flush.console()}
+## real Maine state outline + county boundaries from the maps package
+me_state<-vect(st_as_sf(maps::map("state","maine",plot=FALSE,fill=TRUE))); crs(me_state)<-"EPSG:4326"
+me_cty  <-vect(st_as_sf(maps::map("county","maine",plot=FALSE,fill=TRUE)));  crs(me_cty)<-"EPSG:4326"
 emean<-rast(file.path(OUT,"ENSEMBLE_mean_P_100m.tif")); names(emean)<-"P"
 esd  <-rast(file.path(OUT,"ENSEMBLE_sd_P_100m.tif"));   names(esd)<-"SD"
 res<-project(vect(file.path(SHP,"MNAP_TNC_reserves.shp")), crs(emean))
@@ -13,9 +16,8 @@ fia<-project(vect(file.path(SHP,"FIA_ME_true.shp")),       crs(emean))
 bigreed<-res[res$EcoRName=="Big Reed Forest Reserve",]
 log("reserves=%d  baxter=%d  bigreed plots=%d", nrow(res), nrow(bax), nrow(bigreed))
 
-## smoother Maine outline from FIA + reserve + baxter points
-allpts<-rbind(fia[,0], res[,0], bax[,0])
-hull<-buffer(hull(aggregate(allpts), type="concave_ratio", param=0.62, allowHoles=FALSE), 1500)
+## clip to the real Maine state boundary; overlay county lines
+hull<-project(me_state, crs(emean)); cty<-project(me_cty, crs(emean))
 cl<-function(r) mask(crop(r,hull),hull)
 pc<-cl(emean); uc<-cl(esd)
 sv<-values(esd,mat=FALSE); sv<-sv[is.finite(sv)]
@@ -24,11 +26,11 @@ brc<-crds(centroids(aggregate(bigreed))); baxc<-crds(centroids(aggregate(bax)))
 palP<-colorRampPalette(c("#4575b4","#74add1","#fee090","#f46d43","#a50026"))(100)
 palU<-colorRampPalette(c("#ffffe5","#fee391","#fe9929","#cc4c02","#662506"))(100)
 ovl<-function(){
-  plot(res, add=TRUE, col=NA, border="#08519c", lwd=0.4)
+  lines(cty, col="grey55", lwd=0.35)
   points(res, pch=16, cex=0.18, col="#0b3d91")
   points(bax, pch=17, cex=0.25, col="#b35806")
-  points(bigreed, pch=16, cex=0.35, col="black")
-  lines(hull, col="grey25", lwd=0.8)
+  points(bigreed, pch=16, cex=0.40, col="black")
+  lines(hull, col="grey15", lwd=1.0)
 }
 png(file.path(OUT,"Fig_refined_map.png"), width=2700, height=1850, res=210)
 par(mfrow=c(1,2), mar=c(0.6,0.6,2.4,4.2), xpd=NA)

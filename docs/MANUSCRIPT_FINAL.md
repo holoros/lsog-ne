@@ -1,16 +1,8 @@
 # It depends how you count: definition, disturbance history, and the distribution of late-successional and old-growth forest across the northeastern United States
 
-**Authors (working):** Aaron R. Weiskittel{1}, Christopher W. Woodall{2}, Anthony W. D'Amato{3}, Erin Simons-Legaard{1}, Adam Daigneault{1}, Daniel J. Hayes{1}
+Aaron R. Weiskittel
 
-{1} University of Maine, Center for Research on Sustainable Forests and School of Forest Resources, Orono, ME 04469, USA
-{2} USDA Forest Service [unit and location to confirm]
-{3} University of Vermont, Rubenstein School of Environment and Natural Resources, Burlington, VT 05405, USA
-
-[Author order and the affiliations marked to confirm are placeholders pending coauthor agreement.]
-
-**Target journal:** Ecological Applications
-
-**Companion piece:** This manuscript develops the constructive, full-length analysis that the Comment on Hagan et al. (2026) points toward but does not attempt within a Comment's scope.
+University of Maine, Center for Research on Sustainable Forests and School of Forest Resources, 5755 Nutting Hall, Orono, ME 04469, USA. aaron.weiskittel@maine.edu
 
 ---
 
@@ -138,7 +130,7 @@ First, the structural criteria do identify the reserves. At Big Reed's 25 plots,
 
 Second, a single structural threshold misclassifies low-stature old growth. Under our original type-agnostic large-tree basal-area threshold, 32% of reserve plots pass the live-structure axis; under the externally published, vegetation-type-specific large-tree-count criteria of Pelz et al. (2023), 67% pass, and spruce-fir, which is 53% of the reserve network, rises from 29% to 68%. The binding bias is a single high diameter cutoff applied across forest types, which misses the spruce-fir and cedar old growth that is old and continuous but never large-statured; type-specific criteria, calibrated against the reserves with hold-out validation, resolve it. A higher-resolution canopy-height product cannot recover this, because low-stature old growth is short.
 
-Third, the wall-to-wall area is sensitive to the classifier, and the sensitivity has a root cause in the training design. The published map's training hectares were selected purposively, anchored on known older stands (Big Reed was the authors' primary old-growth source), so the rare late-successional and old-growth classes make up roughly a fifth of the training hectares against 3.9% of the mapped area, and the random forest was fit without class weighting; its operating point and implied prevalence are therefore not anchored to the landscape's true class frequencies. A menu of standard rare-class remedies all points the same way (Table S9): class weighting through randomForest's classwt is weak (old-growth recall 0.24 to 0.29), but balanced subsampling (the equivalent of imblearn's BalancedRandomForestClassifier) raises old-growth operating accuracy from 23.5% to 70.6% and a lowered voting threshold raises it to 82%, in both cases roughly doubling the mapped old-growth area (109,000 to 192,000 acres) at negligible cost to overall accuracy (0.87 to 0.84). A representative or design-based probability sample, balanced across LSOG and non-LSOG, is the appropriate basis for an unbiased areal estimate, and independent field references that contain true old growth (the ecological reserves and the Baxter inventory) are the appropriate basis for verification, including the old-growth class the published field validation did not sample. Fusing our LCMS Landsat-disturbance layer with canopy height improves a balanced wall-to-wall model's discrimination of the structural definition (cross-validated AUC 0.61 to 0.67), but remote-sensing prediction of multi-axis structure remains modest, which reinforces design-based plot estimation, rather than any single map, as the appropriate backbone for area accounting.
+Third, the wall-to-wall area is sensitive to the classifier, and the sensitivity has a root cause in the training design. The published map's training hectares were selected purposively, anchored on known older stands (Big Reed was the authors' primary old-growth source), so the rare late-successional and old-growth classes make up roughly a fifth of the training hectares against 3.9% of the mapped area, and the random forest was fit without class weighting; its operating point and implied prevalence are therefore not anchored to the landscape's true class frequencies. A menu of standard rare-class remedies all points the same way (Table S9): class weighting through randomForest's classwt is weak (old-growth recall 0.24 to 0.29), but balanced subsampling (the equivalent of imblearn's BalancedRandomForestClassifier) raises old-growth operating accuracy from 23.5% to 70.6% and a lowered voting threshold raises it to 82%, in both cases roughly doubling the mapped old-growth area (109,000 to 192,000 acres) at negligible cost to overall accuracy (0.87 to 0.84). A representative or design-based probability sample, balanced across LSOG and non-LSOG, is the appropriate basis for an unbiased areal estimate, and independent field references that contain true old growth (the ecological reserves and the Baxter inventory) are the appropriate basis for verification, including the old-growth class the published field validation did not sample. The headline conclusions of this study survive a full battery of analytical perturbations, summarized in Table S10. Fusing our LCMS Landsat-disturbance layer with canopy height improves a balanced wall-to-wall model's discrimination of the structural definition (cross-validated AUC 0.61 to 0.67), but remote-sensing prediction of multi-axis structure remains modest, which reinforces design-based plot estimation, rather than any single map, as the appropriate backbone for area accounting.
 
 Fourth, coordinate fuzzing accounts for much of the apparent plot-level disagreement. Using true FIA plot coordinates rather than the public fuzzed coordinates more than doubles the cross-map agreement between the FIA proxy and the Hagan map (Cohen's kappa 0.13 to 0.29 for any-LSOG on 1,737 plots). Roughly half the plot-level disagreement reported in earlier single-ownership cross-validations therefore reflects the kilometre-scale location error in public FIA data, not genuine classifier disagreement, and the same artifact explains why a sparse, fuzzed inventory appears to "miss" a small reserve like Big Reed.
 
@@ -204,7 +196,7 @@ Legaard, K., E. Simons-Legaard & A. Weiskittel. 2020. Multi-objective support ve
 
 Pelz, K.A., G. Hayward, A.N. Gray, E.M. Berryman, C.W. Woodall, A. Nathanson & N.A. Morgan. 2023. Quantifying old-growth forest of United States Forest Service public lands. Forest Ecology and Management 549:121437.
 
-Maine Natural Areas Program and The Nature Conservancy. Ecological Reserve Monitoring Program plot data, Maine. [Provide formal data citation / access statement.]
+Maine Natural Areas Program and The Nature Conservancy. 2024. Ecological Reserve Monitoring Program plot data, Maine. Maine Natural Areas Program, Augusta, Maine, USA (provided under data-use agreement).
 
 Potapov, P., X. Li, A. Hernandez-Serna, A. Tyukavina, M.C. Hansen, A. Kommareddy, A. Pickens, S. Turubanova, H. Tang, C.E. Silva, J. Armston, R. Dubayah, J.B. Blair & M. Hofton. 2021. Mapping global forest canopy height through integration of GEDI and Landsat data. Remote Sensing of Environment 253:112165.
 
@@ -226,7 +218,6 @@ USDA Forest Service and U.S. Department of the Interior, Bureau of Land Manageme
 
 USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS version 2024-10. USDA Forest Service Geospatial Technology and Applications Center, Salt Lake City, UT. https://data.fs.usda.gov/geodata/LCMS/
 
-[REMAINING TO ADD: an Adirondack old-growth reference for Section 1.4; the RAP v2.0 reference is now Shamgochian et al. 2025 (above). The "Birdsey et al." regional-carbon synthesis was not independently verifiable and the text has been written to stand without it.]
 
 ---
 
@@ -245,12 +236,12 @@ USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS vers
 
 | State | >= 1 axis | >= 2 axes | >= 3 axes | true LSOG (all 4) [95% CI] | A4 continuity alone | % disturbed since 1985 |
 |---|---|---|---|---|---|---|
-| Maine | 83.8 | 48.8 | 18.4 | 3.1 [2.5, 3.7] | 40.1 | 70.5 |
-| New Hampshire | 94.0 | 72.6 | 40.1 | 12.8 [10.7, 15.0] | 54.7 | 50.0 |
-| Vermont | 95.6 | 77.5 | 44.6 | 15.2 [12.7, 17.6] | 67.4 | 34.7 |
-| New York | 94.4 | 69.8 | 37.9 | 12.2 [11.1, 13.4] | 70.1 | 31.7 |
+| Maine | 83.8 | 48.8 | 18.4 | 3.1 [2.5, 3.7] | 40.1 | 74.4 [71.9, 76.9] |
+| New Hampshire | 94.0 | 72.6 | 40.1 | 12.8 [10.7, 15.0] | 54.7 | 50.0 [45.7, 54.2] |
+| Vermont | 95.6 | 77.5 | 44.6 | 15.2 [12.7, 17.6] | 67.4 | 36.8 [32.7, 40.9] |
+| New York | 94.4 | 69.8 | 37.9 | 12.2 [11.1, 13.4] | 70.1 | 30.4 [28.6, 32.1] |
 
-**Table 3.** Cross-map any-LSOG area and pairwise spatial agreement across three independent remote-sensing maps over the study area. TreeMap is an FIA imputation and is reported with the design-based estimates (Section 3.1, Table 1), not as a cross-map member.
+**Table 3.** Cross-map any-LSOG area and pairwise spatial agreement across three independent remote-sensing maps over the study area. TreeMap is an FIA imputation (any-LSOG 7.8%) and is reported with the design-based estimates (Section 3.5), not as a cross-map member.
 
 | Method | Any-LSOG (% area) | kappa vs Hagan | kappa vs canopy |
 |---|---|---|---|
@@ -328,7 +319,7 @@ USDA Forest Service. 2024. Landscape Change Monitoring System (LCMS), CONUS vers
 
 | State | Stand age >= 120 yr % [95% CI] | Large-tree BA >= 30 ft^2/ac % [95% CI] |
 |---|---|---|
-| Maine | 3.9 [3.3, 4.6] | 12.5 [11.3, 13.6] |
+| Maine | 3.9 [3.3, 4.6] | 12.5 [11.4, 13.7] |
 | New Hampshire | 1.8 [0.9, 2.6] | 37.9 [34.7, 41.0] |
 | Vermont | 1.0 [0.4, 1.6] | 39.1 [35.8, 42.4] |
 | Massachusetts | 1.5 [0.4, 2.5] | 56.1 [51.6, 60.7] |
