@@ -1,0 +1,226 @@
+---
+title: "Ecosphere_code"
+output: html_document
+date: "2026-04-19"
+---
+
+NOTE: This R Markdown document is intended as a reproducible methods companion. It is not expected to be knitted end‑to‑end on most systems due to computational demands and data volume.
+
+Required files:
+- hectare grid covering AOI ("AOI_LiDAR_stats.shp")
+- Training data ("Maine_training_data.csv")
+
+Step 0: Install and load packages 
+
+0.1: Install packages (run these commands only once)
+
+```{r}
+#install packages
+install.packages("raster")
+install.packages("terra")
+install.packages("lidR")
+install.packages("sp")
+install.packages("doParallel")
+install.packages("foreach")
+install.packages("doFuture")
+install.packages("tidyverse")
+install.packages("sf")
+install.packages("stringr")
+install.packages("randomForest")
+```
+
+0.2: Load packages (run these commands every time you open a new session)
+
+```{r}
+#read in packages (run a session is opened)
+library(raster)
+library(terra)
+library(lidR)
+library(sp)
+library(doParallel)
+library(foreach)
+library(doFuture)
+library(tidyverse)
+library(sf)
+library(stringr)
+library(randomForest)
+```
+
+Step 1: LiDAR metric generation
+
+NOTE 1: The text and code below describes how we processed the LiDAR data to generate our 8 canopy metrics for each hectare in the 4.2 million hectare AOI. These data are very large and providing them here would be practically impossible. These data are, however, publicly available and the steps below describe how to generate these metrics. The product of step 1 (a shapefile containing the 8 LiDAR metrics for each hectare in the AOI) has been provided which will allow users to complete steps 2 and 3.
+
+NOTE 2: For some initial data wrangling, the authors used ArcGIS Pro instead of R because it is more memory efficient and allowed for faster processing of some large spatial data. The authors have noted where ArcGIS Pro was used in steps 1.1-1.6.
+
+1.1: Download LiDAR data from https://apps.nationalmap.gov/lidar-explorer/#/
+
+1.2: Generate a 1 meter resolution canopy height model (CHM) in ".tif" format. Filter out points higher than 40 meters and lower than 0 meters. The authors conducted this step in ArcGIS Pro.
+
+1.3: Generate a fishnet hectare grid covering the state of Maine in ".shp" format. Populate an FID field. The authors conducted this step in ArcGIS Pro.
+
+1.4: Select only hectares of the grid that are within or overlap with the AOI. The authors conducted this step in ArcGIS Pro using the "select by location" tool with relationship "intersect" with AOI shapefile layer, then exported selected data to ".shp" format named "hectare_grid_AOI.shp".
+
+1.5: in ArcGIS Pro, clip the CHM to the hectare_grid_AOI polygon so that you're working with smaller files. Name this file "ME_CHM.tif"
+
+1.6: Read the raster CHM and hectare grid shapefile into R. Ensure all projections are the same.
+
+```{r}
+#read in CHM
+chm<-rast("C:/Maine_LSOG/data/ME_CHM.tif")
+
+#read in AOI grid
+AOI_grid<-st_read("C:/Maine_LSOG/data/hectare_grid_AOI.shp")
+
+#ensure that AOI grid and CHM share the same coordinate system
+AOI_grid<-st_transform(AOI_grid,crs = crs(chm))
+```
+
+1.7: Calculate the 8 LiDAR metrics for each of the 4.2 million hectares of the AOI using a foreach loop. This loop runs using parallel processing in which calculations run concurrently on individual computer cores. The more cores used, the faster the process. This can take many hours or even days depending on the number of cores used. Your computer's capabilities may require you to split the calculation into smaller chunks. The authors divided the data into equal thirds for more manageable processing.
+
+```{r}
+#define how many cores you want to use
+UseCores <- 20
+
+#register CoreCluster
+cl<- makeCluster(UseCores)
+registerDoParallel(cl)  
+
+#set number of iterations
+iterations<-nrow(AOI_grid)
+
+#save start time. (for the authors, using 20 cores, this process took about 18 hours)
+start<-Sys.time()
+
+#run the loop. Once this loop finishes, the data will be saved as object "data" with 9 columns (FID, mean_cano_ht, max_cano_ht, percentile_95th, rumple, top_rugosity, cano_cover_2, cano_cover_6, cano_cover_15) and 4.2 million rows.
+data<-foreach(i=1:iterations,.packages = c("raster", "doParallel","sp","sf","lidR"), .combine='rbind') %dopar% {
+  
+  #selected i-th hectare of AOI_grid
+  hectare_i<-AOI_grid[i,] 
+  
+  #save FID number
+  FID<-hectare_i$FID
+  
+  #crop chm to hectare_i
+  croppedraster<-crop(chm,hectare_i)
+  
+  #mask chm to hectare_i
+  maskedraster<-mask(croppedraster,hectare_i) 
+
+  #mean cano height
+  mean_cano_ht <- mean(maskedraster@data@values, na.rm = TRUE)
+
+  #max cano height
+  max_cano_ht <- max(maskedraster@data@values, na.rm=TRUE)
+ 
+  #95th percentile
+  percentile_95th<-as.numeric(quantile(maskedraster@data@values, probs = c(.95),na.rm=TRUE))
+
+  #rumple
+  rumple <- rumple_index(maskedraster)
+ 
+  #top rugosity (SD of first return heights)
+  top_rugosity <- sd(maskedraster@data@values, na.rm = TRUE)
+ 
+  #cover fractions: step one - calculate the total number of non-NA cells in hectare
+  cano_all<- which(maskedraster@data@values >= 0)
+  
+  #cano cover 2m (number of first returns above 2m/total number of first returns)
+  cano_2<- which(maskedraster@data@values > 2)
+  cano_cover_2<-length(cano_2)/length(cano_all)
+ 
+  #cano cover 6m (number of first returns above 6m/total number of first returns)
+  cano_6<- which(maskedraster@data@values > 6)
+  cano_cover_6<-length(cano_6)/length(cano_all)
+ 
+  #cano cover 15m (number of first returns above 15m/total number of first returns)
+  cano_15<- which(maskedraster@data@values > 15)
+  cano_cover_15<-length(cano_15)/length(cano_all)
+
+  return(list(FID,mean_cano_ht,max_cano_ht,percentile_95th,rumple,top_rugosity,cano_cover_2,cano_cover_6,cano_cover_15)) 
+}
+
+#end cluster
+stopCluster(cl)
+
+#save end time
+end<-Sys.time()
+
+#calculate total time
+end-start
+
+#write data to ".csv" file
+write.csv(data,"C:/your/path/AOI_stats.csv")
+```
+
+Step 2: Model development
+
+NOTE: each RandomForest model run is stochastic, so you may get a slightly different model than the authors.
+
+2.1: Read in training data and filter to include only LSOG class and the 8 LiDAR metrics
+
+```{r}
+#load model training data
+training_data_full<-read.csv("C:/your/path/Maine_training_data.csv")
+
+#check names
+names(training_data_full)
+
+#subset to 9 columns (LSOG class and the 8 LiDAR metrics)
+training_data<-training_data_full[c(1,3:10)]
+
+#set LSOG class as a factor
+training_data$LSOG_class<-as.factor(training_data$LSOG_class)
+```
+
+2.2: Train RandomForest model
+
+```{r}
+#create model
+rf_m1<-randomForest(LSOG_class~., data=training_data, mtry=2, proximity=TRUE, ntree=500)
+
+#check overall error rate and confusion matrix
+print(rf_m1)
+
+#look at variable importance
+varImpPlot(rf_m1)
+
+#save model
+saveRDS(rf_m1,"C:/your/path/LSOG_model.rds")
+```
+
+Step 3: Spatial prediction
+
+3.1: Read in LiDAR stats for 4.2 million hectares
+
+```{r}
+#read in using file
+AOI_LiDAR_stats<-st_read("C:/your/path/AOI_LiDAR_stats.shp")
+
+#names abbreviated due to file format. Apply full names
+names(AOI_LiDAR_stats)[2:9]<-c("mean_cano_ht","max_cano_ht","percentile_95th","rumple","top_rugosity","cano_cover_2","cano_cover_6","cano_cover_15")
+
+#check names
+names(AOI_LiDAR_stats)
+
+#pull out just the LiDAR stats in dataframe format
+just_LiDAR_stats<-as.data.frame((AOI_LiDAR_stats)[2:9])
+
+#drop "geometry" field
+just_LiDAR_stats<-just_LiDAR_stats[1:8]
+```
+
+3.2: Apply LSOG model to AOI
+
+```{r}
+#apply model
+m1_predictions<-predict(rf_m1, just_LiDAR_stats)
+
+#merge with AOI_LiDAR_stats to add back spatial data component. Predictions are merged by row order, which is preserved throughout processing
+AOI_predictions<-cbind(AOI_LiDAR_stats,m1_predictions)
+
+#change name to "LSOG_class
+names(AOI_predictions)[10]<-"LSOG_class"
+
+#write to file: note that column names over 10 characters will be truncated. To prevent this, you can write to .gpkg format which retains full column names. e.g., st_write(AOI_predictions, "C:/your/path/AOI_predictions.gpkg")
+st_write(AOI_predictions, "C:/your/path/AOI_predictions.shp")
+```

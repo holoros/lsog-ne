@@ -1,0 +1,1076 @@
+Plot_ID,res,g,ours_orig,ours_pelz,hag_code,hag_lsog,in_hag
+9,Bigelow,spruce-fir,1,1,2,1,1
+10,Bigelow,spruce-fir,0,0,3,1,1
+11,Bigelow,maple-beech-birch,0,0,2,1,1
+12,Salmon Brook Lake,spruce-fir,1,1,,0,0
+13,Salmon Brook Lake,spruce-fir,1,1,,0,0
+14,Salmon Brook Lake,spruce-fir,0,1,,0,0
+15,Salmon Brook Lake,spruce-fir,0,0,,0,0
+16,Salmon Brook Lake,spruce-fir,0,1,,0,0
+17,Salmon Brook Lake,spruce-fir,1,1,,0,0
+18,Salmon Brook Lake,spruce-fir,1,1,,0,0
+20,Salmon Brook Lake,spruce-fir,1,1,,0,0
+21,Salmon Brook Lake,spruce-fir,1,1,,0,0
+22,Salmon Brook Lake,spruce-fir,1,1,,0,0
+23,Salmon Brook Lake,aspen-birch,1,1,,0,0
+24,Salmon Brook Lake,spruce-fir,0,1,,0,0
+25,Salmon Brook Lake,spruce-fir,1,1,,0,0
+26,Salmon Brook Lake,spruce-fir,1,1,,0,0
+27,Spring River Lake,spruce-fir,1,1,3,1,1
+28,Spring River Lake,spruce-fir,1,1,2,1,1
+29,Spring River Lake,spruce-fir,1,1,2,1,1
+30,Spring River Lake,spruce-fir,1,1,2,1,1
+31,Spring River Lake,oak-hickory,0,0,1,0,1
+32,Spring River Lake,spruce-fir,1,1,2,1,1
+33,Spring River Lake,spruce-fir,1,1,2,1,1
+34,Spring River Lake,maple-beech-birch,0,0,1,0,1
+35,Spring River Lake,oak-hickory,1,1,2,1,1
+36,Spring River Lake,oak-hickory,1,1,4,1,1
+37,Spring River Lake,spruce-fir,1,1,2,1,1
+38,Spring River Lake,spruce-fir,0,1,2,1,1
+39,Spring River Lake,spruce-fir,1,1,1,0,1
+40,Spring River Lake,oak-hickory,1,1,4,1,1
+41,Spring River Lake,elm-ash-cottonwood,0,1,2,1,1
+42,Spring River Lake,spruce-fir,0,1,3,1,1
+43,Spring River Lake,maple-beech-birch,1,1,2,1,1
+44,Spring River Lake,oak-hickory,1,1,2,1,1
+45,Spring River Lake,spruce-fir,0,1,2,1,1
+46,Spring River Lake,oak-hickory,0,0,4,1,1
+47,Spring River Lake,spruce-fir,1,1,3,1,1
+48,Spring River Lake,oak-hickory,0,0,1,0,1
+49,Spring River Lake,oak-hickory,0,0,1,0,1
+50,Spring River Lake,oak-hickory,1,1,2,1,1
+51,Spring River Lake,oak-hickory,0,1,1,0,1
+52,Spring River Lake,oak-hickory,1,1,1,0,1
+53,Spring River Lake,aspen-birch,0,0,1,0,1
+54,Spring River Lake,maple-beech-birch,0,0,2,1,1
+55,Spring River Lake,aspen-birch,0,0,1,0,1
+56,Spring River Lake,aspen-birch,0,0,1,0,1
+57,Bigelow,spruce-fir,1,1,4,1,1
+58,Bigelow,maple-beech-birch,0,1,3,1,1
+59,Bigelow,spruce-fir,0,1,2,1,1
+60,Bigelow,spruce-fir,1,1,2,1,1
+61,Bigelow,maple-beech-birch,0,0,2,1,1
+62,Bigelow,spruce-fir,1,1,2,1,1
+63,Bigelow,maple-beech-birch,1,1,4,1,1
+64,Bigelow,maple-beech-birch,1,1,2,1,1
+65,Bigelow,maple-beech-birch,1,1,3,1,1
+66,Bigelow,maple-beech-birch,1,1,3,1,1
+67,Bigelow,maple-beech-birch,0,1,3,1,1
+68,Bigelow,maple-beech-birch,1,1,4,1,1
+69,Bigelow,maple-beech-birch,0,0,2,1,1
+70,Bigelow,maple-beech-birch,1,1,3,1,1
+73,Bigelow,maple-beech-birch,0,1,3,1,1
+74,Bigelow,spruce-fir,1,1,2,1,1
+75,Bigelow,spruce-fir,0,0,2,1,1
+76,Bigelow,spruce-fir,0,0,2,1,1
+77,Bigelow,spruce-fir,1,1,2,1,1
+78,Bigelow,spruce-fir,1,1,3,1,1
+79,Bigelow,maple-beech-birch,0,1,2,1,1
+80,Bigelow,spruce-fir,0,1,2,1,1
+81,Bigelow,pine-softwood,1,1,2,1,1
+82,Bigelow,maple-beech-birch,0,1,3,1,1
+83,Bigelow,maple-beech-birch,0,0,3,1,1
+84,Bigelow,spruce-fir,1,1,2,1,1
+85,Bigelow,spruce-fir,0,1,2,1,1
+86,Bigelow,maple-beech-birch,1,1,3,1,1
+87,Bigelow,spruce-fir,0,0,2,1,1
+88,Bigelow,aspen-birch,0,1,2,1,1
+89,Bigelow,spruce-fir,1,1,2,1,1
+90,Bigelow,spruce-fir,1,1,2,1,1
+91,Bigelow,spruce-fir,0,1,3,1,1
+92,Bigelow,spruce-fir,1,1,1,0,1
+93,Bigelow,spruce-fir,1,1,1,0,1
+94,Bigelow,spruce-fir,1,1,1,0,1
+95,Bigelow,spruce-fir,0,0,1,0,1
+96,Bigelow,spruce-fir,1,1,1,0,1
+97,Bigelow,spruce-fir,1,1,1,0,1
+98,Bigelow,spruce-fir,0,1,1,0,1
+99,Bigelow,spruce-fir,1,1,1,0,1
+100,Bigelow,spruce-fir,1,1,1,0,1
+101,Bigelow,spruce-fir,0,1,1,0,1
+102,Bigelow,spruce-fir,0,0,1,0,1
+103,Bigelow,maple-beech-birch,0,0,2,1,1
+104,Donnell Pond,spruce-fir,0,1,2,1,1
+105,Donnell Pond,spruce-fir,1,1,2,1,1
+106,Donnell Pond,spruce-fir,1,1,2,1,1
+107,Donnell Pond,spruce-fir,0,1,2,1,1
+108,Donnell Pond,maple-beech-birch,1,1,1,0,1
+109,Donnell Pond,maple-beech-birch,0,1,2,1,1
+110,Donnell Pond,spruce-fir,0,0,2,1,1
+111,Donnell Pond,spruce-fir,0,1,1,0,1
+112,Donnell Pond,spruce-fir,1,1,1,0,1
+113,Donnell Pond,spruce-fir,1,1,1,0,1
+114,Donnell Pond,aspen-birch,0,0,1,0,1
+115,Donnell Pond,aspen-birch,0,0,1,0,1
+116,Donnell Pond,maple-beech-birch,1,1,2,1,1
+117,Donnell Pond,maple-beech-birch,0,1,1,0,1
+118,Donnell Pond,spruce-fir,0,0,1,0,1
+119,Donnell Pond,spruce-fir,1,1,1,0,1
+120,Donnell Pond,spruce-fir,1,1,3,1,1
+121,Donnell Pond,spruce-fir,1,1,3,1,1
+122,Duck Lake,pine-softwood,1,1,3,1,1
+123,Duck Lake,pine-softwood,1,1,3,1,1
+124,Duck Lake,spruce-fir,1,1,3,1,1
+125,Duck Lake,spruce-fir,1,1,1,0,1
+126,Duck Lake,spruce-fir,0,1,4,1,1
+127,Duck Lake,spruce-fir,1,1,4,1,1
+128,Duck Lake,elm-ash-cottonwood,1,1,1,0,1
+129,Duck Lake,oak-hickory,0,0,1,0,1
+130,Duck Lake,elm-ash-cottonwood,0,0,2,1,1
+131,Duck Lake,elm-ash-cottonwood,0,0,2,1,1
+132,Deboullie,spruce-fir,1,1,1,0,1
+133,Deboullie,aspen-birch,0,0,1,0,1
+134,Deboullie,maple-beech-birch,0,0,3,1,1
+135,Deboullie,spruce-fir,1,1,3,1,1
+136,Deboullie,maple-beech-birch,0,0,3,1,1
+137,Deboullie,spruce-fir,1,1,2,1,1
+138,Deboullie,spruce-fir,1,1,2,1,1
+139,Deboullie,maple-beech-birch,1,1,2,1,1
+140,Deboullie,maple-beech-birch,1,1,2,1,1
+141,Deboullie,aspen-birch,0,0,3,1,1
+142,Deboullie,spruce-fir,1,1,1,0,1
+143,Deboullie,spruce-fir,0,1,1,0,1
+144,Deboullie,aspen-birch,0,1,2,1,1
+145,Deboullie,spruce-fir,1,1,1,0,1
+146,Duck Lake,pine-softwood,0,0,3,1,1
+147,Duck Lake,pine-softwood,0,0,3,1,1
+148,Duck Lake,pine-softwood,0,0,3,1,1
+149,Duck Lake,spruce-fir,1,1,3,1,1
+150,Duck Lake,spruce-fir,1,1,1,0,1
+151,Duck Lake,pine-softwood,1,1,3,1,1
+152,Duck Lake,elm-ash-cottonwood,0,0,3,1,1
+153,Duck Lake,oak-hickory,1,1,3,1,1
+154,Duck Lake,aspen-birch,0,1,3,1,1
+155,Duck Lake,spruce-fir,1,1,3,1,1
+156,Duck Lake,aspen-birch,0,1,3,1,1
+157,Duck Lake,aspen-birch,0,1,3,1,1
+158,Duck Lake,spruce-fir,1,1,3,1,1
+159,Duck Lake,maple-beech-birch,1,0,3,1,1
+160,Duck Lake,aspen-birch,1,1,3,1,1
+161,Duck Lake,aspen-birch,1,1,3,1,1
+162,Rocky Lake,aspen-birch,0,0,3,1,1
+163,Rocky Lake,oak-hickory,0,1,2,1,1
+164,Rocky Lake,spruce-fir,1,1,1,0,1
+165,Rocky Lake,spruce-fir,0,0,2,1,1
+166,Deboullie,spruce-fir,0,1,2,1,1
+167,Deboullie,spruce-fir,1,1,2,1,1
+168,Deboullie,spruce-fir,1,1,2,1,1
+169,Deboullie,maple-beech-birch,1,1,2,1,1
+170,Deboullie,spruce-fir,1,1,2,1,1
+171,Deboullie,spruce-fir,1,1,3,1,1
+172,Deboullie,spruce-fir,1,1,2,1,1
+173,Deboullie,maple-beech-birch,0,0,2,1,1
+174,Deboullie,spruce-fir,0,0,2,1,1
+175,Rocky Lake,spruce-fir,0,1,1,0,1
+176,Rocky Lake,aspen-birch,0,0,1,0,1
+178,Rocky Lake,spruce-fir,1,1,1,0,1
+179,Deboullie,spruce-fir,0,1,2,1,1
+180,Deboullie,spruce-fir,0,1,1,0,1
+181,Deboullie,spruce-fir,1,1,1,0,1
+182,Deboullie,maple-beech-birch,0,1,3,1,1
+183,Deboullie,maple-beech-birch,1,1,3,1,1
+184,Deboullie,maple-beech-birch,0,1,2,1,1
+185,Deboullie,maple-beech-birch,0,1,3,1,1
+186,Deboullie,spruce-fir,1,1,2,1,1
+187,Deboullie,spruce-fir,1,1,1,0,1
+188,Deboullie,spruce-fir,1,1,2,1,1
+189,Rocky Lake,spruce-fir,0,0,2,1,1
+190,Rocky Lake,spruce-fir,1,1,1,0,1
+192,Gero Island,spruce-fir,1,1,3,1,1
+193,Gero Island,spruce-fir,1,1,2,1,1
+194,Gero Island,spruce-fir,1,1,3,1,1
+195,Gero Island,spruce-fir,1,1,4,1,1
+196,Gero Island,spruce-fir,1,1,3,1,1
+197,Gero Island,spruce-fir,1,1,2,1,1
+198,Gero Island,spruce-fir,1,1,3,1,1
+199,Gero Island,spruce-fir,1,1,2,1,1
+200,Gero Island,spruce-fir,0,0,1,0,1
+201,Gero Island,spruce-fir,0,0,2,1,1
+202,Gero Island,pine-softwood,1,1,3,1,1
+203,Gero Island,pine-softwood,1,1,2,1,1
+204,Gero Island,spruce-fir,0,1,4,1,1
+205,Gero Island,spruce-fir,0,0,4,1,1
+206,Gero Island,spruce-fir,1,1,1,0,1
+207,Gero Island,spruce-fir,1,1,3,1,1
+208,Gero Island,spruce-fir,1,1,3,1,1
+209,Gero Island,spruce-fir,1,1,3,1,1
+212,Gero Island,spruce-fir,1,1,2,1,1
+213,Gero Island,spruce-fir,1,1,1,0,1
+214,Gero Island,aspen-birch,0,1,4,1,1
+215,Gero Island,spruce-fir,0,0,1,0,1
+216,Gero Island,spruce-fir,1,1,2,1,1
+217,Mt. Abraham,spruce-fir,0,0,1,0,1
+218,Mt. Abraham,spruce-fir,1,1,1,0,1
+219,Mt. Abraham,spruce-fir,1,1,2,1,1
+220,Mt. Abraham,maple-beech-birch,1,1,2,1,1
+221,Mt. Abraham,maple-beech-birch,0,0,1,0,1
+222,Mt. Abraham,spruce-fir,0,0,2,1,1
+223,Mt. Abraham,spruce-fir,1,1,1,0,1
+224,Mt. Abraham,spruce-fir,1,1,3,1,1
+225,Mt. Abraham,spruce-fir,0,0,2,1,1
+226,Mt. Abraham,maple-beech-birch,0,1,2,1,1
+227,Mt. Abraham,spruce-fir,0,0,1,0,1
+228,Mt. Abraham,spruce-fir,1,1,1,0,1
+229,Mt. Abraham,maple-beech-birch,0,0,1,0,1
+230,Mt. Abraham,maple-beech-birch,0,0,2,1,1
+231,Mt. Abraham,maple-beech-birch,0,0,2,1,1
+233,Mt. Abraham,spruce-fir,0,1,,0,0
+234,Mt. Abraham,spruce-fir,0,1,,0,0
+235,Mt. Abraham,spruce-fir,0,0,,0,0
+236,Mt. Abraham,spruce-fir,0,0,,0,0
+237,Mt. Abraham,spruce-fir,1,1,,0,0
+238,Mt. Abraham,spruce-fir,0,0,,0,0
+239,Mt. Abraham,spruce-fir,0,0,,0,0
+240,Mt. Abraham,spruce-fir,0,1,,0,0
+241,Mt. Abraham,spruce-fir,1,1,1,0,1
+242,Mt. Abraham,spruce-fir,0,1,1,0,1
+243,Mt. Abraham,spruce-fir,1,1,1,0,1
+244,Mt. Abraham,spruce-fir,1,1,1,0,1
+245,Mt. Abraham,spruce-fir,0,0,1,0,1
+246,Mt. Abraham,spruce-fir,0,0,,0,0
+247,Mt. Abraham,spruce-fir,0,1,,0,0
+248,Mt. Abraham,spruce-fir,0,1,,0,0
+249,Mt. Abraham,spruce-fir,1,1,,0,0
+250,Cutler,spruce-fir,1,1,,0,0
+251,Cutler,spruce-fir,1,1,,0,0
+252,Cutler,spruce-fir,1,1,,0,0
+253,Cutler,spruce-fir,0,1,,0,0
+254,Cutler,spruce-fir,0,0,,0,0
+255,Appleton Bog,elm-ash-cottonwood,0,0,,0,0
+256,Appleton Bog,spruce-fir,1,1,,0,0
+257,Appleton Bog,pine-softwood,1,1,,0,0
+258,Appleton Bog,spruce-fir,1,1,,0,0
+260,Appleton Bog,spruce-fir,0,0,,0,0
+261,Appleton Bog,spruce-fir,0,0,,0,0
+262,Appleton Bog,spruce-fir,1,1,,0,0
+263,Appleton Bog,spruce-fir,0,0,,0,0
+264,Appleton Bog,elm-ash-cottonwood,0,1,,0,0
+265,Appleton Bog,maple-beech-birch,0,1,,0,0
+266,Appleton Bog,spruce-fir,0,0,,0,0
+267,Appleton Bog,spruce-fir,0,0,,0,0
+268,Appleton Bog,spruce-fir,0,0,,0,0
+269,Appleton Bog,pine-softwood,1,1,,0,0
+270,Appleton Bog,spruce-fir,1,1,,0,0
+271,Appleton Bog,spruce-fir,1,1,,0,0
+272,Debsconeags,spruce-fir,1,1,3,1,1
+273,Debsconeags,spruce-fir,1,1,3,1,1
+274,Debsconeags,spruce-fir,0,1,3,1,1
+275,Debsconeags,spruce-fir,1,1,2,1,1
+276,Debsconeags,spruce-fir,1,1,1,0,1
+277,Debsconeags,spruce-fir,1,1,2,1,1
+278,Debsconeags,spruce-fir,0,0,1,0,1
+279,Debsconeags,spruce-fir,1,1,3,1,1
+280,Debsconeags,maple-beech-birch,0,1,3,1,1
+281,Debsconeags,spruce-fir,1,1,3,1,1
+282,Debsconeags,spruce-fir,1,1,3,1,1
+283,Debsconeags,spruce-fir,1,1,3,1,1
+285,Debsconeags,spruce-fir,1,1,2,1,1
+286,Debsconeags,spruce-fir,1,1,1,0,1
+287,Debsconeags,spruce-fir,0,1,4,1,1
+288,Debsconeags,spruce-fir,1,1,2,1,1
+289,Debsconeags,spruce-fir,1,1,2,1,1
+290,Debsconeags,spruce-fir,1,1,1,0,1
+291,Debsconeags,maple-beech-birch,0,0,2,1,1
+293,Debsconeags,spruce-fir,0,0,1,0,1
+294,Debsconeags,spruce-fir,1,1,3,1,1
+295,Debsconeags,spruce-fir,1,1,3,1,1
+296,Debsconeags,spruce-fir,1,1,2,1,1
+297,Debsconeags,pine-softwood,0,1,1,0,1
+298,Debsconeags,spruce-fir,1,1,2,1,1
+299,Debsconeags,spruce-fir,1,1,2,1,1
+300,Debsconeags,spruce-fir,0,0,2,1,1
+301,Debsconeags,spruce-fir,1,1,3,1,1
+302,Debsconeags,pine-softwood,1,1,3,1,1
+303,Debsconeags,spruce-fir,0,0,3,1,1
+304,Debsconeags,pine-softwood,0,1,1,0,1
+305,Debsconeags,spruce-fir,0,0,1,0,1
+306,Debsconeags,spruce-fir,0,0,2,1,1
+307,Debsconeags,pine-softwood,1,1,4,1,1
+308,Debsconeags,spruce-fir,1,1,1,0,1
+309,Debsconeags,spruce-fir,0,1,1,0,1
+310,Debsconeags,spruce-fir,1,1,1,0,1
+314,Debsconeags,aspen-birch,0,0,1,0,1
+315,Debsconeags,spruce-fir,1,1,1,0,1
+316,Debsconeags,aspen-birch,1,1,1,0,1
+317,Debsconeags,spruce-fir,1,1,3,1,1
+318,Debsconeags,spruce-fir,1,1,2,1,1
+319,Debsconeags,aspen-birch,0,0,1,0,1
+320,Debsconeags,spruce-fir,0,0,2,1,1
+321,Debsconeags,spruce-fir,0,0,2,1,1
+322,Debsconeags,spruce-fir,1,1,3,1,1
+323,Debsconeags,maple-beech-birch,0,0,3,1,1
+324,Debsconeags,maple-beech-birch,0,1,2,1,1
+325,Debsconeags,spruce-fir,1,1,3,1,1
+326,Debsconeags,spruce-fir,1,1,4,1,1
+327,Debsconeags,spruce-fir,0,1,3,1,1
+328,Debsconeags,spruce-fir,0,1,2,1,1
+329,Debsconeags,spruce-fir,1,1,2,1,1
+330,Debsconeags,spruce-fir,1,1,3,1,1
+331,Debsconeags,spruce-fir,1,1,3,1,1
+332,Debsconeags,spruce-fir,0,0,1,0,1
+333,Debsconeags,spruce-fir,0,0,1,0,1
+334,Debsconeags,spruce-fir,1,1,2,1,1
+335,Debsconeags,spruce-fir,0,1,1,0,1
+336,Debsconeags,spruce-fir,0,0,1,0,1
+337,Debsconeags,spruce-fir,1,1,3,1,1
+338,Debsconeags,spruce-fir,1,1,3,1,1
+339,Debsconeags,spruce-fir,1,1,3,1,1
+340,Debsconeags,maple-beech-birch,0,1,3,1,1
+341,Debsconeags,spruce-fir,1,1,2,1,1
+342,Debsconeags,spruce-fir,1,1,4,1,1
+343,Debsconeags,spruce-fir,0,0,2,1,1
+344,Debsconeags,maple-beech-birch,0,1,3,1,1
+345,Debsconeags,spruce-fir,1,1,2,1,1
+346,Debsconeags,spruce-fir,1,1,2,1,1
+347,Debsconeags,aspen-birch,0,1,1,0,1
+348,Debsconeags,spruce-fir,0,1,1,0,1
+349,Debsconeags,spruce-fir,0,0,1,0,1
+350,Debsconeags,spruce-fir,1,1,1,0,1
+351,Debsconeags,maple-beech-birch,0,0,2,1,1
+352,Debsconeags,spruce-fir,0,1,3,1,1
+353,Debsconeags,spruce-fir,1,1,2,1,1
+354,Debsconeags,spruce-fir,0,1,3,1,1
+355,Debsconeags,aspen-birch,0,0,2,1,1
+356,Debsconeags,aspen-birch,0,0,4,1,1
+357,Debsconeags,spruce-fir,1,1,3,1,1
+358,Debsconeags,spruce-fir,0,1,2,1,1
+359,Debsconeags,spruce-fir,1,1,2,1,1
+360,Debsconeags,spruce-fir,1,1,2,1,1
+361,Debsconeags,spruce-fir,0,1,2,1,1
+363,Debsconeags,spruce-fir,1,1,3,1,1
+364,Debsconeags,spruce-fir,1,1,3,1,1
+365,Debsconeags,spruce-fir,1,1,3,1,1
+366,Debsconeags,spruce-fir,1,1,3,1,1
+367,Debsconeags,spruce-fir,1,1,1,0,1
+368,Debsconeags,spruce-fir,0,0,1,0,1
+369,Debsconeags,spruce-fir,0,0,1,0,1
+370,Debsconeags,spruce-fir,0,0,1,0,1
+371,Debsconeags,spruce-fir,0,0,1,0,1
+372,Debsconeags,spruce-fir,0,1,1,0,1
+373,Debsconeags,maple-beech-birch,1,1,3,1,1
+374,Debsconeags,pine-softwood,1,1,4,1,1
+375,Debsconeags,pine-softwood,1,1,3,1,1
+376,Debsconeags,pine-softwood,1,1,3,1,1
+377,Debsconeags,spruce-fir,0,1,1,0,1
+378,Debsconeags,spruce-fir,1,1,3,1,1
+379,Debsconeags,spruce-fir,1,1,3,1,1
+380,Debsconeags,spruce-fir,1,1,2,1,1
+381,Debsconeags,pine-softwood,1,1,1,0,1
+382,Debsconeags,spruce-fir,1,1,2,1,1
+383,Debsconeags,spruce-fir,0,0,2,1,1
+384,Debsconeags,spruce-fir,0,1,3,1,1
+385,Debsconeags,maple-beech-birch,0,0,3,1,1
+386,Debsconeags,spruce-fir,0,1,4,1,1
+387,Debsconeags,spruce-fir,1,1,1,0,1
+388,Debsconeags,spruce-fir,0,0,1,0,1
+389,Debsconeags,aspen-birch,0,0,4,1,1
+390,Debsconeags,aspen-birch,0,0,2,1,1
+391,Debsconeags,spruce-fir,1,1,1,0,1
+392,Debsconeags,spruce-fir,0,1,2,1,1
+395,Kennebec Estuary Sites,oak-pine,0,1,,0,0
+396,Kennebec Estuary Sites,oak-hickory,0,1,,0,0
+397,Kennebec Estuary Sites,pine-softwood,1,1,,0,0
+398,Kennebec Estuary Sites,oak-hickory,0,1,,0,0
+399,Kennebec Estuary Sites,pine-softwood,0,1,,0,0
+400,Debsconeags,spruce-fir,1,1,3,1,1
+401,Debsconeags,spruce-fir,0,0,2,1,1
+402,Debsconeags,spruce-fir,0,0,3,1,1
+403,Debsconeags,aspen-birch,0,0,3,1,1
+404,Debsconeags,spruce-fir,0,0,2,1,1
+405,Debsconeags,spruce-fir,0,1,3,1,1
+406,Debsconeags,spruce-fir,1,1,3,1,1
+407,Debsconeags,spruce-fir,1,1,2,1,1
+408,Debsconeags,spruce-fir,0,1,1,0,1
+409,Debsconeags,spruce-fir,1,1,1,0,1
+410,Debsconeags,spruce-fir,1,1,2,1,1
+411,Debsconeags,spruce-fir,1,1,2,1,1
+412,Debsconeags,spruce-fir,1,1,3,1,1
+413,Debsconeags,spruce-fir,0,1,2,1,1
+414,Debsconeags,spruce-fir,1,1,2,1,1
+416,Debsconeags,spruce-fir,1,1,2,1,1
+417,Debsconeags,spruce-fir,0,0,1,0,1
+418,Debsconeags,spruce-fir,0,1,1,0,1
+419,Debsconeags,maple-beech-birch,1,1,1,0,1
+420,Debsconeags,spruce-fir,1,1,2,1,1
+421,Debsconeags,spruce-fir,0,1,1,0,1
+422,Debsconeags,spruce-fir,1,1,2,1,1
+423,Debsconeags,spruce-fir,1,1,2,1,1
+424,Debsconeags,maple-beech-birch,1,1,2,1,1
+425,Debsconeags,spruce-fir,1,1,1,0,1
+426,Debsconeags,spruce-fir,0,1,2,1,1
+427,Debsconeags,spruce-fir,0,0,2,1,1
+428,Debsconeags,spruce-fir,0,0,1,0,1
+429,Debsconeags,spruce-fir,1,1,2,1,1
+430,Debsconeags,spruce-fir,0,1,2,1,1
+431,Debsconeags,spruce-fir,0,1,2,1,1
+432,Debsconeags,spruce-fir,1,1,3,1,1
+433,Debsconeags,spruce-fir,1,1,3,1,1
+434,Debsconeags,spruce-fir,1,1,3,1,1
+435,Debsconeags,spruce-fir,1,1,2,1,1
+436,Debsconeags,spruce-fir,1,1,2,1,1
+437,Debsconeags,spruce-fir,0,0,3,1,1
+438,Debsconeags,spruce-fir,1,1,2,1,1
+439,Debsconeags,spruce-fir,1,1,2,1,1
+440,Debsconeags,spruce-fir,0,1,1,0,1
+441,Debsconeags,spruce-fir,0,1,4,1,1
+442,Debsconeags,spruce-fir,1,1,4,1,1
+444,Debsconeags,spruce-fir,1,1,3,1,1
+445,Debsconeags,spruce-fir,0,1,3,1,1
+446,Debsconeags,spruce-fir,1,1,2,1,1
+447,Debsconeags,spruce-fir,1,1,2,1,1
+448,Debsconeags,spruce-fir,1,1,2,1,1
+449,Debsconeags,spruce-fir,1,1,1,0,1
+450,Debsconeags,spruce-fir,1,1,1,0,1
+451,Debsconeags,spruce-fir,0,0,1,0,1
+452,Debsconeags,maple-beech-birch,1,1,1,0,1
+454,Debsconeags,maple-beech-birch,0,1,1,0,1
+455,Debsconeags,spruce-fir,1,1,3,1,1
+456,Debsconeags,spruce-fir,0,1,2,1,1
+457,Debsconeags,maple-beech-birch,0,0,1,0,1
+458,Debsconeags,spruce-fir,1,1,1,0,1
+459,Debsconeags,spruce-fir,0,0,2,1,1
+461,Kennebec Estuary Sites,oak-pine,0,0,,0,0
+462,Kennebec Estuary Sites,spruce-fir,0,0,,0,0
+463,Kennebec Estuary Sites,pine-softwood,1,1,,0,0
+464,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+465,Kennebec Estuary Sites,aspen-birch,0,0,,0,0
+466,Kennebec Estuary Sites,aspen-birch,0,0,,0,0
+467,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+468,Kennebec Estuary Sites,spruce-fir,1,1,,0,0
+469,Kennebec Estuary Sites,spruce-fir,1,1,,0,0
+470,Kennebec Estuary Sites,spruce-fir,0,0,,0,0
+471,Kennebec Estuary Sites,pine-softwood,0,1,,0,0
+472,Kennebec Estuary Sites,oak-pine,0,0,,0,0
+473,Kennebec Estuary Sites,pine-softwood,1,1,,0,0
+474,Kennebec Estuary Sites,spruce-fir,0,0,,0,0
+475,Kennebec Estuary Sites,spruce-fir,0,0,,0,0
+476,Kennebec Estuary Sites,pine-softwood,1,1,,0,0
+477,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+478,Kennebec Estuary Sites,spruce-fir,1,1,,0,0
+480,Debsconeags,aspen-birch,1,1,1,0,1
+481,Debsconeags,spruce-fir,0,0,1,0,1
+484,Debsconeags,maple-beech-birch,0,0,1,0,1
+486,Debsconeags,aspen-birch,0,1,2,1,1
+487,Debsconeags,maple-beech-birch,0,0,1,0,1
+488,Debsconeags,spruce-fir,1,1,1,0,1
+489,Debsconeags,spruce-fir,0,0,1,0,1
+491,Debsconeags,maple-beech-birch,1,1,2,1,1
+492,Debsconeags,maple-beech-birch,0,1,3,1,1
+493,Debsconeags,spruce-fir,1,1,3,1,1
+494,Debsconeags,maple-beech-birch,1,1,3,1,1
+495,Debsconeags,aspen-birch,0,0,2,1,1
+496,Debsconeags,spruce-fir,1,1,2,1,1
+497,Debsconeags,maple-beech-birch,0,1,2,1,1
+498,Debsconeags,pine-softwood,0,0,1,0,1
+499,Debsconeags,aspen-birch,0,0,2,1,1
+500,Debsconeags,aspen-birch,1,1,2,1,1
+501,Debsconeags,aspen-birch,0,0,2,1,1
+502,Kennebec Estuary Sites,spruce-fir,1,1,,0,0
+503,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+504,Kennebec Estuary Sites,oak-pine,0,0,,0,0
+505,Kennebec Estuary Sites,pine-softwood,0,1,,0,0
+506,Debsconeags,aspen-birch,0,0,2,1,1
+507,Debsconeags,aspen-birch,0,1,3,1,1
+508,Debsconeags,aspen-birch,0,0,1,0,1
+512,Great Duck Island,spruce-fir,0,1,,0,0
+513,Great Duck Island,spruce-fir,0,0,,0,0
+514,Great Duck Island,spruce-fir,0,0,,0,0
+515,Great Duck Island,spruce-fir,0,0,,0,0
+516,Great Duck Island,spruce-fir,0,1,,0,0
+518,Debsconeags,aspen-birch,0,0,1,0,1
+519,Debsconeags,aspen-birch,0,0,1,0,1
+520,Debsconeags,maple-beech-birch,1,1,1,0,1
+521,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+522,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+523,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+524,Kennebec Estuary Sites,oak-pine,0,1,,0,0
+525,Kennebec Estuary Sites,oak-pine,0,0,,0,0
+526,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+527,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+528,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+529,Kennebec Estuary Sites,oak-pine,1,0,,0,0
+530,Kennebec Estuary Sites,oak-pine,0,1,,0,0
+531,Kennebec Estuary Sites,pine-softwood,1,1,,0,0
+544,Trout Mountain,maple-beech-birch,1,1,2,1,1
+546,Great Wass Island,spruce-fir,1,1,,0,0
+547,Great Wass Island,spruce-fir,0,0,,0,0
+548,Great Wass Island,pine-softwood,0,0,,0,0
+549,Great Wass Island,pine-softwood,0,0,,0,0
+550,Great Wass Island,spruce-fir,1,1,,0,0
+551,Great Wass Island,oak-pine,0,0,,0,0
+552,Great Wass Island,spruce-fir,1,1,,0,0
+553,Great Wass Island,spruce-fir,0,0,,0,0
+554,Great Wass Island,spruce-fir,1,1,,0,0
+555,Great Wass Island,spruce-fir,0,0,,0,0
+556,Trout Mountain,spruce-fir,0,1,3,1,1
+557,Trout Mountain,spruce-fir,1,1,2,1,1
+558,Trout Mountain,spruce-fir,1,1,2,1,1
+559,Trout Mountain,spruce-fir,0,0,1,0,1
+560,Trout Mountain,pine-softwood,1,1,3,1,1
+561,Trout Mountain,pine-softwood,0,0,2,1,1
+562,Trout Mountain,spruce-fir,0,1,3,1,1
+563,Trout Mountain,spruce-fir,0,1,1,0,1
+564,Trout Mountain,aspen-birch,1,1,1,0,1
+565,Trout Mountain,spruce-fir,0,1,2,1,1
+567,Trout Mountain,spruce-fir,1,1,1,0,1
+568,Trout Mountain,spruce-fir,1,1,2,1,1
+569,Kennebec Estuary Sites,oak-pine,0,0,,0,0
+570,Kennebec Estuary Sites,oak-hickory,1,1,,0,0
+571,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+572,Kennebec Estuary Sites,oak-pine,0,0,,0,0
+573,Kennebec Estuary Sites,oak-pine,0,0,,0,0
+579,Saco River Sites,maple-beech-birch,1,1,,0,0
+580,Saco River Sites,pine-softwood,1,1,,0,0
+581,Saco River Sites,pine-softwood,1,1,,0,0
+582,Saco River Sites,elm-ash-cottonwood,1,1,,0,0
+583,Saco River Sites,elm-ash-cottonwood,0,0,,0,0
+584,Saco River Sites,elm-ash-cottonwood,0,0,,0,0
+585,Saco River Sites,pine-softwood,1,1,,0,0
+586,Saco River Sites,pine-softwood,1,1,,0,0
+587,Placentia Island Preserve,spruce-fir,1,1,,0,0
+588,Placentia Island Preserve,spruce-fir,1,1,,0,0
+589,Placentia Island Preserve,spruce-fir,0,1,,0,0
+590,Placentia Island Preserve,spruce-fir,1,1,,0,0
+591,Placentia Island Preserve,spruce-fir,0,1,,0,0
+592,Moose River Number 5 Mountain,spruce-fir,0,1,1,0,1
+593,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+594,Moose River Number 5 Mountain,spruce-fir,0,1,1,0,1
+595,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+596,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+597,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+600,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+601,Moose River Number 5 Mountain,aspen-birch,0,1,2,1,1
+602,Moose River Number 5 Mountain,spruce-fir,0,0,1,0,1
+603,Moose River Number 5 Mountain,spruce-fir,0,0,1,0,1
+604,Moose River Number 5 Mountain,spruce-fir,1,1,1,0,1
+605,Moose River Number 5 Mountain,spruce-fir,0,0,1,0,1
+606,Moose River Number 5 Mountain,spruce-fir,0,0,1,0,1
+607,Moose River Number 5 Mountain,pine-softwood,0,0,1,0,1
+608,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+609,Moose River Number 5 Mountain,spruce-fir,1,1,1,0,1
+611,Moose River Number 5 Mountain,spruce-fir,0,0,1,0,1
+612,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+613,Moose River Number 5 Mountain,spruce-fir,0,0,1,0,1
+614,Moose River Number 5 Mountain,spruce-fir,0,0,1,0,1
+615,Moose River Number 5 Mountain,spruce-fir,0,0,1,0,1
+616,Moose River Number 5 Mountain,spruce-fir,0,0,1,0,1
+617,Moose River Number 5 Mountain,aspen-birch,0,1,2,1,1
+618,Moose River Number 5 Mountain,aspen-birch,0,0,2,1,1
+619,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+620,Moose River Number 5 Mountain,aspen-birch,0,0,2,1,1
+621,Moose River Number 5 Mountain,spruce-fir,1,1,1,0,1
+622,Moose River Number 5 Mountain,aspen-birch,0,1,1,0,1
+623,Moose River Number 5 Mountain,maple-beech-birch,1,1,2,1,1
+624,Moose River Number 5 Mountain,aspen-birch,1,1,1,0,1
+625,Moose River Number 5 Mountain,spruce-fir,1,1,2,1,1
+626,Moose River Number 5 Mountain,aspen-birch,0,1,1,0,1
+627,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+628,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+629,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+630,Moose River Number 5 Mountain,spruce-fir,0,1,1,0,1
+631,Moose River Number 5 Mountain,spruce-fir,0,1,1,0,1
+633,Moose River Number 5 Mountain,spruce-fir,0,0,1,0,1
+634,Moose River Number 5 Mountain,spruce-fir,0,0,1,0,1
+635,Moose River Number 5 Mountain,aspen-birch,0,0,1,0,1
+636,Pine Barrens Sites,elm-ash-cottonwood,1,1,,0,0
+637,Pine Barrens Sites,oak-pine,0,0,,0,0
+638,Pine Barrens Sites,oak-pine,0,0,,0,0
+639,Pine Barrens Sites,spruce-fir,0,1,,0,0
+640,Pine Barrens Sites,spruce-fir,0,0,,0,0
+641,Pine Barrens Sites,oak-hickory,0,0,,0,0
+642,Pine Barrens Sites,oak-hickory,0,0,,0,0
+643,Pine Barrens Sites,oak-hickory,0,0,,0,0
+644,Pine Barrens Sites,oak-hickory,0,0,,0,0
+645,Pine Barrens Sites,oak-hickory,0,0,,0,0
+646,Saco River Sites,pine-softwood,1,1,,0,0
+647,Saco River Sites,pine-softwood,0,0,,0,0
+648,Saco River Sites,oak-pine,0,1,,0,0
+649,Saco River Sites,oak-pine,1,1,,0,0
+650,Saco River Sites,elm-ash-cottonwood,0,1,,0,0
+651,Saco River Sites,elm-ash-cottonwood,1,1,,0,0
+652,Saco River Sites,oak-pine,1,1,,0,0
+653,Saco River Sites,elm-ash-cottonwood,0,0,,0,0
+654,Saco River Sites,elm-ash-cottonwood,1,1,,0,0
+655,Pine Barrens Sites,spruce-fir,0,0,,0,0
+656,Pine Barrens Sites,oak-pine,0,0,,0,0
+657,Pine Barrens Sites,spruce-fir,1,1,,0,0
+658,Pine Barrens Sites,spruce-fir,0,0,,0,0
+659,Pine Barrens Sites,elm-ash-cottonwood,1,1,,0,0
+660,Pine Barrens Sites,oak-pine,0,0,,0,0
+661,Pine Barrens Sites,oak-pine,0,1,,0,0
+662,Pine Barrens Sites,aspen-birch,0,0,,0,0
+663,Pine Barrens Sites,oak-pine,0,1,,0,0
+664,Pine Barrens Sites,oak-pine,1,1,,0,0
+665,Pine Barrens Sites,oak-pine,0,1,,0,0
+666,Pine Barrens Sites,oak-pine,0,1,,0,0
+667,Pine Barrens Sites,oak-pine,1,1,,0,0
+680,Big Reed Forest Reserve,spruce-fir,1,1,2,1,1
+681,Big Reed Forest Reserve,spruce-fir,1,1,2,1,1
+682,Big Reed Forest Reserve,spruce-fir,1,1,4,1,1
+683,Big Reed Forest Reserve,spruce-fir,1,1,1,0,1
+684,Big Reed Forest Reserve,maple-beech-birch,0,0,1,0,1
+685,Big Reed Forest Reserve,spruce-fir,1,1,2,1,1
+686,Big Reed Forest Reserve,spruce-fir,1,1,1,0,1
+687,Big Reed Forest Reserve,spruce-fir,1,1,1,0,1
+688,Big Reed Forest Reserve,spruce-fir,1,1,3,1,1
+689,Big Reed Forest Reserve,spruce-fir,1,1,2,1,1
+690,Big Reed Forest Reserve,spruce-fir,1,1,2,1,1
+691,Big Reed Forest Reserve,spruce-fir,0,0,3,1,1
+692,Big Reed Forest Reserve,spruce-fir,0,1,4,1,1
+693,Big Reed Forest Reserve,spruce-fir,0,0,1,0,1
+694,Big Reed Forest Reserve,maple-beech-birch,1,1,2,1,1
+695,Big Reed Forest Reserve,maple-beech-birch,1,1,4,1,1
+696,Big Reed Forest Reserve,spruce-fir,1,1,4,1,1
+698,Big Reed Forest Reserve,maple-beech-birch,0,0,2,1,1
+699,Big Reed Forest Reserve,maple-beech-birch,0,0,4,1,1
+700,Big Reed Forest Reserve,maple-beech-birch,0,0,2,1,1
+701,Big Reed Forest Reserve,maple-beech-birch,0,0,2,1,1
+702,Big Reed Forest Reserve,maple-beech-birch,1,1,2,1,1
+703,Big Reed Forest Reserve,spruce-fir,1,1,2,1,1
+704,Big Reed Forest Reserve,spruce-fir,1,1,2,1,1
+705,Big Reed Forest Reserve,maple-beech-birch,1,1,4,1,1
+706,Spring River Preserve,aspen-birch,0,0,1,0,1
+707,Spring River Preserve,spruce-fir,1,1,1,0,1
+710,Spring River Preserve,spruce-fir,0,0,1,0,1
+711,Spring River Preserve,spruce-fir,1,1,1,0,1
+712,Spring River Preserve,spruce-fir,0,0,1,0,1
+713,Spring River Preserve,oak-hickory,0,1,1,0,1
+714,Spring River Preserve,oak-pine,0,0,1,0,1
+715,Spring River Preserve,oak-pine,0,0,1,0,1
+716,Spring River Preserve,oak-pine,0,1,1,0,1
+717,Spring River Preserve,aspen-birch,0,0,1,0,1
+718,Spring River Preserve,pine-softwood,1,1,1,0,1
+720,Spring River Preserve,oak-hickory,0,0,1,0,1
+721,Spring River Preserve,oak-hickory,1,1,1,0,1
+722,Spring River Preserve,oak-hickory,0,1,1,0,1
+723,Spring River Preserve,spruce-fir,0,0,1,0,1
+724,Spring River Preserve,oak-pine,1,1,1,0,1
+725,Spring River Preserve,aspen-birch,0,0,1,0,1
+726,Spring River Preserve,pine-softwood,0,1,2,1,1
+727,Spring River Preserve,spruce-fir,0,1,1,0,1
+728,Spring River Preserve,oak-hickory,0,0,1,0,1
+729,Spring River Preserve,aspen-birch,0,0,1,0,1
+730,Spring River Preserve,pine-softwood,1,1,1,0,1
+731,Spring River Preserve,elm-ash-cottonwood,0,0,1,0,1
+732,Spring River Preserve,oak-pine,0,0,1,0,1
+733,Spring River Preserve,oak-hickory,0,0,1,0,1
+734,Spring River Preserve,oak-hickory,0,0,2,1,1
+735,Spring River Preserve,spruce-fir,1,1,1,0,1
+737,Spring River Preserve,maple-beech-birch,1,1,2,1,1
+740,Spring River Preserve,spruce-fir,0,1,1,0,1
+750,Spring River Preserve,spruce-fir,1,1,2,1,1
+751,Spring River Preserve,oak-hickory,1,1,1,0,1
+752,Spring River Preserve,spruce-fir,0,1,1,0,1
+753,Spring River Preserve,spruce-fir,0,1,1,0,1
+754,Spring River Preserve,oak-hickory,0,0,1,0,1
+755,Spring River Preserve,oak-hickory,1,1,1,0,1
+759,Spring River Preserve,spruce-fir,1,1,1,0,1
+760,Spring River Preserve,spruce-fir,1,1,2,1,1
+761,Spring River Preserve,maple-beech-birch,1,1,2,1,1
+763,Spring River Preserve,spruce-fir,1,1,1,0,1
+764,Spring River Preserve,spruce-fir,1,1,2,1,1
+765,Spring River Preserve,spruce-fir,0,0,1,0,1
+766,Spring River Preserve,spruce-fir,1,1,2,1,1
+767,Spring River Preserve,aspen-birch,0,0,1,0,1
+768,Spring River Preserve,pine-softwood,1,1,1,0,1
+769,Trout Mountain,aspen-birch,0,0,2,1,1
+770,Trout Mountain,spruce-fir,1,1,2,1,1
+771,Trout Mountain,spruce-fir,1,1,2,1,1
+772,Trout Mountain,spruce-fir,1,1,2,1,1
+773,Trout Mountain,spruce-fir,0,1,3,1,1
+774,Trout Mountain,spruce-fir,1,1,1,0,1
+775,Trout Mountain,aspen-birch,0,0,2,1,1
+776,Trout Mountain,aspen-birch,0,0,2,1,1
+777,Trout Mountain,aspen-birch,0,0,2,1,1
+778,Trout Mountain,aspen-birch,0,0,2,1,1
+779,Trout Mountain,aspen-birch,0,0,3,1,1
+780,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+781,Kennebec Estuary Sites,maple-beech-birch,0,0,,0,0
+782,Big Spencer,maple-beech-birch,0,0,2,1,1
+783,Big Spencer,maple-beech-birch,0,0,2,1,1
+784,Big Spencer,maple-beech-birch,1,1,2,1,1
+785,Big Spencer,maple-beech-birch,0,0,2,1,1
+786,Big Spencer,maple-beech-birch,0,1,1,0,1
+787,Big Spencer,spruce-fir,1,1,1,0,1
+788,Big Spencer,spruce-fir,0,0,,0,0
+789,Big Spencer,spruce-fir,0,0,,0,0
+790,Big Spencer,maple-beech-birch,1,1,2,1,1
+791,Big Spencer,maple-beech-birch,1,1,2,1,1
+792,Big Spencer,maple-beech-birch,0,0,3,1,1
+793,Big Spencer,maple-beech-birch,0,0,3,1,1
+794,Big Spencer,maple-beech-birch,1,1,3,1,1
+795,Big Spencer,spruce-fir,1,1,1,0,1
+796,Big Spencer,spruce-fir,0,0,2,1,1
+797,Big Spencer,maple-beech-birch,0,0,3,1,1
+798,Big Spencer,maple-beech-birch,0,0,2,1,1
+799,Big Spencer,maple-beech-birch,0,1,2,1,1
+800,Big Spencer,maple-beech-birch,0,1,1,0,1
+801,Big Spencer,spruce-fir,0,0,1,0,1
+802,Big Spencer,spruce-fir,1,1,1,0,1
+803,Big Spencer,spruce-fir,1,1,1,0,1
+804,Big Spencer,spruce-fir,0,0,1,0,1
+805,Big Spencer,maple-beech-birch,0,1,1,0,1
+806,Big Spencer,spruce-fir,1,1,1,0,1
+807,Big Spencer,maple-beech-birch,1,1,2,1,1
+808,Big Spencer,maple-beech-birch,0,0,2,1,1
+809,Big Spencer,maple-beech-birch,0,0,1,0,1
+810,Big Spencer,maple-beech-birch,1,1,1,0,1
+811,Big Spencer,spruce-fir,0,1,2,1,1
+812,Big Spencer,maple-beech-birch,0,0,1,0,1
+813,Big Spencer,maple-beech-birch,1,1,1,0,1
+814,Big Spencer,spruce-fir,1,1,1,0,1
+815,Big Spencer,spruce-fir,1,1,,0,0
+816,Big Spencer,spruce-fir,0,0,,0,0
+817,Saco River Sites,elm-ash-cottonwood,1,1,,0,0
+818,Saco River Sites,elm-ash-cottonwood,1,1,,0,0
+819,Saco River Sites,elm-ash-cottonwood,0,0,,0,0
+820,Chamberlain Lake,spruce-fir,1,1,1,0,1
+821,Chamberlain Lake,spruce-fir,1,1,2,1,1
+822,Chamberlain Lake,spruce-fir,1,1,3,1,1
+823,Chamberlain Lake,spruce-fir,0,1,2,1,1
+824,Chamberlain Lake,spruce-fir,1,1,2,1,1
+825,Chamberlain Lake,spruce-fir,1,1,3,1,1
+826,Chamberlain Lake,spruce-fir,0,0,2,1,1
+827,Chamberlain Lake,pine-softwood,1,1,2,1,1
+828,Chamberlain Lake,pine-softwood,1,1,4,1,1
+829,Chamberlain Lake,pine-softwood,1,1,4,1,1
+830,Chamberlain Lake,pine-softwood,1,1,4,1,1
+831,Chamberlain Lake,spruce-fir,1,1,2,1,1
+832,Chamberlain Lake,spruce-fir,1,1,3,1,1
+833,Chamberlain Lake,spruce-fir,1,1,3,1,1
+834,Chamberlain Lake,spruce-fir,1,1,3,1,1
+835,Chamberlain Lake,spruce-fir,1,1,2,1,1
+836,Cutler,spruce-fir,0,0,,0,0
+837,Cutler,spruce-fir,0,1,,0,0
+838,Cutler,spruce-fir,0,0,,0,0
+839,Cutler,spruce-fir,1,1,,0,0
+840,Cutler,spruce-fir,1,1,,0,0
+841,Cutler,spruce-fir,1,1,,0,0
+842,Cutler,elm-ash-cottonwood,0,0,,0,0
+843,Cutler,spruce-fir,0,0,,0,0
+844,Cutler,spruce-fir,1,1,,0,0
+845,Cutler,spruce-fir,0,1,,0,0
+846,Cutler,spruce-fir,0,0,,0,0
+847,Cutler,spruce-fir,0,0,,0,0
+848,Cutler,spruce-fir,0,1,,0,0
+849,Cutler,pine-softwood,0,0,,0,0
+850,Cutler,aspen-birch,0,0,,0,0
+851,Cutler,aspen-birch,0,0,,0,0
+852,Cutler,aspen-birch,0,0,,0,0
+853,Cutler,elm-ash-cottonwood,0,0,,0,0
+854,Cutler,aspen-birch,0,0,,0,0
+856,Cutler,spruce-fir,0,0,,0,0
+857,Cutler,spruce-fir,0,0,,0,0
+858,Cutler,spruce-fir,0,1,,0,0
+859,Cutler,spruce-fir,0,0,,0,0
+860,Forest City,pine-softwood,1,1,3,1,1
+861,Forest City,pine-softwood,1,1,3,1,1
+862,Forest City,pine-softwood,0,0,3,1,1
+863,Forest City,spruce-fir,0,0,2,1,1
+864,Forest City,spruce-fir,0,1,2,1,1
+865,Forest City,spruce-fir,0,1,2,1,1
+866,Forest City,pine-softwood,0,1,3,1,1
+867,Forest City,spruce-fir,1,1,3,1,1
+868,Great Heath,aspen-birch,0,0,1,0,1
+869,Great Heath,spruce-fir,1,1,1,0,1
+870,Great Heath,spruce-fir,0,0,1,0,1
+871,Great Heath,pine-softwood,1,1,1,0,1
+872,Great Heath,spruce-fir,0,1,1,0,1
+873,Great Heath,spruce-fir,0,0,1,0,1
+874,Great Heath,spruce-fir,1,1,1,0,1
+875,Great Heath,spruce-fir,0,0,2,1,1
+876,Great Heath,pine-softwood,1,1,4,1,1
+877,Great Heath,spruce-fir,1,1,1,0,1
+878,Great Heath,aspen-birch,0,1,2,1,1
+879,Great Heath,spruce-fir,0,0,2,1,1
+880,Great Heath,spruce-fir,1,1,2,1,1
+881,Pine Barrens Sites,pine-softwood,1,1,,0,0
+882,Pine Barrens Sites,pine-softwood,1,1,,0,0
+884,Pine Barrens Sites,spruce-fir,0,0,,0,0
+885,Pine Barrens Sites,spruce-fir,0,0,,0,0
+886,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+887,Kennebec Estuary Sites,oak-hickory,0,1,,0,0
+888,Kennebec Estuary Sites,oak-pine,0,1,,0,0
+889,Kennebec Estuary Sites,oak-hickory,0,0,,0,0
+890,Kennebec Estuary Sites,pine-softwood,1,1,,0,0
+891,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+892,Mahoosucs,spruce-fir,1,1,1,0,1
+893,Mahoosucs,spruce-fir,1,1,1,0,1
+894,Mahoosucs,spruce-fir,0,0,1,0,1
+895,Mahoosucs,spruce-fir,1,1,1,0,1
+896,Mahoosucs,spruce-fir,0,1,1,0,1
+897,Mahoosucs,maple-beech-birch,1,1,1,0,1
+898,Mahoosucs,maple-beech-birch,1,1,2,1,1
+899,Mahoosucs,spruce-fir,1,1,1,0,1
+900,Mahoosucs,maple-beech-birch,1,1,2,1,1
+901,Mahoosucs,maple-beech-birch,1,1,2,1,1
+902,Mahoosucs,maple-beech-birch,1,1,2,1,1
+903,Mahoosucs,maple-beech-birch,1,1,3,1,1
+904,Mahoosucs,maple-beech-birch,1,1,2,1,1
+905,Mahoosucs,maple-beech-birch,0,0,2,1,1
+906,Mahoosucs,maple-beech-birch,0,1,1,0,1
+907,Mahoosucs,maple-beech-birch,0,1,2,1,1
+908,Mahoosucs,oak-hickory,1,1,2,1,1
+909,Mahoosucs,maple-beech-birch,1,1,3,1,1
+910,Mahoosucs,maple-beech-birch,0,1,2,1,1
+911,Mahoosucs,spruce-fir,0,0,2,1,1
+912,Mahoosucs,spruce-fir,0,1,1,0,1
+913,Mahoosucs,maple-beech-birch,1,1,2,1,1
+914,Mahoosucs,maple-beech-birch,1,1,2,1,1
+915,Mahoosucs,maple-beech-birch,1,1,3,1,1
+916,Mahoosucs,spruce-fir,0,0,,0,0
+917,Mahoosucs,spruce-fir,0,0,,0,0
+918,Mahoosucs,maple-beech-birch,0,1,,0,0
+919,Mahoosucs,maple-beech-birch,0,1,2,1,1
+920,Mahoosucs,maple-beech-birch,1,1,2,1,1
+921,Mt. Abraham,spruce-fir,0,0,1,0,1
+922,Mt. Abraham,spruce-fir,0,1,1,0,1
+923,Mt. Abraham,spruce-fir,1,1,1,0,1
+924,Mt. Agamenticus,oak-hickory,1,1,,0,0
+925,Mt. Agamenticus,pine-softwood,1,1,,0,0
+926,Mt. Agamenticus,elm-ash-cottonwood,1,1,,0,0
+927,Mt. Agamenticus,pine-softwood,1,1,,0,0
+928,Mt. Agamenticus,oak-hickory,1,1,,0,0
+929,Mt. Agamenticus,pine-softwood,0,1,,0,0
+930,Mt. Agamenticus,oak-hickory,0,1,,0,0
+931,Mt. Agamenticus,oak-pine,1,1,,0,0
+932,Nahmakanta,aspen-birch,0,1,3,1,1
+933,Nahmakanta,maple-beech-birch,1,1,4,1,1
+934,Nahmakanta,aspen-birch,0,0,3,1,1
+935,Nahmakanta,spruce-fir,1,1,2,1,1
+936,Nahmakanta,aspen-birch,0,1,2,1,1
+937,Nahmakanta,elm-ash-cottonwood,1,1,3,1,1
+938,Nahmakanta,aspen-birch,0,0,1,0,1
+939,Nahmakanta,aspen-birch,0,1,2,1,1
+940,Nahmakanta,aspen-birch,0,0,1,0,1
+941,Nahmakanta,aspen-birch,1,1,3,1,1
+942,Nahmakanta,aspen-birch,0,0,1,0,1
+943,Nahmakanta,aspen-birch,0,0,1,0,1
+944,Nahmakanta,aspen-birch,0,1,1,0,1
+945,Nahmakanta,maple-beech-birch,1,1,1,0,1
+946,Nahmakanta,pine-softwood,1,1,1,0,1
+947,Nahmakanta,aspen-birch,0,1,1,0,1
+948,Nahmakanta,spruce-fir,1,1,3,1,1
+949,Nahmakanta,maple-beech-birch,1,1,2,1,1
+950,Nahmakanta,maple-beech-birch,1,1,3,1,1
+951,Nahmakanta,aspen-birch,0,0,2,1,1
+952,Nahmakanta,spruce-fir,0,0,2,1,1
+953,Nahmakanta,spruce-fir,1,1,2,1,1
+954,Nahmakanta,spruce-fir,1,1,2,1,1
+955,Nahmakanta,spruce-fir,0,0,2,1,1
+956,Nahmakanta,spruce-fir,1,1,3,1,1
+957,Nahmakanta,aspen-birch,0,1,2,1,1
+958,Nahmakanta,maple-beech-birch,0,0,1,0,1
+959,Nahmakanta,maple-beech-birch,0,0,2,1,1
+960,Nahmakanta,spruce-fir,0,0,1,0,1
+961,Nahmakanta,maple-beech-birch,0,0,1,0,1
+962,Nahmakanta,spruce-fir,1,1,3,1,1
+963,Nahmakanta,spruce-fir,1,1,3,1,1
+964,Nahmakanta,maple-beech-birch,0,1,3,1,1
+965,Nahmakanta,spruce-fir,1,1,3,1,1
+966,Nahmakanta,spruce-fir,1,1,3,1,1
+967,Nahmakanta,spruce-fir,1,1,3,1,1
+968,Nahmakanta,maple-beech-birch,0,1,3,1,1
+969,Nahmakanta,spruce-fir,1,1,1,0,1
+970,Nahmakanta,maple-beech-birch,0,0,2,1,1
+972,Nahmakanta,spruce-fir,0,0,3,1,1
+973,Nahmakanta,spruce-fir,1,1,3,1,1
+974,Nahmakanta,spruce-fir,1,1,3,1,1
+975,Nahmakanta,spruce-fir,1,1,2,1,1
+976,Nahmakanta,spruce-fir,1,1,3,1,1
+977,Nahmakanta,spruce-fir,1,1,2,1,1
+978,Nahmakanta,spruce-fir,1,1,3,1,1
+979,Nahmakanta,spruce-fir,0,0,1,0,1
+980,Nahmakanta,spruce-fir,1,1,1,0,1
+981,Nahmakanta,spruce-fir,0,0,1,0,1
+982,Narraguagus,pine-softwood,1,1,,0,0
+983,Narraguagus,spruce-fir,0,0,,0,0
+984,Narraguagus,aspen-birch,0,0,,0,0
+985,Narraguagus,spruce-fir,1,1,,0,0
+986,Narraguagus,spruce-fir,1,1,,0,0
+987,Number 5 Bog,spruce-fir,1,1,1,0,1
+988,Number 5 Bog,spruce-fir,1,1,1,0,1
+989,Number 5 Bog,spruce-fir,1,1,1,0,1
+990,Number 5 Bog,spruce-fir,0,0,1,0,1
+991,Number 5 Bog,spruce-fir,0,0,1,0,1
+992,Number 5 Bog,spruce-fir,0,0,1,0,1
+993,Number 5 Bog,spruce-fir,0,0,1,0,1
+995,Number 5 Bog,spruce-fir,0,0,1,0,1
+996,Number 5 Bog,pine-softwood,0,1,1,0,1
+998,Number 5 Bog,pine-softwood,0,0,1,0,1
+999,Number 5 Bog,pine-softwood,0,0,1,0,1
+1000,Number 5 Bog,pine-softwood,0,0,1,0,1
+1001,Number 5 Bog,spruce-fir,1,1,1,0,1
+1002,Number 5 Bog,spruce-fir,0,0,1,0,1
+1003,Number 5 Bog,spruce-fir,1,1,1,0,1
+1004,Number 5 Bog,spruce-fir,1,1,1,0,1
+1005,Number 5 Bog,spruce-fir,0,0,1,0,1
+1006,Number 5 Bog,pine-softwood,0,0,1,0,1
+1007,Number 5 Bog,spruce-fir,0,0,1,0,1
+1008,Number 5 Bog,pine-softwood,0,0,1,0,1
+1009,Number 5 Bog,pine-softwood,0,0,1,0,1
+1010,Number 5 Bog,pine-softwood,0,0,1,0,1
+1011,St. John Ponds,spruce-fir,1,1,1,0,1
+1012,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1013,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1014,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1015,St. John Ponds,spruce-fir,0,0,1,0,1
+1016,St. John Ponds,spruce-fir,0,0,1,0,1
+1017,St. John Ponds,spruce-fir,0,0,1,0,1
+1018,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1019,St. John Ponds,maple-beech-birch,0,0,2,1,1
+1020,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1021,St. John Ponds,maple-beech-birch,1,1,1,0,1
+1022,St. John Ponds,maple-beech-birch,1,1,1,0,1
+1023,St. John Ponds,maple-beech-birch,1,1,2,1,1
+1024,St. John Ponds,maple-beech-birch,0,1,1,0,1
+1025,St. John Ponds,spruce-fir,0,0,1,0,1
+1027,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1028,St. John Ponds,maple-beech-birch,1,1,1,0,1
+1029,St. John Ponds,spruce-fir,1,1,1,0,1
+1030,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1031,St. John Ponds,maple-beech-birch,1,1,2,1,1
+1032,St. John Ponds,maple-beech-birch,0,1,2,1,1
+1033,St. John Ponds,maple-beech-birch,1,1,2,1,1
+1034,St. John Ponds,maple-beech-birch,0,1,1,0,1
+1035,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1036,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1037,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1038,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1039,St. John Ponds,spruce-fir,0,0,1,0,1
+1040,St. John Ponds,aspen-birch,0,0,1,0,1
+1041,St. John Ponds,aspen-birch,0,0,1,0,1
+1042,St. John Ponds,maple-beech-birch,0,0,1,0,1
+1043,St. John Ponds,maple-beech-birch,1,1,3,1,1
+1044,St. John Ponds,spruce-fir,0,0,1,0,1
+1045,St. John Ponds,spruce-fir,0,0,1,0,1
+1046,St. John Ponds,spruce-fir,0,1,1,0,1
+1047,Wassataquoik,elm-ash-cottonwood,1,1,2,1,1
+1048,Wassataquoik,elm-ash-cottonwood,1,1,2,1,1
+1049,Wassataquoik,elm-ash-cottonwood,1,1,2,1,1
+1050,Wassataquoik,elm-ash-cottonwood,0,1,3,1,1
+1051,Wassataquoik,elm-ash-cottonwood,0,1,2,1,1
+1052,Wassataquoik,maple-beech-birch,1,1,2,1,1
+1053,Wassataquoik,spruce-fir,1,1,4,1,1
+1054,Wassataquoik,elm-ash-cottonwood,0,0,2,1,1
+1055,Wassataquoik,elm-ash-cottonwood,1,1,3,1,1
+1056,Wassataquoik,maple-beech-birch,0,0,2,1,1
+1057,Wassataquoik,elm-ash-cottonwood,1,1,2,1,1
+1058,Wassataquoik,maple-beech-birch,1,1,2,1,1
+1059,Wassataquoik,elm-ash-cottonwood,1,1,1,0,1
+1060,Wassataquoik,spruce-fir,1,1,2,1,1
+1061,Wassataquoik,elm-ash-cottonwood,1,1,2,1,1
+1062,Wassataquoik,spruce-fir,1,1,3,1,1
+1063,Wassataquoik,spruce-fir,1,1,2,1,1
+1064,Salmon Brook Lake,other,1,1,,0,0
+1065,Mt. Abraham,spruce-fir,0,0,,0,0
+1066,Bigelow,other,0,0,1,0,1
+1067,Spring River Lake,maple-beech-birch,1,1,1,0,1
+1068,Baxter State Park,spruce-fir,1,1,2,1,1
+1069,Baxter State Park,spruce-fir,1,1,2,1,1
+1070,Baxter State Park,spruce-fir,0,0,1,0,1
+1071,Baxter State Park,spruce-fir,0,0,1,0,1
+1072,Baxter State Park,spruce-fir,1,1,1,0,1
+1073,Baxter State Park,spruce-fir,1,1,1,0,1
+1074,Baxter State Park,spruce-fir,0,0,1,0,1
+1075,Baxter State Park,spruce-fir,1,1,1,0,1
+1076,Baxter State Park,spruce-fir,0,1,1,0,1
+1077,Baxter State Park,spruce-fir,0,1,1,0,1
+1078,Baxter State Park,spruce-fir,1,1,1,0,1
+1079,Baxter State Park,aspen-birch,0,0,1,0,1
+1080,Baxter State Park,spruce-fir,1,1,3,1,1
+1081,Baxter State Park,aspen-birch,1,1,2,1,1
+1082,Baxter State Park,pine-softwood,1,1,2,1,1
+1084,Kennebec Estuary Sites,oak-pine,1,1,,0,0
+1085,Kennebec Estuary Sites,oak-hickory,1,1,,0,0
+1086,Shapleigh Woods,oak-pine,1,1,,0,0
+1088,Shapleigh Woods,oak-hickory,1,1,,0,0
+1089,Shapleigh Woods,oak-hickory,1,1,,0,0
+1090,Shapleigh Woods,oak-hickory,1,1,,0,0
+1091,Shapleigh Woods,oak-hickory,1,1,,0,0
+1093,Baxter State Park,aspen-birch,0,0,1,0,1
+1094,Big Spencer,other,1,1,1,0,1
+1096,Baxter State Park,aspen-birch,0,0,1,0,1
+1097,Baxter State Park,aspen-birch,0,0,1,0,1
+1098,Baxter State Park,aspen-birch,0,0,1,0,1
+1099,Baxter State Park,aspen-birch,1,1,3,1,1
+1100,Baxter State Park,aspen-birch,0,0,1,0,1
+1101,Baxter State Park,spruce-fir,0,0,4,1,1
+1102,Baxter State Park,spruce-fir,1,1,1,0,1
+1103,Baxter State Park,spruce-fir,1,1,1,0,1
+1104,Baxter State Park,spruce-fir,1,1,1,0,1
+1105,Baxter State Park,spruce-fir,1,1,2,1,1
+1106,Baxter State Park,spruce-fir,1,1,2,1,1
+1107,Baxter State Park,maple-beech-birch,1,1,2,1,1
+1108,Baxter State Park,spruce-fir,1,1,1,0,1
+1109,Baxter State Park,spruce-fir,0,0,1,0,1
+1110,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1111,Pine Barrens Sites,oak-hickory,0,1,,0,0
+1112,Pine Barrens Sites,oak-pine,0,0,,0,0
+1113,Pine Barrens Sites,oak-pine,0,0,,0,0
+1114,Pine Barrens Sites,oak-pine,1,1,,0,0
+1115,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1116,Pine Barrens Sites,spruce-fir,1,1,,0,0
+1117,Pine Barrens Sites,spruce-fir,1,1,,0,0
+1118,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1119,Pine Barrens Sites,spruce-fir,0,1,,0,0
+1120,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1121,Pine Barrens Sites,oak-hickory,0,1,,0,0
+1122,Pine Barrens Sites,elm-ash-cottonwood,0,0,,0,0
+1123,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1124,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1125,Pine Barrens Sites,spruce-fir,0,1,,0,0
+1126,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1127,Pine Barrens Sites,spruce-fir,0,1,,0,0
+1128,Pine Barrens Sites,spruce-fir,1,1,,0,0
+1129,Pine Barrens Sites,oak-pine,0,0,,0,0
+1130,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1131,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1132,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1133,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1135,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1136,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1137,Pine Barrens Sites,spruce-fir,0,0,,0,0
+1138,Pine Barrens Sites,spruce-fir,0,1,,0,0
+1139,Pine Barrens Sites,aspen-birch,0,0,,0,0
+1140,Baxter State Park,spruce-fir,0,0,1,0,1
+1141,Baxter State Park,spruce-fir,0,1,2,1,1
+1142,Baxter State Park,aspen-birch,0,0,1,0,1
+1143,Baxter State Park,aspen-birch,0,0,1,0,1
+1144,Baxter State Park,aspen-birch,0,0,,0,0
+1145,Baxter State Park,spruce-fir,0,0,2,1,1
+1146,Baxter State Park,aspen-birch,0,1,4,1,1
+1147,Baxter State Park,pine-softwood,0,1,1,0,1
+1148,Baxter State Park,spruce-fir,0,1,4,1,1
+1149,Baxter State Park,aspen-birch,0,1,2,1,1
+1150,Baxter State Park,other,1,1,1,0,1
+1151,Baxter State Park,spruce-fir,0,0,1,0,1
+1152,Baxter State Park,aspen-birch,0,0,2,1,1
+1153,Baxter State Park,aspen-birch,1,1,2,1,1
+1154,Baxter State Park,aspen-birch,0,1,4,1,1
+1155,Bradley Sunkhaze,spruce-fir,0,1,,0,0
+1156,Bradley Sunkhaze,pine-softwood,1,1,,0,0
+1157,Bradley Sunkhaze,spruce-fir,0,0,,0,0
+1158,Bradley Sunkhaze,spruce-fir,0,0,,0,0
+1159,Bradley Sunkhaze,spruce-fir,0,0,,0,0
+1160,Bradley Sunkhaze,spruce-fir,0,1,,0,0
+1161,Bradley Sunkhaze,aspen-birch,0,0,,0,0
+1162,Bradley Sunkhaze,spruce-fir,1,1,,0,0
+1163,Bradley Sunkhaze,spruce-fir,1,1,,0,0
+1164,Bradley Sunkhaze,spruce-fir,1,1,1,0,1
+1165,Bradley Sunkhaze,spruce-fir,0,1,1,0,1
+1166,Bradley Sunkhaze,pine-softwood,0,0,1,0,1
+1167,Bradley Sunkhaze,pine-softwood,1,1,1,0,1
+1168,Bradley Sunkhaze,spruce-fir,0,0,1,0,1
+1169,Bradley Sunkhaze,spruce-fir,0,0,1,0,1
+1170,Bradley Sunkhaze,spruce-fir,0,0,1,0,1
+1171,Bradley Sunkhaze,spruce-fir,0,0,1,0,1
+1172,Bradley Sunkhaze,other,0,0,1,0,1
+1173,Bradley Sunkhaze,spruce-fir,0,0,1,0,1
+1174,Bradley Sunkhaze,other,0,0,1,0,1
+1175,Bradley Sunkhaze,spruce-fir,0,1,1,0,1
+1176,Bradley Sunkhaze,spruce-fir,0,0,1,0,1
+1177,Bradley Sunkhaze,spruce-fir,0,0,1,0,1
+1178,Bradley Sunkhaze,maple-beech-birch,1,1,2,1,1
+1179,Bradley Sunkhaze,oak-hickory,1,1,2,1,1

@@ -1,0 +1,8 @@
+metric,value
+forested NE pixels (30m),145668300
+mean agreement,0.115
+median agreement,0
+% pixels high-agreement (>=0.67),8.93
+% pixels all-three-agree (==1),0.71
+mean uncertainty,0.14
+% pixels high-uncertainty (>=0.4),24.26

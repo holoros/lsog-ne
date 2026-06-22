@@ -1,0 +1,6 @@
+structural_var,n,cv_R2_from_LiDAR,lo,hi
+basal_GE_40cmDBH,461,0.681,0.669,0.7
+No_treesGE_40cmdbh,461,0.586,0.578,0.597
+CWD_vol,462,0.201,0.175,0.23
+sum_dead_basalarea,461,0.241,0.222,0.264
+CV_livedbh,442,0.514,0.502,0.526

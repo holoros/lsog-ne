@@ -1,0 +1,22 @@
+pixels 3797566 (LSOG 895964) 
+      lsogf       n disturbance_prob slope_deg slope_median
+     <fctr>   <int>            <num>     <num>        <num>
+1: Not LSOG 2901602            0.111      4.13         2.99
+2:     LSOG  895964            0.128      6.65         5.28
+             driver spearman_with_ensemble
+             <char>                  <num>
+1: disturbance prob                  0.325
+2:            slope                  0.342
+LSOG rate by slope tercile:
+   slope_t lsog_rate
+    <fctr>     <num>
+1:     low      11.8
+2:     med      21.7
+3:    high      37.3
+LSOG rate by disturbance tercile:
+   dist_t lsog_rate
+   <fctr>     <num>
+1:    low      16.9
+2:    med      18.9
+3:   high      35.0
+PHASE 27 DONE

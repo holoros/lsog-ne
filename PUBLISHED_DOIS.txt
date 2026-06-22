@@ -1,0 +1,17 @@
+v1.2.0  10.5281/zenodo.20628341  (concept 10.5281/zenodo.20614496)  published 2026-06-10
+v1.2.3  10.5281/zenodo.20631007  (concept 10.5281/zenodo.20614496)  corrected complete Comment, sole author
+v1.2.4  10.5281/zenodo.20632716  (concept 10.5281/zenodo.20614496)  stress-tested, Shamgochian cited, final
+v1.2.5  10.5281/zenodo.20632890  (concept 10.5281/zenodo.20614496)  layout polish + future-research section
+v1.2.6  10.5281/zenodo.20641461  (concept 10.5281/zenodo.20614496)  14pp expanded: confusion, threshold, temporal, NE regional, protection, ensemble prototype
+v1.2.7  10.5281/zenodo.20641723  (concept 10.5281/zenodo.20614496)  simulated peer review v2 + refinements
+v1.2.8  10.5281/zenodo.20642112  NE hex ensemble + temporal thresholds + AUC + refinements
+v1.2.9  10.5281/zenodo.20642166  Metzler: snapshot/future-LSOG + toolset
+v1.3.0  10.5281/zenodo.20642403  what-is-LSOG multidimensional core + dimensions figure + skid-trail continuity
+v1.4.0  10.5281/zenodo.20642675  repeatable multi-axis true-LSOG classification (funnel 6.5v1.5.0  10.5281/zenodo.20643542  LSOG x disturbance/slope drivers
+v1.5.1  10.5281/zenodo.20643697  three-reviewer revision
+v1.6.0  10.5281/zenodo.20643962  Landsat continuity + FIA tempering + Fig2 AUC
+v1.7.0  10.5281/zenodo.20644318  (concept 10.5281/zenodo.20614496)  Table 8 LSOG-estimate synthesis; 16pp
+v1.8.0  10.5281/zenodo.20644936  (concept 10.5281/zenodo.20614496)  Pelz external cross-map check (Table S9) + carbon-by-class line; 16pp
+v1.9.0  10.5281/zenodo.20650416  (concept 10.5281/zenodo.20614496)  AOI-clipped UT trend answers footprint Q (rises within UT); Schloss no-regrets cite; Table S10
+v1.10.0  10.5281/zenodo.20652604  (concept 10.5281/zenodo.20614496)  drivers redone with real HCS v5 harvest prob: mapped LSOG on HIGH harvest-prob ground (reverses slope proxy)
+v1.11.0  10.5281/zenodo.20661925  (concept 10.5281/zenodo.20614496)  drivers two-sided (HCS+slope) + pre-emptive note; comprehensive working version

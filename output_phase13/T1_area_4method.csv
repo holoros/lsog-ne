@@ -1,0 +1,5 @@
+method,any_LSOG_pct,basis
+M1 Hagan,21.9227066588879,all AOI
+M2 v5.1-GEDI,13.9409066259109,all AOI
+M3 Potapov-direct,14.1071464437804,all AOI
+M4 TreeMap (FIA imputed),2.88041664233341,TreeMap-known cells

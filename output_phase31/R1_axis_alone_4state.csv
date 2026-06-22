@@ -1,0 +1,17 @@
+state,metric,pct,lo,hi
+ME,A1 live structure,12.5,11.35,13.65
+ME,A2 dead wood,46.13,44.38,47.88
+ME,A3 composition,55.32,53.52,57.12
+ME,A4 continuity,40.12,38.49,41.74
+NH,A1 live structure,37.86,34.74,40.98
+NH,A2 dead wood,59.94,56.65,63.23
+NH,A3 composition,67.01,63.71,70.32
+NH,A4 continuity,54.74,51.38,58.1
+VT,A1 live structure,39.08,35.8,42.35
+VT,A2 dead wood,59.14,55.61,62.67
+VT,A3 composition,67.22,63.75,70.68
+VT,A4 continuity,67.37,63.88,70.85
+NY,A1 live structure,39.22,37.44,41
+NY,A2 dead wood,56.45,54.6,58.3
+NY,A3 composition,48.57,46.79,50.35
+NY,A4 continuity,70.07,68.23,71.91

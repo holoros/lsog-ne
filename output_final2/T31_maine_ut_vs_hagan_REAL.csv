@@ -1,0 +1,15 @@
+comparison_basis,metric,v51_fia_proxy,hagan_lidar,source_note
+plot_level_in_AOI_2019_2023,n_plots,1760,1760,same FIA plots evaluated by both products (full UT AOI)
+plot_level_in_AOI_2019_2023,any_LSOG_pct,11.99,21.14,v5.1 TLS+LS+OG vs Hagan TransLS+LS+OGL at FIA plots
+plot_level_in_AOI_2019_2023,LS_OG_pct,1.19,3.86,policy-relevant late-successional+old-growth
+plot_level_in_AOI_2019_2023,OG_only_pct,0.057,0.85,v5.1 OG vs Hagan OGL
+plot_level_in_AOI_2019_2023,kappa_any,0.123,0.123,Cohen kappa v5.1 vs Hagan (any-LSOG)
+plot_level_in_AOI_2019_2023,kappa_LS_OG,0.050,0.050,Cohen kappa v5.1 vs Hagan (LS+OG)
+landscape_wall_to_wall,total_ha,NA,4281766,Hagan reproduced classified hectares (4.28M grid; published study area 4185869)
+landscape_wall_to_wall,any_LSOG_pct,NA,21.92,Hagan reproduced (published 19.7)
+landscape_wall_to_wall,LS_OGL_pct,NA,4.20,Hagan reproduced (published 3.9)
+landscape_wall_to_wall,LS_OGL_ha,NA,179891,Hagan reproduced (published 161881)
+landscape_wall_to_wall,OGL_pct,NA,0.88,Hagan reproduced (published 0.9)
+rf_validation,binary_notLSOG_vs_LSOG_acc_pct,NA,94.2,reproduced OOB (published 94.1)
+rf_validation,four_class_acc_pct,NA,86.6,reproduced OOB
+rf_validation,top_variable,NA,cano_cover_15,matches published most-important metric

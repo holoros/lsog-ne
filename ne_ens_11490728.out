@@ -1,0 +1,21 @@
+
+Lmod is automatically replacing "intel/2021.10.0" with "gcc/12.3.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) mvapich/4.1
+
+plots 13432; mean ens 0.120; any-def prevalence d1 0.22 d2 0.03 d3 0.11 
+VAT values 65043; with ens 4172 
+|---------|---------|---------|---------|=========================================                                          cropped NE TreeMap: 593,525,964 cells (29046 x 20434) 
+|---------|---------|---------|---------|=========================================                                          |---------|---------|---------|---------|=========================================                                          hex cells with data: 554; mean ens 0.117; mean unc 0.141 
+                              metric        value
+                              <char>        <num>
+1:          forested NE pixels (30m) 1.456683e+08
+2:                    mean agreement 1.150000e-01
+3:                  median agreement 0.000000e+00
+4:  % pixels high-agreement (>=0.67) 8.930000e+00
+5:    % pixels all-three-agree (==1) 7.100000e-01
+6:                  mean uncertainty 1.400000e-01
+7: % pixels high-uncertainty (>=0.4) 2.426000e+01
+PHASE 24 DONE

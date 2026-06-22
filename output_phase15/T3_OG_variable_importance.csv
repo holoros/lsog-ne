@@ -1,0 +1,17 @@
+variable,MDA,set
+sum_live_basalarea,14.35,ground structure
+cano_cover_15,14.32,LiDAR canopy
+basal_GE_40cmDBH,13.09,ground structure
+percentile_95th,11.74,LiDAR canopy
+CV_livedbh,11.17,ground structure
+QMD_live,10.17,ground structure
+mean_cano_ht,7.46,LiDAR canopy
+sum_dead_basalarea,7.44,ground structure
+cano_cover_2,6.74,LiDAR canopy
+max_cano_ht,5.9,LiDAR canopy
+No_treesGE_40cmdbh,5.72,ground structure
+prop_basal_GE_40cmDBH,5.41,ground structure
+top_rugosity,5.24,LiDAR canopy
+cano_cover_6,4.49,LiDAR canopy
+rumple,4.41,LiDAR canopy
+CWD_vol,3.08,ground structure

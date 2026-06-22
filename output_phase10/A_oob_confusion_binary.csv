@@ -1,0 +1,5 @@
+actual,predicted,N
+LSOG,LSOG,167
+Not LSOG,LSOG,13
+LSOG,Not LSOG,14
+Not LSOG,Not LSOG,269
