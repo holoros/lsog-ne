@@ -1,0 +1,10 @@
+test,ME,ME_rank_of_4,ME_lowest,ordering
+any-LSOG cutoff v5>=3,40.9,1,TRUE,ME<NY<NH<VT
+any-LSOG cutoff v5>=4,24.8,1,TRUE,ME<NY<NH<VT
+any-LSOG cutoff v5>=5,12.9,1,TRUE,ME<NY<NH<VT
+true-LSOG cutoff v5>=7,1.9,1,TRUE,ME<NH<VT<NY
+true-LSOG cutoff v5>=8,0.4,1,TRUE,ME<NH<VT<NY
+true-LSOG cutoff v5>=9,0.1,2,FALSE,NH<ME<VT<NY
+"any-LSOG, canopy dim removed (v5_nocanopy>=4)",20.3,1,TRUE,ME<NY<VT<NH
+any-LSOG by panel 2014-2018,23.9,1,TRUE,ME<NY<NH<VT
+any-LSOG by panel 2019-2023,25.8,1,TRUE,ME<NY<NH<VT

@@ -1,0 +1,3 @@
+soln,rmse,sys,slope,bias_hi
+total-error-optimal,1.711,0.136,0.864,-3.211
+MO compromise,1.712,0.082,0.918,-3.268

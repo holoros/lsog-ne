@@ -1,0 +1,89 @@
+// Splits manuscript_final.md into a main-text-only docx (with figures) and a
+// standalone Supporting Information docx (Tables S1-S10). Reuses build_manuscript.js style.
+const fs = require("fs");
+const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
+        ImageRun, AlignmentType, BorderStyle, WidthType, ShadingType,
+        PageBreak, LineNumberRestartFormat, Footer, PageNumber } = require("docx");
+
+const MD = "/sessions/vibrant-lucid-faraday/mnt/outputs/manuscript_final.md";
+const FIG = "/sessions/vibrant-lucid-faraday/mnt/outputs/ms_figs";
+const allLines = fs.readFileSync(MD, "utf8").split("\n");
+const siIdx = allLines.findIndex(l => l.trim() === "## Supplemental Materials");
+const mainLines = allLines.slice(0, siIdx);
+const siLines = allLines.slice(siIdx);
+
+const border = { style: BorderStyle.SINGLE, size: 1, color: "999999" };
+const borders = { top: border, bottom: border, left: border, right: border };
+const CONTENT = 9360;
+function S(t){ t = String(t)
+  .replace(/CO2e/g,"CO₂e").replace(/CO2/g,"CO₂")
+  .replace(/m\^3/g,"m³").replace(/ft\^2/g,"ft²").replace(/km\^2/g,"km²")
+  .replace(/R\^2/g,"R²").replace(/ha\^-1/g,"ha⁻¹")
+  .replace(/>=/g,"≥").replace(/<=/g,"≤").replace(/\+\/-/g,"±"); t = t.split(/(\s+)/).map(function(w){return /https?:\/\/|doi\.org/.test(w)?w:w.replace(/(\d)-(\d)/g,"$1–$2");}).join(""); return t; }
+function runs(text){ text = S(text); const out=[]; const re=/(\*\*[^*]+\*\*|\*[^*]+\*)/g; let last=0,m;
+  while((m=re.exec(text))){ if(m.index>last) out.push(new TextRun({text:text.slice(last,m.index),size:24}));
+    const t=m[0]; if(t.startsWith("**")) out.push(new TextRun({text:t.slice(2,-2),bold:true,size:24}));
+    else out.push(new TextRun({text:t.slice(1,-1),italics:true,size:24})); last=m.index+t.length; }
+  if(last<text.length) out.push(new TextRun({text:text.slice(last),size:24}));
+  if(!out.length) out.push(new TextRun({text:"",size:24})); return out; }
+function para(text,opts={}){ return new Paragraph({ spacing:{line:opts.line||480,before:opts.before||0,after:opts.after||0}, children:runs(text)}); }
+function heading(text,lvl){ const size=lvl===1?26:24; return new Paragraph({spacing:{line:480,before:200,after:60},children:[new TextRun({text,bold:true,size})]}); }
+function tcell(text,w,head){ return new TableCell({borders,width:{size:w,type:WidthType.DXA},
+  shading:head?{fill:"D9E2EC",type:ShadingType.CLEAR}:undefined, margins:{top:40,bottom:40,left:90,right:90},
+  children:[new Paragraph({spacing:{line:240},children:[new TextRun({text:S(text),bold:!!head,size:19})]})]}); }
+function mdtable(rows){ const ncol=rows[0].length; const w=Math.floor(CONTENT/ncol);
+  const widths=Array(ncol).fill(w); widths[0]=CONTENT-w*(ncol-1);
+  return new Table({width:{size:CONTENT,type:WidthType.DXA},columnWidths:widths,
+    rows:rows.map((r,ri)=>new TableRow({children:r.map((c,ci)=>tcell(c,widths[ci],ri===0))}))}); }
+
+function renderBody(src){
+  const children=[]; let i=0;
+  while(i<src.length){ let line=src[i];
+    if(line.trim()===""||line.trim()==="---"){ i++; continue; }
+    if(line.startsWith("# ")){ children.push(new Paragraph({spacing:{line:320,after:120},children:[new TextRun({text:line.slice(2),bold:true,size:30})]})); i++; continue; }
+    if(line.startsWith("## ")){ children.push(heading(line.slice(3),1)); i++; continue; }
+    if(line.startsWith("### ")){ children.push(heading(line.slice(4),2)); i++; continue; }
+    if(line.startsWith("|")){ const block=[]; while(i<src.length&&src[i].startsWith("|")){ block.push(src[i]); i++; }
+      const rows=block.map(r=>r.split("|").slice(1,-1).map(c=>c.trim()));
+      const clean=rows.filter(r=>!r.every(c=>/^:?-+:?$/.test(c)||c===""));
+      children.push(mdtable(clean)); children.push(new Paragraph({spacing:{line:120},children:[new TextRun("")]})); continue; }
+    children.push(para(line)); i++;
+  }
+  return children;
+}
+
+function makeDoc(children){ return new Document({
+  styles:{default:{document:{run:{font:"Times New Roman",size:24}}}},
+  sections:[{properties:{page:{size:{width:12240,height:15840},
+    margin:{top:1440,right:1440,bottom:1440,left:1440},
+    lineNumbers:{countBy:1,restart:LineNumberRestartFormat.CONTINUOUS,distance:360}}},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,
+      children:[new TextRun({children:[PageNumber.CURRENT],size:20})]})]})},
+    children}]}); }
+
+// ---- MAIN (with figures appended) ----
+const mainChildren = renderBody(mainLines);
+const figDims = { "Fig_datamap.png":[2100,2280],"msFig2_4state_fixed.png":[1504,1578],"msFig3.png":[3000,1750],
+  "msFig4.png":[1600,950],"msFig5.png":[2520,1680],"msFig6_prob_surface.png":[2192,1322],"msFig_refined_map.png":[2700,1850],"msFig_regional10m.png":[2600,2200] };
+const figW = { "Fig_datamap.png":5.1,"msFig2_4state_fixed.png":5.6,"msFig3.png":6.4,"msFig4.png":6.2,"msFig5.png":6.2,"msFig6_prob_surface.png":6.4,"msFig_refined_map.png":6.6,"msFig_regional10m.png":6.5 };
+let fnum=1;
+for(const f of ["Fig_datamap.png","msFig2_4state_fixed.png","msFig3.png","msFig4.png","msFig5.png","msFig6_prob_surface.png","msFig_refined_map.png","msFig_regional10m.png"]){
+  mainChildren.push(new Paragraph({children:[new PageBreak()]}));
+  mainChildren.push(new Paragraph({spacing:{after:60},children:[new TextRun({text:"Figure "+fnum,bold:true,size:22})]}));
+  const wIn=figW[f]*96,h=wIn*figDims[f][1]/figDims[f][0];
+  mainChildren.push(new Paragraph({alignment:AlignmentType.CENTER,children:[new ImageRun({type:"png",data:fs.readFileSync(`${FIG}/${f}`),transformation:{width:Math.round(wIn),height:Math.round(h)},altText:{title:f,description:f,name:f}})]}));
+  fnum++;
+}
+
+// ---- SI (Tables S1-S10) with a title block ----
+const siChildren=[];
+siChildren.push(new Paragraph({spacing:{line:320,after:60},children:[new TextRun({text:"Supporting Information",bold:true,size:30})]}));
+siChildren.push(new Paragraph({spacing:{line:300,after:60},children:[new TextRun({text:"It depends how you count: definition, disturbance history, and the distribution of late-successional and old-growth forest across the northeastern United States",italics:true,size:24})]}));
+siChildren.push(new Paragraph({spacing:{line:300,after:200},children:[new TextRun({text:"Aaron R. Weiskittel, University of Maine, Center for Research on Sustainable Forests and School of Forest Resources",size:22})]}));
+// drop the original "## Supplemental Materials" heading (replaced by the title above)
+siChildren.push(...renderBody(siLines.filter(l=>l.trim()!=="## Supplemental Materials")));
+
+Promise.all([
+  Packer.toBuffer(makeDoc(mainChildren)).then(b=>fs.writeFileSync("/sessions/vibrant-lucid-faraday/mnt/outputs/Northeast_LSOG_Manuscript_main.docx",b)),
+  Packer.toBuffer(makeDoc(siChildren)).then(b=>fs.writeFileSync("/sessions/vibrant-lucid-faraday/mnt/outputs/Northeast_LSOG_Manuscript_SI.docx",b)),
+]).then(()=>console.log("wrote main + SI"));
