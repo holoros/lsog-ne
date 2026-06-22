@@ -3,7 +3,7 @@
 const fs = require("fs");
 const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
         ImageRun, AlignmentType, BorderStyle, WidthType, ShadingType,
-        PageBreak, LineNumberRestartFormat } = require("docx");
+        PageBreak, LineNumberRestartFormat, Footer, PageNumber } = require("docx");
 
 const MD = "/sessions/vibrant-lucid-faraday/mnt/outputs/manuscript_final.md";
 const FIG = "/sessions/vibrant-lucid-faraday/mnt/outputs/ms_figs";
@@ -56,15 +56,18 @@ function makeDoc(children){ return new Document({
   styles:{default:{document:{run:{font:"Times New Roman",size:24}}}},
   sections:[{properties:{page:{size:{width:12240,height:15840},
     margin:{top:1440,right:1440,bottom:1440,left:1440},
-    lineNumbers:{countBy:1,restart:LineNumberRestartFormat.CONTINUOUS,distance:360}}},children}]}); }
+    lineNumbers:{countBy:1,restart:LineNumberRestartFormat.CONTINUOUS,distance:360}}},
+    footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,
+      children:[new TextRun({children:[PageNumber.CURRENT],size:20})]})]})},
+    children}]}); }
 
 // ---- MAIN (with figures appended) ----
 const mainChildren = renderBody(mainLines);
 const figDims = { "Fig_datamap.png":[2100,2280],"msFig2_4state_fixed.png":[1504,1578],"msFig3.png":[3000,1750],
-  "msFig4.png":[1600,950],"msFig5.png":[2520,1680],"msFig6_prob_surface.png":[1500,1900],"msFig_refined_map.png":[2700,1850] };
-const figW = { "Fig_datamap.png":5.1,"msFig2_4state_fixed.png":5.6,"msFig3.png":6.4,"msFig4.png":6.2,"msFig5.png":6.2,"msFig6_prob_surface.png":4.3,"msFig_refined_map.png":6.6 };
+  "msFig4.png":[1600,950],"msFig5.png":[2520,1680],"msFig6_prob_surface.png":[2192,1322],"msFig_refined_map.png":[2700,1850],"msFig_regional10m.png":[2600,2200] };
+const figW = { "Fig_datamap.png":5.1,"msFig2_4state_fixed.png":5.6,"msFig3.png":6.4,"msFig4.png":6.2,"msFig5.png":6.2,"msFig6_prob_surface.png":6.4,"msFig_refined_map.png":6.6,"msFig_regional10m.png":6.5 };
 let fnum=1;
-for(const f of ["Fig_datamap.png","msFig2_4state_fixed.png","msFig3.png","msFig4.png","msFig5.png","msFig6_prob_surface.png","msFig_refined_map.png"]){
+for(const f of ["Fig_datamap.png","msFig2_4state_fixed.png","msFig3.png","msFig4.png","msFig5.png","msFig6_prob_surface.png","msFig_refined_map.png","msFig_regional10m.png"]){
   mainChildren.push(new Paragraph({children:[new PageBreak()]}));
   mainChildren.push(new Paragraph({spacing:{after:60},children:[new TextRun({text:"Figure "+fnum,bold:true,size:22})]}));
   const wIn=figW[f]*96,h=wIn*figDims[f][1]/figDims[f][0];
