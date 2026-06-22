@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
         ImageRun, AlignmentType, BorderStyle, WidthType,
-        ShadingType, PageBreak, LineNumberRestartFormat } = require("docx");
+        ShadingType, PageBreak, LineNumberRestartFormat, Footer, PageNumber } = require("docx");
 
 const FIG = "/sessions/vibrant-lucid-faraday/mnt/outputs/comment_figs";
 
@@ -59,19 +59,40 @@ function img(file, wIn) {
 }
 
 const children = [];
+children.push(new Paragraph({ spacing: { line: 300 }, children: [new TextRun({ text: "Ecosphere", size: 22 })] }));
+children.push(new Paragraph({ spacing: { line: 300, after: 80 }, children: [new TextRun({ text: "Manuscript type: Comment", size: 22 })] }));
 children.push(new Paragraph({ spacing: { line: 360, after: 120 }, children: [
   new TextRun({ text: "Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA: Comment", bold: true, size: 28 })] }));
 children.push(new Paragraph({ spacing: { line: 360 }, children: [
   new TextRun({ text: "Aaron R. Weiskittel", size: 24 }),
+  new TextRun({ text: "1", size: 16, superScript: true }),
+  new TextRun({ text: ", Anthony W. D'Amato", size: 24 }),
+  new TextRun({ text: "2", size: 16, superScript: true }),
+  new TextRun({ text: ", Christopher W. Woodall", size: 24 }),
+  new TextRun({ text: "3", size: 16, superScript: true }),
+  new TextRun({ text: ", Erin Simons-Legaard", size: 24 }),
+  new TextRun({ text: "1", size: 16, superScript: true }),
+  new TextRun({ text: ", Adam Daigneault", size: 24 }),
+  new TextRun({ text: "1", size: 16, superScript: true }),
+  new TextRun({ text: ", Daniel J. Hayes", size: 24 }),
   new TextRun({ text: "1", size: 16, superScript: true })] }));
+children.push(new Paragraph({ spacing: { line: 300 }, children: [
+  new TextRun({ text: "1 University of Maine, Center for Research on Sustainable Forests and School of Forest Resources, 5755 Nutting Hall, Orono, ME 04469, USA", size: 20, italics: true })] }));
+children.push(new Paragraph({ spacing: { line: 300 }, children: [
+  new TextRun({ text: "2 University of Vermont, Rubenstein School of Environment and Natural Resources, Burlington, VT, USA", size: 20, italics: true })] }));
+children.push(new Paragraph({ spacing: { line: 300 }, children: [
+  new TextRun({ text: "3 CTrees, Pasadena, CA, USA", size: 20, italics: true })] }));
 children.push(new Paragraph({ spacing: { line: 300, after: 120 }, children: [
-  new TextRun({ text: "1 University of Maine, Center for Research on Sustainable Forests, 5755 Nutting Hall, Orono, ME 04469, USA. aaron.weiskittel@maine.edu", size: 20, italics: true })] }));
+  new TextRun({ text: "Corresponding author: Aaron R. Weiskittel, aaron.weiskittel@maine.edu", size: 20, italics: true })] }));
 children.push(new Paragraph({ spacing: { line: 300, after: 120 }, children: [
   new TextRun({ text: "Comment on Hagan, J.M., B. Shamgochian, M.M.L. Taylor & J.M. Reed. 2026. Using LiDAR to quantify, map, and conserve late-successional and old-growth forest in Maine, USA. Ecosphere 17(6):e70670. https://doi.org/10.1002/ecs2.70670.", size: 20, italics: true })] }));
+children.push(new Paragraph({ spacing: { line: 300, after: 120 }, children: [
+  new TextRun({ text: "Key words: ", bold: true, size: 20 }),
+  new TextRun({ text: "canopy height; cross-map assessment; design-based estimation; forest inventory and analysis; late-successional and old-growth; map uncertainty; old-growth forest; remote sensing", size: 20 })] }));
 
 const sections = [
   ["1. Introduction", [
-"Mapping late-successional and old-growth (LSOG) forest has become a national undertaking. A 2022 federal executive order directed the first government-wide inventory of mature and old-growth forest (U.S. Executive Order 14072 2022; USDA Forest Service and USDI Bureau of Land Management 2023), and in the same period continental old-growth probability layers (Bruening et al. 2026), structure-based national maps (DellaSala et al. 2022), region-standardized field criteria (Pelz et al. 2023), and global canopy-height products (Potapov et al. 2021) were all produced. A recurring lesson runs through that body of work: because older forest is rare, structurally heterogeneous, and operationalized differently by each program, independent and individually credible maps disagree substantially on both how much LSOG exists and where it sits, and defining the condition at all is a recognized hard problem (Barnett et al. 2023; Gray et al. 2023). That federal effort has also shown that treating maturity and old growth as a multidimensional structural condition rather than a single threshold leaves the estimate strongly dependent on the criteria chosen: the Forest Inventory Growth Stage System builds maturity from a suite of structural indicators across roughly 80 regional vegetation types and places about 45% of federal forest in the mature class and 18% in old growth (Woodall et al. 2023; USDA Forest Service and USDI Bureau of Land Management 2023), an estimate that shifts with the structural thresholds chosen, the national-scale analogue of the definitional sensitivity we quantify here. That disagreement, more than any single map's internal error, is what makes a map's fitness for a particular decision the question that matters. The maps also carry consequences once they are read literally, because a wall-to-wall surface is easily taken as a direct guide to where conservation money should go, stripped of the caveats and uncertainties under which it was built. Maine offers an unusually concrete instance of that general problem, and we treat it here not as a special case but as a worked example of what a cross-map accuracy assessment and an explicit uncertainty statement add before a map anchors spending.",
+"Mapping late-successional and old-growth (LSOG) forest has become a national undertaking. A 2022 federal executive order directed the first government-wide inventory of mature and old-growth forest (U.S. Executive Order 14072 2022; USDA Forest Service and USDI Bureau of Land Management 2023), and in the same period continental old-growth probability layers (Bruening et al. 2026), structure-based national maps (DellaSala et al. 2022), region-standardized field criteria (Pelz et al. 2023), and global canopy-height products (Potapov et al. 2021) were all produced. A recurring lesson runs through that body of work: because older forest is rare, structurally heterogeneous, and operationalized differently by each program, independent and individually credible maps disagree substantially on both how much LSOG exists and where it sits, and defining the condition at all is a recognized hard problem (Barnett et al. 2023; Gray et al. 2023). That federal effort has also shown that treating maturity and old growth as a multidimensional structural condition rather than a single threshold leaves the estimate strongly dependent on the criteria chosen: the Forest Inventory Growth Stage System builds maturity from a suite of structural indicators across roughly 80 regional vegetation types and places about 45% of federal forest in the mature class and 18% in old growth (Woodall et al. 2023, their Tables 4 and 5; USDA Forest Service and USDI Bureau of Land Management 2023); in that system the mature-and-old-growth share swings from roughly 27% to 81% of forest depending on the structural thresholds chosen, the national-scale analogue of the definitional sensitivity we quantify here. That disagreement, more than any single map's internal error, is what makes a map's fitness for a particular decision the question that matters. The maps also carry consequences once they are read literally, because a wall-to-wall surface is easily taken as a direct guide to where conservation money should go, stripped of the caveats and uncertainties under which it was built. Maine offers an unusually concrete instance of that general problem, and we treat it here not as a special case but as a worked example of what a cross-map accuracy assessment and an explicit uncertainty statement add before a map anchors spending.",
 "Hagan et al. (2026) provide a valuable, transparent, and timely contribution: a field-trained, wall-to-wall classification of late-successional and old-growth (LSOG) forest across approximately 4.2 million hectares of Maine's unorganized townships, derived from publicly available airborne LiDAR. The authors archived their training data and code, the field effort is substantial, and the resulting map has focused overdue attention on older forest in a working landscape. We were able to reproduce their random forest classifier exactly from the archived data, obtaining an out-of-bag accuracy of 94.2% for the Not-LSOG versus LSOG distinction against their reported 94.1%, with the same most-important predictor (canopy cover above 15 m). Nothing in this Comment questions the competence or the openness of the original analysis, both of which we commend.",
 "Our concern is narrower and methodological, and it follows from how the map is now being used. The classification has become the spatial basis for conservation prioritization at scale: Thompson et al. (2026) build directly on it and estimate that protecting the highest-priority half of the mapped LSOG patches would cost on the order of US $200-300 million, in support of Maine's LD 1529. When a single map becomes the substrate for parcel-level acquisition and emerging carbon and conservation markets, the properties that govern its fitness for that purpose are no longer only its training accuracy. They are (i) its accuracy and agreement relative to independent maps and to ground-based inventory of the same target; (ii) the uncertainty of every quantity derived from it; and (iii) the validity of the trend used to motivate action. A map can be both wrong, in the unavoidable sense that LSOG is a continuous and partly subjective condition forced into discrete classes, and useful for some decisions but not others (Box 1976). Our purpose is to show, using analyses built largely on the authors' own archived data and on independent public data over the same area, what a cross-map accuracy assessment and an explicit uncertainty statement add, and to suggest that they should accompany the map before it anchors large expenditures.",
 "A map built to guide conservation spending must answer three questions: what late-successional and old-growth forest is, how much of it exists, and where it is. The published analysis answers the first only as a canopy-structure proxy and does not yet robustly answer the second or third, and we make four specific points. First, training accuracy is high for every candidate approach and is therefore not the issue (Section 2); what happens beyond the training set is. Second, independent and equally defensible operationalizations of LSOG disagree markedly on where it is, at the very scale at which hectares are prioritized (Section 3). Third, the canopy signal the method relies on is sensitive to tall, big-tree forest but largely blind to the dead wood and disturbance history that distinguish genuine old-growth, so it answers what by mapping a structural proxy rather than old-growth itself, and that proxy is roughly three times more extensive than ground-defined old forest (Section 4). Fourth, how much is reported as a single number without the sampling interval that the ground-based inventory it approximates readily supplies, and that inventory shows the stock stable to rising rather than rapidly declining (Section 5). Section 6 discusses implications.",
@@ -96,13 +117,19 @@ const sections = [
 ];
 for (const [h, paras] of sections) { children.push(H(h)); for (const p of paras) children.push(P(p)); }
 
-children.push(H("Competing Interests"));
+children.push(H("Acknowledgments"));
+children.push(P("We thank the Maine Natural Areas Program and The Nature Conservancy, and Baxter State Park, for access to the ecological reserve and continuous forest inventory data used as independent validation, each provided under data-use agreement. We thank J.M. Hagan and colleagues for openly archiving the training data and code that made the reproduction possible. This work was supported by the Center for Research on Sustainable Forests at the University of Maine [PLACEHOLDER: award numbers]."));
+
+children.push(H("Author Contributions"));
+children.push(P("A.R.W. conceived the Comment, performed the analyses, and wrote the manuscript. A.W.D., C.W.W., E.S.L., A.D., and D.J.H. contributed to interpretation and manuscript revision. All authors approved the final version. [PLACEHOLDER: confirm per-author CRediT roles.]"));
+
+children.push(H("Conflict of Interest"));
 children.push(P("The authors are developing an independent, FIA-anchored multi-axis LSOG classification (the companion analysis referenced here), which could be regarded as an alternative to the product discussed. This Comment is offered as a methodological critique in that context, and all supporting analyses use the original authors' archived data and public data over the same area. The alternative we are developing is held to the same standard we apply here: it equally requires independent field validation of the old-growth class, and our own analyses indicate that even modern wall-to-wall products fall short of replacing design-based estimation for this target: an open Sentinel-based satellite-embedding model reaches a cross-validated area-under-curve near 0.82, and fusing multiple modern sources lifts it to about 0.87, both well above a single coarse canopy-height layer (about 0.67 to 0.70) yet still imperfect for a class this rare; these benchmarks are documented in the companion technical report (Weiskittel 2026). The argument is therefore not that one map outperforms another, but that no remote-sensing map, ours included, can substitute for design-based estimation of how much LSOG exists."));
 
-children.push(H("Data and Code Availability"));
-children.push(P("All analyses, code, and derived products supporting this Comment are archived at Zenodo (concept DOI 10.5281/zenodo.20614496, resolving to the latest version). Hagan et al.'s training data and code are at Zenodo (10.5281/zenodo.19696494). FIA data are from the USDA FIA DataMart (apps.fs.usda.gov/fia/datamart), accessed June 2026."));
+children.push(H("Open Research"));
+children.push(P("All analyses, code, and derived products supporting this Comment are archived at Zenodo (concept DOI 10.5281/zenodo.20614496, resolving to the latest version). Hagan et al.'s training data and code are at Zenodo (10.5281/zenodo.19696494). FIA data are from the USDA FIA DataMart (apps.fs.usda.gov/fia/datamart), accessed June 2026. FIA plot coordinates are confidential and are not released."));
 
-children.push(H("Literature Cited"));
+children.push(H("References"));
 const refs = [
 "Barnett, K., G.H. Aplet & R.T. Belote. 2023. Classifying, inventorying, and mapping mature and old-growth forests in the United States. Frontiers in Forests and Global Change 5:1070372. https://doi.org/10.3389/ffgc.2022.1070372",
 "Box, G.E.P. 1976. Science and statistics. Journal of the American Statistical Association 71:791-799.",
@@ -183,6 +210,8 @@ const doc = new Document({
     properties: { page: { size: { width: 12240, height: 15840 },
       margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 },
       lineNumbers: { countBy: 1, restart: LineNumberRestartFormat.CONTINUOUS, distance: 360 } } },
+    footers: { default: new Footer({ children: [ new Paragraph({ alignment: AlignmentType.CENTER,
+      children: [ new TextRun({ children: [PageNumber.CURRENT], size: 20 }) ] }) ] }) },
     children,
   }],
 });
