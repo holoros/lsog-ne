@@ -1,0 +1,25 @@
+Package: lsogscore
+Title: Late-Successional and Old-Growth Scoring Instruments for Maine and New Brunswick
+Version: 0.1.0
+Authors@R: c(
+    person("Aaron", "Weiskittel", email = "aaron.weiskittel@maine.edu",
+           role = c("aut", "cre")),
+    person("Christopher W.", "Woodall", role = "aut"),
+    person("Anthony W.", "D'Amato", role = "aut"))
+Description: One tested implementation of every late-successional and old-growth
+    (LSOG) scoring instrument used in the Maine and New Brunswick analysis, in
+    place of the seven scattered R and Python implementations that preceded it.
+    Covers the Maine published six-axis card, the New Brunswick published
+    five-axis card, the strict four-axis conjunctive rule, the CORE4 comparable
+    instrument, both CORE5 forms, and the two small-area-estimation label cards.
+    Every threshold is stored in the units its source code used, carries the file
+    and line it came from, and is converted once at a single boundary, so a
+    jurisdiction difference is visible rather than silently harmonized. No plot
+    coordinate is read, written, or required.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.0)
+Suggests: testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.0
