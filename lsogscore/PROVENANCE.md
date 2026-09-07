@@ -114,9 +114,11 @@ carries what the validation needed without the embeddings.
 
 ## Open
 
-No `man/` pages. The roxygen comments are written but have not been compiled to
-`.Rd`, so `R CMD INSTALL` warns and `?score_core4` will not resolve. Run
-`roxygen2::roxygenise()` when convenient.
+Closed September 6, 2026. `man/` holds 24 Rd files compiled with roxygen2 8.1.0
+under R 4.5.1, the regenerated NAMESPACE carries the same 33 exports as the
+hand-written one, and `R CMD check --no-manual` returns Status OK. Three
+constants remain without a source line in the registry, namely 0.229568,
+2.54, and 2.4710538, which are unit definitions rather than project choices.
 
 The New Brunswick label card's attribute construction is confirmed from sibling
 scorers rather than from its own source, since `nb_public_v51_pipeline.py` v1
@@ -127,7 +129,11 @@ evidence the construction matches, but it is evidence rather than a reading of
 the line.
 
 The A3 species set excludes balsam fir, *Abies balsamea* (L.) Mill. All ten
-members of the set are long lived and balsam fir is not, which is a coherent
-reading, yet the manuscript does not state that rationale. `late_species()`
-encodes the set that produced the reported figure and a test fails loudly if it
-changes, so the question stays visible rather than drifting.
+members of the set are long lived and balsam fir is not. Decided September 6,
+2026, to keep it out and to state that rationale in the manuscript. A Cardinal
+sensitivity run (SLURM 14267992, `scripts/jobB_four_axis_no_proxy_spcd12probe.R`)
+found that adding SPCD 12 moves the Maine strict four-axis rate from 2.51%
+[1.88, 3.13] to 2.87% [2.20, 3.55], 63 to 71 of 2,441 plots, inside the baseline
+interval, while the A3 axis alone rises from 55.3% to 80.8% of forestland and
+stops discriminating. `late_species()` encodes the set that produced the
+reported figure and a test fails loudly if it changes.
