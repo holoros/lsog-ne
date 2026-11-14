@@ -1,0 +1,34 @@
+{
+ "file": "2026-11-14_me-lsog-definition-probability-30m_DATA.tif",
+ "bytes": 894612994,
+ "sha256": "1068fbbb968d14cb06ea81e61b2c0c37d45589964af0c04bfbae1e585d2dc5ec",
+ "width": 10849,
+ "height": 16540,
+ "crs": "EPSG:32619",
+ "cell_m": 30,
+ "kept_cells": 82509639,
+ "area_ha": 7425867.5,
+ "row_offset_r1": 289,
+ "row_end_r2": 16829,
+ "col_offset_c1": 2746,
+ "mean_probability": {
+  "V3": 0.23409,
+  "V1": 0.16831,
+  "V2": 0.13203,
+  "V4": 0.1047,
+  "V9_c3": 0.05981,
+  "V7": 0.02704
+ },
+ "mean_probability_10m": {
+  "V3": 0.23415,
+  "V1": 0.16834,
+  "V2": 0.13207,
+  "V4": 0.10471,
+  "V9_c3": 0.05981,
+  "V7": 0.02706
+ },
+ "share_extrapolated": 0.04649,
+ "check_cells": 400,
+ "check_mismatch": 0,
+ "check_max_abs_diff": 0.0
+}
