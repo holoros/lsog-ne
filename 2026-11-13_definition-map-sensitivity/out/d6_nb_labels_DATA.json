@@ -1,0 +1,84 @@
+{
+ "captured": [
+  "W1",
+  "W2",
+  "W3",
+  "W4",
+  "W5",
+  "W6",
+  "X10_OG6",
+  "X10_OG7",
+  "X8",
+  "X8_c2",
+  "X8_c3",
+  "X8_c5",
+  "X9",
+  "X9_c2",
+  "X9_c3"
+ ],
+ "missing": [],
+ "defs": {
+  "W2": {
+   "pct": 39.39,
+   "lo": 36.89,
+   "hi": 41.82,
+   "n_plots": 9042,
+   "n_pos": 3578,
+   "target": 39.39,
+   "pass_point": true,
+   "pass_interval": true
+  },
+  "W1": {
+   "pct": 31.47,
+   "lo": 29.17,
+   "hi": 33.31,
+   "n_plots": 9042,
+   "n_pos": 2854,
+   "target": 31.47,
+   "pass_point": true,
+   "pass_interval": true
+  },
+  "W4": {
+   "pct": 9.75,
+   "lo": 8.51,
+   "hi": 10.88,
+   "n_plots": 9042,
+   "n_pos": 890,
+   "target": 9.75,
+   "pass_point": true,
+   "pass_interval": true
+  },
+  "X9_c3": {
+   "pct": 9.37,
+   "lo": 7.71,
+   "hi": 11.03,
+   "n_plots": 9042,
+   "n_pos": 849,
+   "target": 9.37,
+   "pass_point": true,
+   "pass_interval": true
+  },
+  "X9": {
+   "pct": 6.12,
+   "lo": 4.87,
+   "hi": 7.48,
+   "n_plots": 9042,
+   "n_pos": 555,
+   "target": 6.12,
+   "pass_point": true,
+   "pass_interval": true
+  },
+  "W6": {
+   "pct": 4.49,
+   "lo": 3.57,
+   "hi": 5.55,
+   "n_plots": 9042,
+   "n_pos": 410,
+   "target": 4.49,
+   "pass_point": true,
+   "pass_interval": true
+  }
+ },
+ "same_plot_basis_all_variants": true,
+ "gate": true
+}

@@ -1,0 +1,64 @@
+{
+ "jurisdiction": "me",
+ "cells": 741738128,
+ "fixed_threshold": 0.5,
+ "flagged_share_pct_at_0.5": {
+  "V3": 9.5887,
+  "V1": 4.5361,
+  "V2": 3.1017,
+  "V4": 0.6243,
+  "V9_c3": 0.1566,
+  "V7": 0.0001
+ },
+ "design_pct": {
+  "V3": 22.69,
+  "V1": 15.92,
+  "V2": 12.46,
+  "V4": 9.5,
+  "V9_c3": 5.1,
+  "V7": 2.26
+ },
+ "ratio_flagged_at_0.5_to_design": {
+  "V3": 0.4226,
+  "V1": 0.2849,
+  "V2": 0.2489,
+  "V4": 0.0657,
+  "V9_c3": 0.0307,
+  "V7": 0.0
+ },
+ "agreement_share_pct_at_0.5": {
+  "any": 9.6587,
+  "half": 3.0798,
+  "all": 0.0
+ },
+ "agreement_share_pct_rank_rule": {
+  "any": 24.22,
+  "half": 13.567,
+  "all": 1.194
+ },
+ "five_seeds": {
+  "definition": "V1",
+  "n_plots": 2977,
+  "seeds": 5,
+  "level": "plot, out of fold; surfaces not remapped",
+  "auc_oof_range": [
+   0.8155,
+   0.8199
+  ],
+  "auc_oof_seed0": 0.8155,
+  "mean_oof_pct_range": [
+   15.8504,
+   15.9403
+  ],
+  "top_share_flag_pct": 15.92,
+  "n_flagged": 474,
+  "pairwise_jaccard_flagged_plots_range": [
+   0.8735,
+   0.9036
+  ],
+  "pairwise_corr_oof_range": [
+   0.9924,
+   0.9933
+  ]
+ }
+}

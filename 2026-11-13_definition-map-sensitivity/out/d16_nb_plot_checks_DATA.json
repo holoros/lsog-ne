@@ -1,0 +1,124 @@
+{
+ "jurisdiction": "nb",
+ "n_plots": 9042,
+ "defs": [
+  "W2",
+  "W1",
+  "W4",
+  "X9_c3",
+  "X9",
+  "W6"
+ ],
+ "label_containment_smaller_in_larger": {
+  "W2|W1": 1.0,
+  "W2|W4": 1.0,
+  "W2|X9_c3": 0.9647,
+  "W2|X9": 0.9892,
+  "W2|W6": 1.0,
+  "W1|W4": 1.0,
+  "W1|X9_c3": 0.947,
+  "W1|X9": 0.982,
+  "W1|W6": 1.0,
+  "W4|X9_c3": 0.6125,
+  "W4|X9": 0.8306,
+  "W4|W6": 1.0,
+  "X9_c3|X9": 1.0,
+  "X9_c3|W6": 0.9951,
+  "X9|W6": 0.9341
+ },
+ "label_containment_median": 0.9951,
+ "label_containment_min": 0.6125,
+ "plots_by_count_unweighted": {
+  "0": 5434,
+  "1": 733,
+  "2": 1697,
+  "3": 572,
+  "4": 120,
+  "5": 103,
+  "6": 383
+ },
+ "weighted_plot_share_pct": {
+  "any": {
+   "est": 39.726,
+   "ci": [
+    38.173,
+    41.349
+   ]
+  },
+  "half": {
+   "est": 12.766,
+   "ci": [
+    11.826,
+    13.746
+   ]
+  },
+  "all": {
+   "est": 4.106,
+   "ci": [
+    3.536,
+    4.72
+   ]
+  }
+ },
+ "weighted_plot_share_note": "plot mean with design weights (Maine: unweighted fitted plots; see d15 for the design-based estimate); 20 km block bootstrap, 2,000 replicates",
+ "null_permuted_labels": {
+  "label_rate_pct": [
+   39.234,
+   31.501,
+   9.959,
+   9.412,
+   6.023,
+   4.52
+  ],
+  "mean_oof_prob_pct": [
+   39.81,
+   32.42,
+   10.964,
+   10.446,
+   6.934,
+   5.283
+  ],
+  "auc_oof": [
+   0.5025,
+   0.5038,
+   0.513,
+   0.5103,
+   0.5126,
+   0.5197
+  ],
+  "slope_mean_prob_on_rate": 0.9935,
+  "intercept": 0.9779,
+  "slope_on_design_pct": 0.9896
+ },
+ "blocks_40km": {
+  "n_blocks": 74,
+  "any": {
+   "est": 42.249,
+   "ci": [
+    40.045,
+    44.48
+   ]
+  },
+  "half": {
+   "est": 11.77,
+   "ci": [
+    10.069,
+    13.57
+   ]
+  },
+  "all": {
+   "est": 3.045,
+   "ci": [
+    2.268,
+    3.884
+   ]
+  },
+  "slope": {
+   "est": 0.972,
+   "ci": [
+    0.95,
+    0.994
+   ]
+  }
+ }
+}

@@ -1,0 +1,321 @@
+{
+ "date": "2026-11-14",
+ "n_fitted_plots": 2977,
+ "ring_m": [
+  35,
+  45
+ ],
+ "control_distance_m": 1000,
+ "bootstrap": 2000,
+ "layers": {
+  "V3": {
+   "units": "probability",
+   "positive_group": "plots positive under the definition",
+   "true_cell_minus_ring": {
+    "positive": {
+     "n": 654,
+     "mean": 0.01349,
+     "ci": [
+      0.00789,
+      0.01915
+     ]
+    },
+    "negative": {
+     "n": 2254,
+     "mean": -0.00336,
+     "ci": [
+      -0.00546,
+      -0.00137
+     ]
+    }
+   },
+   "control_1km_minus_ring": {
+    "positive": {
+     "n": 598,
+     "mean": 0.00235,
+     "ci": [
+      -0.00219,
+      0.0066
+     ]
+    },
+    "negative": {
+     "n": 2094,
+     "mean": -0.00154,
+     "ci": [
+      -0.00389,
+      0.00089
+     ]
+    }
+   }
+  },
+  "V1": {
+   "units": "probability",
+   "positive_group": "plots positive under the definition",
+   "true_cell_minus_ring": {
+    "positive": {
+     "n": 458,
+     "mean": 0.01543,
+     "ci": [
+      0.00917,
+      0.02118
+     ]
+    },
+    "negative": {
+     "n": 2450,
+     "mean": -0.00144,
+     "ci": [
+      -0.00321,
+      0.0003
+     ]
+    }
+   },
+   "control_1km_minus_ring": {
+    "positive": {
+     "n": 414,
+     "mean": 0.00311,
+     "ci": [
+      -0.00143,
+      0.00814
+     ]
+    },
+    "negative": {
+     "n": 2278,
+     "mean": -0.00027,
+     "ci": [
+      -0.00231,
+      0.00172
+     ]
+    }
+   }
+  },
+  "V2": {
+   "units": "probability",
+   "positive_group": "plots positive under the definition",
+   "true_cell_minus_ring": {
+    "positive": {
+     "n": 357,
+     "mean": 0.01734,
+     "ci": [
+      0.01052,
+      0.02406
+     ]
+    },
+    "negative": {
+     "n": 2551,
+     "mean": -0.00043,
+     "ci": [
+      -0.00207,
+      0.0012
+     ]
+    }
+   },
+   "control_1km_minus_ring": {
+    "positive": {
+     "n": 318,
+     "mean": -0.00111,
+     "ci": [
+      -0.00633,
+      0.00396
+     ]
+    },
+    "negative": {
+     "n": 2374,
+     "mean": 0.0002,
+     "ci": [
+      -0.00166,
+      0.00207
+     ]
+    }
+   }
+  },
+  "V4": {
+   "units": "probability",
+   "positive_group": "plots positive under the definition",
+   "true_cell_minus_ring": {
+    "positive": {
+     "n": 271,
+     "mean": 0.01266,
+     "ci": [
+      0.00652,
+      0.01872
+     ]
+    },
+    "negative": {
+     "n": 2637,
+     "mean": -0.00063,
+     "ci": [
+      -0.00182,
+      0.00062
+     ]
+    }
+   },
+   "control_1km_minus_ring": {
+    "positive": {
+     "n": 234,
+     "mean": -0.00156,
+     "ci": [
+      -0.006,
+      0.0027
+     ]
+    },
+    "negative": {
+     "n": 2458,
+     "mean": -0.00013,
+     "ci": [
+      -0.00158,
+      0.0012
+     ]
+    }
+   }
+  },
+  "V9_c3": {
+   "units": "probability",
+   "positive_group": "plots positive under the definition",
+   "true_cell_minus_ring": {
+    "positive": {
+     "n": 147,
+     "mean": 0.00935,
+     "ci": [
+      0.00196,
+      0.01721
+     ]
+    },
+    "negative": {
+     "n": 2761,
+     "mean": -0.00029,
+     "ci": [
+      -0.00117,
+      0.00059
+     ]
+    }
+   },
+   "control_1km_minus_ring": {
+    "positive": {
+     "n": 120,
+     "mean": -0.0022,
+     "ci": [
+      -0.0079,
+      0.00314
+     ]
+    },
+    "negative": {
+     "n": 2572,
+     "mean": 0.00068,
+     "ci": [
+      -0.00022,
+      0.00166
+     ]
+    }
+   }
+  },
+  "V7": {
+   "units": "probability",
+   "positive_group": "plots positive under the definition",
+   "true_cell_minus_ring": {
+    "positive": {
+     "n": 63,
+     "mean": 0.00348,
+     "ci": [
+      -0.00313,
+      0.0104
+     ]
+    },
+    "negative": {
+     "n": 2845,
+     "mean": -0.00024,
+     "ci": [
+      -0.00079,
+      0.00031
+     ]
+    }
+   },
+   "control_1km_minus_ring": {
+    "positive": {
+     "n": 53,
+     "mean": -0.00388,
+     "ci": [
+      -0.00809,
+      0.00071
+     ]
+    },
+    "negative": {
+     "n": 2639,
+     "mean": 0.00045,
+     "ci": [
+      -0.0001,
+      0.00104
+     ]
+    }
+   }
+  },
+  "agreement_count": {
+   "units": "definitions (0 to 6)",
+   "positive_group": "plots positive under at least three definitions",
+   "true_cell_minus_ring": {
+    "positive": {
+     "n": 407,
+     "mean": 0.11462,
+     "ci": [
+      0.03007,
+      0.20326
+     ]
+    },
+    "negative": {
+     "n": 2501,
+     "mean": -0.02723,
+     "ci": [
+      -0.04757,
+      -0.00626
+     ]
+    }
+   },
+   "control_1km_minus_ring": {
+    "positive": {
+     "n": 363,
+     "mean": -0.02173,
+     "ci": [
+      -0.08987,
+      0.05084
+     ]
+    },
+    "negative": {
+     "n": 2321,
+     "mean": 0.01361,
+     "ci": [
+      -0.01078,
+      0.03894
+     ]
+    }
+   }
+  }
+ },
+ "agreement_layer_percentile_rank_in_disk": {
+  "all": {
+   "n": 2457,
+   "median": 0.4332,
+   "median_ci": [
+    0.43,
+    0.4375
+   ],
+   "median_search_share_of_disk": 0.5668
+  },
+  "ge3_definitions": {
+   "n": 351,
+   "median": 0.773,
+   "median_ci": [
+    0.6987,
+    0.8049
+   ],
+   "median_search_share_of_disk": 0.227
+  },
+  "all_six": {
+   "n": 35,
+   "median": 0.5991,
+   "median_ci": [
+    0.4161,
+    0.8256
+   ],
+   "median_search_share_of_disk": 0.4009
+  }
+ }
+}
